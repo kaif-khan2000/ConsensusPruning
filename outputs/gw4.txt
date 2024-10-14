@@ -1,0 +1,468 @@
+New Session Id:  4db09501432eea26674aa6775c55a868a3d4206c9824e3c5f7299e0c3f8ac1ed
+successfully generated keys for the gateway
+
+gateway private key:  &{{{0xc00009c200} 92142415878329839534002344734558218752277956938578197963135840752270724223656 107333935014355369649363363766905981203532436229448252158988874825648262536368} 45576087960634904292765335727760143953938476646646670678688779717300453465634}
+
+gateway public key:  {{0xc00009c200} 92142415878329839534002344734558218752277956938578197963135840752270724223656 107333935014355369649363363766905981203532436229448252158988874825648262536368}
+
+session id:  [77 176 149 1 67 46 234 38 103 74 166 119 92 85 168 104 163 212 32 108 152 36 227 197 247 41 158 12 63 138 193 237]
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /pics/*filepath           --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /pics/*filepath           --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /getDagImage              --> main.getDagImage (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :4000
+successfully connected to the css
+
+successfully created genesis transaction
+Pruning the DAG
+prune: total  0  transactions
+Pruned  0  transactions
+
+successfully added genesis transaction to the dag
+Received before clustering :  {"Gw":["150.0.0.5","150.0.0.6","150.0.0.7"],"Sn":null,"Token_gw":{"150.0.0.5":"61374524-8d85-484c-868a-02c3421cb4cb","150.0.0.6":"f656a8a5-33ac-4e7d-bc1f-b2424f7e6adc","150.0.0.7":"2230da6b-d8ad-48ee-91f7-d234452b7e8b"},"Token_sn":"","Own_token_gw":"436ed46f-a8d9-43bb-b5ff-c619d11abc2a","Own_nodeno":4}
+Pinging neighbours
+Listening to socket -  4242
+Downloading dag
+Sending request to  150.0.0.7
+Gateway is ready to receive transactions
+I am not the generator node
+P2P code finished
+false
+Sensor is running
+noOfRecordsPerChunk:  7
+Received message in handle message : {"Type":"DOWNLOAD_DAG_RESPONSE","Data":"{\"Gateway_no\":0,\"Vertex_no\":0,\"Tx\":{\"Type\":0,\"Hash\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"From\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"LeftTip\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"RightTip\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"Nonce\":8447,\"Timestamp\":0,\"SessionId\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":null,\"IhSequenceStart\":0,\"IhSequenceEnd\":0},\"Signature\":\"IbWPXIBMVyz7C34o9K41a+uHSfU5QsycwrluzpNn+JTodOUM4cn1GhP8LrQfMR08NRD2LLa9N+On2X/drLYkEA==\",\"Neighbours\":[\"0000a147b87b5552e09241c4f19e54ea7e6d6ae4f99702601f6716d02c530dec\",\"0000d0425d51719decfaade3db2967a315aeb9aede538c7e96e929b46e6ad92a\"],\"Weight\":4,\"Confirmed\":true}","Timestamp":0}
+DAG download vertex from gateway 0
+Vertex no downloaded:  0
+Pruning the DAG
+prune: total  0  transactions
+Pruned  0  transactions
+*************************************
+Received message in handle message : {"Type":"DOWNLOAD_DAG_RESPONSE","Data":"{\"Gateway_no\":0,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"From\":[4,177,93,83,252,60,125,51,109,231,247,135,11,159,136,126,35,86,82,169,66,184,187,180,37,177,132,78,26,60,40,179,105,141,76,240,135,214,119,45,181,63,67,118,115,228,239,131,119,86,110,170,105,159,107,205,130,158,190,186,20,10,32,159,213],\"LeftTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"RightTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"Nonce\":3656,\"Timestamp\":1681636999839683628,\"SessionId\":[53,207,243,128,208,224,227,177,232,80,198,46,183,253,117,174,200,178,218,162,130,247,150,106,39,145,168,29,167,243,34,14],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[239,88,225,31,171,88,159,224,208,143,237,63,61,243,54,91,178,176,160,65,8,103,117,26,209,35,170,90,187,45,73,62],[82,209,38,117,149,0,159,173,209,244,245,31,228,70,236,141,110,113,79,163,116,95,128,206,87,126,213,61,162,105,182,72],[3,202,120,211,157,206,239,188,155,50,177,42,141,4,15,132,208,172,130,77,233,43,95,222,87,242,148,87,106,103,252,124]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"N1wrWLU2lQBJoWtA7b4EwLIrm0/0Sd74M+lrGLvoaXZAIUhZRlxDgJExKg6g5ZDq0TY6jSTsxqmloNgdafWABQ==\",\"Neighbours\":[],\"Weight\":1,\"Confirmed\":true}","Timestamp":0}
+DAG download vertex from gateway 0
+Vertex no downloaded:  1
+Pruning the DAG
+prune: total  0  transactions
+Pruned  0  transactions
+*************************************
+Received message in handle message : {"Type":"DOWNLOAD_DAG_RESPONSE","Data":"{\"Gateway_no\":0,\"Vertex_no\":2,\"Tx\":{\"Type\":2,\"Hash\":[0,0,208,66,93,81,113,157,236,250,173,227,219,41,103,163,21,174,185,174,222,83,140,126,150,233,41,180,110,106,217,42],\"From\":[4,177,93,83,252,60,125,51,109,231,247,135,11,159,136,126,35,86,82,169,66,184,187,180,37,177,132,78,26,60,40,179,105,141,76,240,135,214,119,45,181,63,67,118,115,228,239,131,119,86,110,170,105,159,107,205,130,158,190,186,20,10,32,159,213],\"LeftTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"RightTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"Nonce\":34693,\"Timestamp\":1681637001210842481,\"SessionId\":[53,207,243,128,208,224,227,177,232,80,198,46,183,253,117,174,200,178,218,162,130,247,150,106,39,145,168,29,167,243,34,14],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[23,93,67,4,39,247,38,120,85,92,196,178,137,143,230,163,66,126,180,108,185,62,175,126,165,225,198,77,212,71,255,34]],\"IhSequenceStart\":3,\"IhSequenceEnd\":3},\"Signature\":\"ofva+7XLqd84F7Q6qj4X7+OBD2p0dKxrtxnY2iqsfAnrOX5UirXF8geSIaYfnYVOgbLidQm2BV34AsyclucWYA==\",\"Neighbours\":[],\"Weight\":1,\"Confirmed\":true}","Timestamp":0}
+DAG download vertex from gateway 0
+Vertex no downloaded:  2
+Pruning the DAG
+prune: total  0  transactions
+Pruned  0  transactions
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":1,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,48,88,114,127,251,48,40,9,159,3,217,52,141,179,48,5,203,148,99,149,166,143,9,143,253,137,69,81,235,147],\"From\":[4,169,71,160,85,110,38,242,235,132,175,28,234,94,153,86,30,226,206,87,191,228,255,42,13,229,98,39,184,245,97,90,84,69,210,150,205,172,222,115,126,110,245,38,75,162,162,215,84,136,44,153,249,200,96,239,179,87,100,48,162,30,174,236,129],\"LeftTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"RightTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"Nonce\":44816,\"Timestamp\":1681637002003684952,\"SessionId\":[230,158,20,192,189,251,42,23,172,108,80,168,26,158,229,22,14,119,196,101,152,213,71,160,213,98,76,248,77,14,206,203],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[11,206,153,208,4,235,25,40,177,94,55,202,177,122,128,192,88,252,55,88,248,98,26,190,95,215,22,236,137,0,75,25],[74,156,71,149,153,239,136,55,147,85,205,92,207,15,53,242,93,225,93,40,241,56,124,92,30,219,63,66,158,40,177,26],[214,230,252,100,97,72,3,108,200,79,79,87,246,180,227,250,252,8,17,103,3,96,152,139,68,150,237,76,201,227,41,148]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"u33UvgkawrBUvGmORvGz33USpOASVWsV/qkA2BgaeEAJ7LjQ8zfPEZpW5/R8LoBGAMREg0r/rYtaBeQNsny4Tw==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637004614687694}
+Vertex no received:  1
+Transaction received from other gateway 1
+Received vertex from the network:  00003058727ffb3028099f03d9348db33005cb946395a68f098ffd894551eb93
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":1,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,48,88,114,127,251,48,40,9,159,3,217,52,141,179,48,5,203,148,99,149,166,143,9,143,253,137,69,81,235,147],\"From\":[4,169,71,160,85,110,38,242,235,132,175,28,234,94,153,86,30,226,206,87,191,228,255,42,13,229,98,39,184,245,97,90,84,69,210,150,205,172,222,115,126,110,245,38,75,162,162,215,84,136,44,153,249,200,96,239,179,87,100,48,162,30,174,236,129],\"LeftTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"RightTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"Nonce\":44816,\"Timestamp\":1681637002003684952,\"SessionId\":[230,158,20,192,189,251,42,23,172,108,80,168,26,158,229,22,14,119,196,101,152,213,71,160,213,98,76,248,77,14,206,203],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[11,206,153,208,4,235,25,40,177,94,55,202,177,122,128,192,88,252,55,88,248,98,26,190,95,215,22,236,137,0,75,25],[74,156,71,149,153,239,136,55,147,85,205,92,207,15,53,242,93,225,93,40,241,56,124,92,30,219,63,66,158,40,177,26],[214,230,252,100,97,72,3,108,200,79,79,87,246,180,227,250,252,8,17,103,3,96,152,139,68,150,237,76,201,227,41,148]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"u33UvgkawrBUvGmORvGz33USpOASVWsV/qkA2BgaeEAJ7LjQ8zfPEZpW5/R8LoBGAMREg0r/rYtaBeQNsny4Tw==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637004614687694}
+Duplicate message received
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00003058727ffb3028099f03d9348db33005cb946395a68f098ffd894551eb93","Timestamp":0}
+ACK received
+vertex confirmed:  1
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00003058727ffb3028099f03d9348db33005cb946395a68f098ffd894551eb93","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00003058727ffb3028099f03d9348db33005cb946395a68f098ffd894551eb93","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":1,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,48,88,114,127,251,48,40,9,159,3,217,52,141,179,48,5,203,148,99,149,166,143,9,143,253,137,69,81,235,147],\"From\":[4,169,71,160,85,110,38,242,235,132,175,28,234,94,153,86,30,226,206,87,191,228,255,42,13,229,98,39,184,245,97,90,84,69,210,150,205,172,222,115,126,110,245,38,75,162,162,215,84,136,44,153,249,200,96,239,179,87,100,48,162,30,174,236,129],\"LeftTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"RightTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"Nonce\":44816,\"Timestamp\":1681637002003684952,\"SessionId\":[230,158,20,192,189,251,42,23,172,108,80,168,26,158,229,22,14,119,196,101,152,213,71,160,213,98,76,248,77,14,206,203],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[11,206,153,208,4,235,25,40,177,94,55,202,177,122,128,192,88,252,55,88,248,98,26,190,95,215,22,236,137,0,75,25],[74,156,71,149,153,239,136,55,147,85,205,92,207,15,53,242,93,225,93,40,241,56,124,92,30,219,63,66,158,40,177,26],[214,230,252,100,97,72,3,108,200,79,79,87,246,180,227,250,252,8,17,103,3,96,152,139,68,150,237,76,201,227,41,148]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"u33UvgkawrBUvGmORvGz33USpOASVWsV/qkA2BgaeEAJ7LjQ8zfPEZpW5/R8LoBGAMREg0r/rYtaBeQNsny4Tw==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637004614687694}
+Duplicate message received
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":0,\"Vertex_no\":3,\"Tx\":{\"Type\":2,\"Hash\":[0,0,194,212,139,12,51,124,27,216,131,31,200,0,95,225,40,222,220,140,16,120,95,227,71,203,255,35,77,138,106,53],\"From\":[4,177,93,83,252,60,125,51,109,231,247,135,11,159,136,126,35,86,82,169,66,184,187,180,37,177,132,78,26,60,40,179,105,141,76,240,135,214,119,45,181,63,67,118,115,228,239,131,119,86,110,170,105,159,107,205,130,158,190,186,20,10,32,159,213],\"LeftTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"RightTip\":[0,0,208,66,93,81,113,157,236,250,173,227,219,41,103,163,21,174,185,174,222,83,140,126,150,233,41,180,110,106,217,42],\"Nonce\":44098,\"Timestamp\":1681637002915714764,\"SessionId\":[53,207,243,128,208,224,227,177,232,80,198,46,183,253,117,174,200,178,218,162,130,247,150,106,39,145,168,29,167,243,34,14],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[123,29,146,118,186,4,185,251,110,12,61,211,188,255,69,196,14,132,239,159,23,150,252,47,132,231,243,178,23,132,192,105]],\"IhSequenceStart\":4,\"IhSequenceEnd\":4},\"Signature\":\"Bs1AjUugNc5aI5tlR81duU5JXGJQWpIl4+ZzeztsvQqX/POiTbjnwG7BPA5aN6FsU+glZmUQ1qwisQjFMXeubw==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637004935725331}
+Vertex no received:  3
+Transaction received from other gateway 0
+Received vertex from the network:  0000c2d48b0c337c1bd8831fc8005fe128dedc8c10785fe347cbff234d8a6a35
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":0,\"Vertex_no\":3,\"Tx\":{\"Type\":2,\"Hash\":[0,0,194,212,139,12,51,124,27,216,131,31,200,0,95,225,40,222,220,140,16,120,95,227,71,203,255,35,77,138,106,53],\"From\":[4,177,93,83,252,60,125,51,109,231,247,135,11,159,136,126,35,86,82,169,66,184,187,180,37,177,132,78,26,60,40,179,105,141,76,240,135,214,119,45,181,63,67,118,115,228,239,131,119,86,110,170,105,159,107,205,130,158,190,186,20,10,32,159,213],\"LeftTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"RightTip\":[0,0,208,66,93,81,113,157,236,250,173,227,219,41,103,163,21,174,185,174,222,83,140,126,150,233,41,180,110,106,217,42],\"Nonce\":44098,\"Timestamp\":1681637002915714764,\"SessionId\":[53,207,243,128,208,224,227,177,232,80,198,46,183,253,117,174,200,178,218,162,130,247,150,106,39,145,168,29,167,243,34,14],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[123,29,146,118,186,4,185,251,110,12,61,211,188,255,69,196,14,132,239,159,23,150,252,47,132,231,243,178,23,132,192,105]],\"IhSequenceStart\":4,\"IhSequenceEnd\":4},\"Signature\":\"Bs1AjUugNc5aI5tlR81duU5JXGJQWpIl4+ZzeztsvQqX/POiTbjnwG7BPA5aN6FsU+glZmUQ1qwisQjFMXeubw==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637004935725331}
+Duplicate message received
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":0,\"Vertex_no\":3,\"Tx\":{\"Type\":2,\"Hash\":[0,0,194,212,139,12,51,124,27,216,131,31,200,0,95,225,40,222,220,140,16,120,95,227,71,203,255,35,77,138,106,53],\"From\":[4,177,93,83,252,60,125,51,109,231,247,135,11,159,136,126,35,86,82,169,66,184,187,180,37,177,132,78,26,60,40,179,105,141,76,240,135,214,119,45,181,63,67,118,115,228,239,131,119,86,110,170,105,159,107,205,130,158,190,186,20,10,32,159,213],\"LeftTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"RightTip\":[0,0,208,66,93,81,113,157,236,250,173,227,219,41,103,163,21,174,185,174,222,83,140,126,150,233,41,180,110,106,217,42],\"Nonce\":44098,\"Timestamp\":1681637002915714764,\"SessionId\":[53,207,243,128,208,224,227,177,232,80,198,46,183,253,117,174,200,178,218,162,130,247,150,106,39,145,168,29,167,243,34,14],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[123,29,146,118,186,4,185,251,110,12,61,211,188,255,69,196,14,132,239,159,23,150,252,47,132,231,243,178,23,132,192,105]],\"IhSequenceStart\":4,\"IhSequenceEnd\":4},\"Signature\":\"Bs1AjUugNc5aI5tlR81duU5JXGJQWpIl4+ZzeztsvQqX/POiTbjnwG7BPA5aN6FsU+glZmUQ1qwisQjFMXeubw==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637004935725331}
+Duplicate message received
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000c2d48b0c337c1bd8831fc8005fe128dedc8c10785fe347cbff234d8a6a35","Timestamp":0}
+ACK received
+vertex confirmed:  3
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000c2d48b0c337c1bd8831fc8005fe128dedc8c10785fe347cbff234d8a6a35","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000c2d48b0c337c1bd8831fc8005fe128dedc8c10785fe347cbff234d8a6a35","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000faaaf8ad5433514223a08a545b77e896a95195aea4f2937f52a2f2dcfc80","Timestamp":0}
+ACK received
+vertex confirmed:  0
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":3,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,250,170,248,173,84,51,81,66,35,160,138,84,91,119,232,150,169,81,149,174,164,242,147,127,82,162,242,220,252,128],\"From\":[4,128,84,129,196,199,82,65,131,99,132,208,62,74,195,62,181,81,229,235,32,57,134,184,177,65,169,103,100,28,115,33,234,25,93,19,237,2,43,128,118,59,210,196,21,197,201,25,136,90,120,189,204,223,195,249,28,196,9,208,110,45,216,51,25],\"LeftTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"RightTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"Nonce\":3542,\"Timestamp\":1681637006371722064,\"SessionId\":[161,146,212,155,161,89,215,227,18,57,30,14,120,47,145,184,52,81,97,83,204,83,155,246,143,162,215,45,2,12,160,202],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[169,38,227,100,43,242,86,1,251,4,154,238,179,36,236,129,54,177,69,169,66,199,215,170,148,106,98,29,147,53,105,3],[97,94,186,53,14,0,193,60,244,128,74,70,34,141,1,45,84,203,176,152,21,157,166,10,52,2,10,130,60,208,122,207],[215,25,95,151,238,39,104,100,42,124,49,170,137,25,188,19,180,7,177,122,22,201,186,197,106,84,254,92,26,22,124,129]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"+osaIiuIXwyYFfrSw5xYI8YXfNXnrQs39ygsnm3UOWcBfkIaLpbIH6PkRmt+gdR5/S1tP2iVChAWLq37A35FBQ==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637006697261396}
+Vertex no received:  1
+Transaction received from other gateway 3
+Vertex already exists in the dag
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000faaaf8ad5433514223a08a545b77e896a95195aea4f2937f52a2f2dcfc80","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":3,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,250,170,248,173,84,51,81,66,35,160,138,84,91,119,232,150,169,81,149,174,164,242,147,127,82,162,242,220,252,128],\"From\":[4,128,84,129,196,199,82,65,131,99,132,208,62,74,195,62,181,81,229,235,32,57,134,184,177,65,169,103,100,28,115,33,234,25,93,19,237,2,43,128,118,59,210,196,21,197,201,25,136,90,120,189,204,223,195,249,28,196,9,208,110,45,216,51,25],\"LeftTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"RightTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"Nonce\":3542,\"Timestamp\":1681637006371722064,\"SessionId\":[161,146,212,155,161,89,215,227,18,57,30,14,120,47,145,184,52,81,97,83,204,83,155,246,143,162,215,45,2,12,160,202],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[169,38,227,100,43,242,86,1,251,4,154,238,179,36,236,129,54,177,69,169,66,199,215,170,148,106,98,29,147,53,105,3],[97,94,186,53,14,0,193,60,244,128,74,70,34,141,1,45,84,203,176,152,21,157,166,10,52,2,10,130,60,208,122,207],[215,25,95,151,238,39,104,100,42,124,49,170,137,25,188,19,180,7,177,122,22,201,186,197,106,84,254,92,26,22,124,129]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"+osaIiuIXwyYFfrSw5xYI8YXfNXnrQs39ygsnm3UOWcBfkIaLpbIH6PkRmt+gdR5/S1tP2iVChAWLq37A35FBQ==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637006697261396}
+Duplicate message received
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000faaaf8ad5433514223a08a545b77e896a95195aea4f2937f52a2f2dcfc80","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":2,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,51,156,226,222,154,230,155,44,221,238,249,5,249,116,236,1,254,196,203,185,68,11,64,169,148,13,10,176,15,20],\"From\":[4,124,107,234,254,116,213,225,133,148,36,195,12,196,205,45,182,17,71,117,78,175,130,188,134,175,151,172,212,106,238,110,92,46,169,121,55,55,168,169,120,225,132,86,65,31,127,55,164,244,139,113,250,202,249,244,105,69,157,196,207,27,146,110,173],\"LeftTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"RightTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"Nonce\":44563,\"Timestamp\":1681637004115688737,\"SessionId\":[63,225,217,27,100,89,164,118,55,174,195,184,227,63,183,249,234,234,134,119,72,235,116,107,130,10,217,186,203,175,71,26],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[40,118,75,123,169,37,136,68,116,192,151,77,128,104,222,96,206,243,123,94,139,109,4,23,71,252,105,217,31,149,145,66],[36,98,122,173,223,69,87,99,54,41,160,10,135,169,155,124,152,136,71,237,194,187,126,50,76,98,34,75,56,119,42,51],[146,5,63,151,40,9,80,254,63,7,245,29,110,3,103,92,101,194,81,157,128,79,107,34,195,62,186,150,114,2,162,133]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"ebqwEaXqLEQ2GbuOuB4SkvgZmR/ka/I4ilA4Yxfe+UwxdfMKf7aEQv+eu5K3qi3Bk5f+F0C4fYOlN6Olq9NDdA==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637006782696584}
+Vertex no received:  1
+Transaction received from other gateway 2
+Received vertex from the network:  0000339ce2de9ae69b2cddeef905f974ec01fec4cbb9440b40a9940d0ab00f14
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000339ce2de9ae69b2cddeef905f974ec01fec4cbb9440b40a9940d0ab00f14","Timestamp":0}
+ACK received
+vertex confirmed:  1
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":2,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,51,156,226,222,154,230,155,44,221,238,249,5,249,116,236,1,254,196,203,185,68,11,64,169,148,13,10,176,15,20],\"From\":[4,124,107,234,254,116,213,225,133,148,36,195,12,196,205,45,182,17,71,117,78,175,130,188,134,175,151,172,212,106,238,110,92,46,169,121,55,55,168,169,120,225,132,86,65,31,127,55,164,244,139,113,250,202,249,244,105,69,157,196,207,27,146,110,173],\"LeftTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"RightTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"Nonce\":44563,\"Timestamp\":1681637004115688737,\"SessionId\":[63,225,217,27,100,89,164,118,55,174,195,184,227,63,183,249,234,234,134,119,72,235,116,107,130,10,217,186,203,175,71,26],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[40,118,75,123,169,37,136,68,116,192,151,77,128,104,222,96,206,243,123,94,139,109,4,23,71,252,105,217,31,149,145,66],[36,98,122,173,223,69,87,99,54,41,160,10,135,169,155,124,152,136,71,237,194,187,126,50,76,98,34,75,56,119,42,51],[146,5,63,151,40,9,80,254,63,7,245,29,110,3,103,92,101,194,81,157,128,79,107,34,195,62,186,150,114,2,162,133]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"ebqwEaXqLEQ2GbuOuB4SkvgZmR/ka/I4ilA4Yxfe+UwxdfMKf7aEQv+eu5K3qi3Bk5f+F0C4fYOlN6Olq9NDdA==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637006782696584}
+Duplicate message received
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000339ce2de9ae69b2cddeef905f974ec01fec4cbb9440b40a9940d0ab00f14","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000339ce2de9ae69b2cddeef905f974ec01fec4cbb9440b40a9940d0ab00f14","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":2,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,51,156,226,222,154,230,155,44,221,238,249,5,249,116,236,1,254,196,203,185,68,11,64,169,148,13,10,176,15,20],\"From\":[4,124,107,234,254,116,213,225,133,148,36,195,12,196,205,45,182,17,71,117,78,175,130,188,134,175,151,172,212,106,238,110,92,46,169,121,55,55,168,169,120,225,132,86,65,31,127,55,164,244,139,113,250,202,249,244,105,69,157,196,207,27,146,110,173],\"LeftTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"RightTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"Nonce\":44563,\"Timestamp\":1681637004115688737,\"SessionId\":[63,225,217,27,100,89,164,118,55,174,195,184,227,63,183,249,234,234,134,119,72,235,116,107,130,10,217,186,203,175,71,26],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[40,118,75,123,169,37,136,68,116,192,151,77,128,104,222,96,206,243,123,94,139,109,4,23,71,252,105,217,31,149,145,66],[36,98,122,173,223,69,87,99,54,41,160,10,135,169,155,124,152,136,71,237,194,187,126,50,76,98,34,75,56,119,42,51],[146,5,63,151,40,9,80,254,63,7,245,29,110,3,103,92,101,194,81,157,128,79,107,34,195,62,186,150,114,2,162,133]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"ebqwEaXqLEQ2GbuOuB4SkvgZmR/ka/I4ilA4Yxfe+UwxdfMKf7aEQv+eu5K3qi3Bk5f+F0C4fYOlN6Olq9NDdA==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637006782696584}
+Duplicate message received
+*************************************
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":1,\"Vertex_no\":2,\"Tx\":{\"Type\":2,\"Hash\":[0,0,21,160,99,10,31,206,143,203,71,225,226,43,29,222,153,113,127,246,174,254,59,79,204,228,154,29,232,210,147,122],\"From\":[4,169,71,160,85,110,38,242,235,132,175,28,234,94,153,86,30,226,206,87,191,228,255,42,13,229,98,39,184,245,97,90,84,69,210,150,205,172,222,115,126,110,245,38,75,162,162,215,84,136,44,153,249,200,96,239,179,87,100,48,162,30,174,236,129],\"LeftTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"RightTip\":[0,0,208,66,93,81,113,157,236,250,173,227,219,41,103,163,21,174,185,174,222,83,140,126,150,233,41,180,110,106,217,42],\"Nonce\":53228,\"Timestamp\":1681637005854052508,\"SessionId\":[230,158,20,192,189,251,42,23,172,108,80,168,26,158,229,22,14,119,196,101,152,213,71,160,213,98,76,248,77,14,206,203],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[244,176,187,79,31,41,153,211,123,197,250,217,168,162,171,122,173,42,38,91,169,148,226,32,33,202,58,47,77,20,195,226],[81,242,220,36,15,37,177,151,237,179,56,42,103,24,251,13,200,205,141,97,4,175,84,245,95,60,253,176,255,219,125,172],[95,142,127,194,5,27,226,240,129,3,77,112,182,155,7,233,198,55,223,194,136,70,240,108,158,120,102,233,131,13,201,249]],\"IhSequenceStart\":3,\"IhSequenceEnd\":5},\"Signature\":\"NjA9f/+oEK3nAZosYA9a5zQG/iUIY8Oa8kKGh9QJc5X5DbZ6Z2BX/npjT8tNmP9FKpa2ZoW8XWVHJ3LG3q7MJg==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637009409768799}
+Vertex no received:  2
+Transaction received from other gateway 1
+Received vertex from the network:  000015a0630a1fce8fcb47e1e22b1dde99717ff6aefe3b4fcce49a1de8d2937a
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":1,\"Vertex_no\":2,\"Tx\":{\"Type\":2,\"Hash\":[0,0,21,160,99,10,31,206,143,203,71,225,226,43,29,222,153,113,127,246,174,254,59,79,204,228,154,29,232,210,147,122],\"From\":[4,169,71,160,85,110,38,242,235,132,175,28,234,94,153,86,30,226,206,87,191,228,255,42,13,229,98,39,184,245,97,90,84,69,210,150,205,172,222,115,126,110,245,38,75,162,162,215,84,136,44,153,249,200,96,239,179,87,100,48,162,30,174,236,129],\"LeftTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"RightTip\":[0,0,208,66,93,81,113,157,236,250,173,227,219,41,103,163,21,174,185,174,222,83,140,126,150,233,41,180,110,106,217,42],\"Nonce\":53228,\"Timestamp\":1681637005854052508,\"SessionId\":[230,158,20,192,189,251,42,23,172,108,80,168,26,158,229,22,14,119,196,101,152,213,71,160,213,98,76,248,77,14,206,203],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[244,176,187,79,31,41,153,211,123,197,250,217,168,162,171,122,173,42,38,91,169,148,226,32,33,202,58,47,77,20,195,226],[81,242,220,36,15,37,177,151,237,179,56,42,103,24,251,13,200,205,141,97,4,175,84,245,95,60,253,176,255,219,125,172],[95,142,127,194,5,27,226,240,129,3,77,112,182,155,7,233,198,55,223,194,136,70,240,108,158,120,102,233,131,13,201,249]],\"IhSequenceStart\":3,\"IhSequenceEnd\":5},\"Signature\":\"NjA9f/+oEK3nAZosYA9a5zQG/iUIY8Oa8kKGh9QJc5X5DbZ6Z2BX/npjT8tNmP9FKpa2ZoW8XWVHJ3LG3q7MJg==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637009409768799}
+Duplicate message received
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000015a0630a1fce8fcb47e1e22b1dde99717ff6aefe3b4fcce49a1de8d2937a","Timestamp":0}
+ACK received
+vertex confirmed:  2
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":1,\"Vertex_no\":2,\"Tx\":{\"Type\":2,\"Hash\":[0,0,21,160,99,10,31,206,143,203,71,225,226,43,29,222,153,113,127,246,174,254,59,79,204,228,154,29,232,210,147,122],\"From\":[4,169,71,160,85,110,38,242,235,132,175,28,234,94,153,86,30,226,206,87,191,228,255,42,13,229,98,39,184,245,97,90,84,69,210,150,205,172,222,115,126,110,245,38,75,162,162,215,84,136,44,153,249,200,96,239,179,87,100,48,162,30,174,236,129],\"LeftTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"RightTip\":[0,0,208,66,93,81,113,157,236,250,173,227,219,41,103,163,21,174,185,174,222,83,140,126,150,233,41,180,110,106,217,42],\"Nonce\":53228,\"Timestamp\":1681637005854052508,\"SessionId\":[230,158,20,192,189,251,42,23,172,108,80,168,26,158,229,22,14,119,196,101,152,213,71,160,213,98,76,248,77,14,206,203],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[244,176,187,79,31,41,153,211,123,197,250,217,168,162,171,122,173,42,38,91,169,148,226,32,33,202,58,47,77,20,195,226],[81,242,220,36,15,37,177,151,237,179,56,42,103,24,251,13,200,205,141,97,4,175,84,245,95,60,253,176,255,219,125,172],[95,142,127,194,5,27,226,240,129,3,77,112,182,155,7,233,198,55,223,194,136,70,240,108,158,120,102,233,131,13,201,249]],\"IhSequenceStart\":3,\"IhSequenceEnd\":5},\"Signature\":\"NjA9f/+oEK3nAZosYA9a5zQG/iUIY8Oa8kKGh9QJc5X5DbZ6Z2BX/npjT8tNmP9FKpa2ZoW8XWVHJ3LG3q7MJg==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637009409768799}
+Duplicate message received
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000015a0630a1fce8fcb47e1e22b1dde99717ff6aefe3b4fcce49a1de8d2937a","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000015a0630a1fce8fcb47e1e22b1dde99717ff6aefe3b4fcce49a1de8d2937a","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received after clustering :  {"Gw":["150.0.0.10","150.0.0.12","150.0.0.5"],"Sn":null,"Token_gw":{"150.0.0.10":"08408aaf-fcb1-4324-9ad5-aee2e56e2ccf","150.0.0.12":"db67ff86-1288-4a02-9a47-97ee6a45df9a","150.0.0.5":"17ab904d-8e6c-49be-bdd3-f5328914dffe"},"Token_sn":"","Own_token_gw":"238e67fd-0145-422c-a4f4-cce50bc6bd67","Own_nodeno":0} from ip address of DN:  150.0.0.100
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  4db09501432eea26674aa6775c55a868a3d4206c9824e3c5f7299e0c3f8ac1ed
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  4db09501432eea26674aa6775c55a868a3d4206c9824e3c5f7299e0c3f8ac1ed
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  4db09501432eea26674aa6775c55a868a3d4206c9824e3c5f7299e0c3f8ac1ed
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  4db09501432eea26674aa6775c55a868a3d4206c9824e3c5f7299e0c3f8ac1ed
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  4db09501432eea26674aa6775c55a868a3d4206c9824e3c5f7299e0c3f8ac1ed
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  4db09501432eea26674aa6775c55a868a3d4206c9824e3c5f7299e0c3f8ac1ed
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  4db09501432eea26674aa6775c55a868a3d4206c9824e3c5f7299e0c3f8ac1ed
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":0,\"Vertex_no\":4,\"Tx\":{\"Type\":2,\"Hash\":[0,0,130,213,178,219,255,204,125,176,137,78,111,209,251,144,165,109,122,220,148,132,124,113,220,175,84,161,26,9,135,184],\"From\":[4,177,93,83,252,60,125,51,109,231,247,135,11,159,136,126,35,86,82,169,66,184,187,180,37,177,132,78,26,60,40,179,105,141,76,240,135,214,119,45,181,63,67,118,115,228,239,131,119,86,110,170,105,159,107,205,130,158,190,186,20,10,32,159,213],\"LeftTip\":[0,0,161,71,184,123,85,82,224,146,65,196,241,158,84,234,126,109,106,228,249,151,2,96,31,103,22,208,44,83,13,236],\"RightTip\":[0,0,48,88,114,127,251,48,40,9,159,3,217,52,141,179,48,5,203,148,99,149,166,143,9,143,253,137,69,81,235,147],\"Nonce\":132970,\"Timestamp\":1681637005346472040,\"SessionId\":[53,207,243,128,208,224,227,177,232,80,198,46,183,253,117,174,200,178,218,162,130,247,150,106,39,145,168,29,167,243,34,14],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[188,253,227,30,157,120,6,177,14,84,82,223,159,188,154,198,249,49,51,59,112,171,2,123,188,14,102,230,186,77,230,54],[144,142,114,213,131,46,220,227,134,108,92,41,202,202,117,173,134,126,89,10,64,112,128,174,140,201,51,140,139,140,88,212]],\"IhSequenceStart\":5,\"IhSequenceEnd\":6},\"Signature\":\"1Mhrhb+mSswAmZ7pnTvufHMXiW8Zdc7eLpqATPGJUiCXmQSpIhgXa5K9JTwShGAoDUas8tKPskMTT3QoEojqeA==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637014387740325}
+Vertex no received:  4
+Transaction received from other gateway 0
+Received vertex from the network:  000082d5b2dbffcc7db0894e6fd1fb90a56d7adc94847c71dcaf54a11a0987b8
+No left Tip vertex no is  4
+No left Tip vertex no in orphan  4
+Vertex Verification Tips Failed
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00006e0306fae5fbe1b984071f1e5ad3846235ef7d40e5f09fd3b73d8c71aa59","Timestamp":0}
+ACK received
+vertex confirmed:  0
+*************************************
+Received message in handle message : {"Type":"PING","Data":"{\"Data\":{\"Gateway_no\":0,\"Vertex_no\":0,\"Tx\":{\"Type\":0,\"Hash\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"From\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"LeftTip\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"RightTip\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"Nonce\":0,\"Timestamp\":0,\"SessionId\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":null,\"IhSequenceStart\":0,\"IhSequenceEnd\":0},\"Signature\":null,\"Neighbours\":null,\"Weight\":0,\"Confirmed\":false},\"Token\":\"8a707a7c-548a-46c7-abce-b534724f6a04\",\"Timestamp\":0,\"Msg_type\":\"PING\"}","Timestamp":1681637011614040808}
+Transaction is invalid 8a707a7c-548a-46c7-abce-b534724f6a04 238e67fd-0145-422c-a4f4-cce50bc6bd67
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":4,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,72,212,78,190,149,196,129,49,205,194,171,187,59,178,250,162,168,132,75,162,85,217,156,71,62,74,119,41,84,251],\"From\":[4,203,182,194,93,38,167,132,50,142,177,190,159,127,112,6,127,233,178,240,97,226,20,177,150,204,93,10,37,71,58,210,168,237,76,218,183,83,202,136,196,75,47,109,64,252,165,67,131,173,113,159,152,39,23,239,122,103,78,219,151,237,198,220,176],\"LeftTip\":[0,0,51,156,226,222,154,230,155,44,221,238,249,5,249,116,236,1,254,196,203,185,68,11,64,169,148,13,10,176,15,20],\"RightTip\":[0,0,208,66,93,81,113,157,236,250,173,227,219,41,103,163,21,174,185,174,222,83,140,126,150,233,41,180,110,106,217,42],\"Nonce\":55387,\"Timestamp\":1681637008363723377,\"SessionId\":[77,176,149,1,67,46,234,38,103,74,166,119,92,85,168,104,163,212,32,108,152,36,227,197,247,41,158,12,63,138,193,237],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[74,167,62,128,202,162,225,128,214,76,103,32,67,151,147,150,228,201,179,132,10,81,65,23,72,196,135,127,150,203,241,168],[47,46,51,118,64,16,247,180,202,232,236,18,89,83,15,67,208,206,3,13,36,136,56,122,116,219,25,169,71,24,65,252],[152,81,50,198,0,34,52,37,84,68,141,83,114,221,164,239,147,177,142,86,192,107,26,155,244,129,9,243,45,129,176,19]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"8WqeDfGDHU+sDF7sCjqaYM3STAldPztnlDpxCofLYVoPGA6gTsq6iSjqrN7q2EwAzAseoMEYSRY54DRbtJfC9g==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637012208056373}
+Vertex no received:  1
+Transaction received from other gateway 4
+Vertex already exists in the dag
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":5,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,190,70,54,181,8,149,94,58,34,112,159,6,38,37,141,134,121,186,30,53,40,171,140,36,25,143,124,72,72,235],\"From\":[4,232,136,146,105,212,231,168,31,247,135,180,233,18,27,237,142,162,56,211,71,197,201,250,18,43,133,245,137,78,75,119,250,131,75,152,192,152,28,145,5,194,22,92,47,56,161,134,151,172,125,44,199,38,182,247,167,215,183,139,166,14,112,119,182],\"LeftTip\":[0,0,194,212,139,12,51,124,27,216,131,31,200,0,95,225,40,222,220,140,16,120,95,227,71,203,255,35,77,138,106,53],\"RightTip\":[0,0,194,212,139,12,51,124,27,216,131,31,200,0,95,225,40,222,220,140,16,120,95,227,71,203,255,35,77,138,106,53],\"Nonce\":24047,\"Timestamp\":1681637010659707811,\"SessionId\":[221,38,94,15,3,193,145,165,183,57,155,229,45,204,236,53,16,64,83,98,182,101,248,179,151,210,19,210,86,171,159,54],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[169,154,172,180,172,106,214,145,176,76,53,173,176,105,132,101,9,161,192,205,214,16,190,232,125,231,89,63,109,44,28,68],[53,209,135,39,155,208,197,43,167,156,148,104,200,246,79,50,198,62,212,255,228,183,10,218,46,144,108,209,2,130,121,11],[119,202,157,22,97,209,209,178,16,108,185,197,225,229,171,172,158,101,175,23,150,180,58,199,152,140,152,143,106,76,178,1]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"L2FXgWYYQXC7k1ISuCmoV7IY7KanAL8b9g06BQki6sC0vQ2zdzCJ3GYhlZJZlje7dCKKLANwhZVR9oZv92XrQQ==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637012627539882}
+Vertex no received:  1
+Transaction received from other gateway 5
+Received vertex from the network:  0000be4636b508955e3a22709f0626258d8679ba1e3528ab8c24198f7c4848eb
+Received message in handle message : {"Type":"PING","Data":"{\"Data\":{\"Gateway_no\":0,\"Vertex_no\":0,\"Tx\":{\"Type\":0,\"Hash\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"From\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"LeftTip\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"RightTip\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"Nonce\":0,\"Timestamp\":0,\"SessionId\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":null,\"IhSequenceStart\":0,\"IhSequenceEnd\":0},\"Signature\":null,\"Neighbours\":null,\"Weight\":0,\"Confirmed\":false},\"Token\":\"8a707a7c-548a-46c7-abce-b534724f6a04\",\"Timestamp\":0,\"Msg_type\":\"PING\"}","Timestamp":1681637011609504908}
+Transaction is invalid 8a707a7c-548a-46c7-abce-b534724f6a04 238e67fd-0145-422c-a4f4-cce50bc6bd67
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":7,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,207,208,217,146,253,82,113,233,34,139,120,167,43,5,84,100,48,154,67,58,148,73,112,24,252,156,136,147,74,36],\"From\":[4,153,209,62,210,249,212,186,129,156,46,125,244,165,0,20,31,79,182,184,34,188,103,207,93,227,26,151,171,142,213,51,201,148,159,4,191,62,132,198,222,180,201,213,66,93,221,186,180,116,173,166,132,143,249,120,211,241,186,144,56,118,110,61,146],\"LeftTip\":[0,0,250,170,248,173,84,51,81,66,35,160,138,84,91,119,232,150,169,81,149,174,164,242,147,127,82,162,242,220,252,128],\"RightTip\":[0,0,194,212,139,12,51,124,27,216,131,31,200,0,95,225,40,222,220,140,16,120,95,227,71,203,255,35,77,138,106,53],\"Nonce\":86,\"Timestamp\":1681637014615786067,\"SessionId\":[128,110,2,127,244,141,21,166,181,69,17,219,133,71,54,162,59,166,238,105,98,71,162,150,196,171,106,95,23,6,38,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[144,216,67,158,82,109,56,45,122,166,27,239,234,92,121,74,196,213,216,66,153,114,110,3,194,120,188,174,208,36,10,46],[114,77,8,131,131,42,14,150,171,207,111,54,231,234,51,182,63,205,224,126,137,134,91,19,187,163,139,99,205,185,147,7],[37,228,151,229,104,21,10,104,250,87,234,79,12,175,247,213,33,8,100,35,236,49,137,255,170,88,192,109,154,193,82,234]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"w9nGDi8LLrEVTa3D56lDkfOsvJt2SnsR352Vdk3bzfuXvMkG39F3o3JUCfVFjDSjI/4jna8/EM0y1+zTturXkg==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637014617562369}
+Vertex no received:  1
+Transaction received from other gateway 7
+Received vertex from the network:  0000cfd0d992fd5271e9228b78a72b055464309a433a94497018fc9c88934a24
+Received message in handle message : {"Type":"ACK","Data":"0000cfd0d992fd5271e9228b78a72b055464309a433a94497018fc9c88934a24","Timestamp":0}
+ACK received
+vertex confirmed:  0
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":7,\"Vertex_no\":2,\"Tx\":{\"Type\":2,\"Hash\":[0,0,223,83,22,112,234,233,45,100,206,253,27,209,175,209,241,208,190,44,26,125,189,245,55,189,191,57,21,226,185,189],\"From\":[4,153,209,62,210,249,212,186,129,156,46,125,244,165,0,20,31,79,182,184,34,188,103,207,93,227,26,151,171,142,213,51,201,148,159,4,191,62,132,198,222,180,201,213,66,93,221,186,180,116,173,166,132,143,249,120,211,241,186,144,56,118,110,61,146],\"LeftTip\":[0,0,250,170,248,173,84,51,81,66,35,160,138,84,91,119,232,150,169,81,149,174,164,242,147,127,82,162,242,220,252,128],\"RightTip\":[0,0,21,160,99,10,31,206,143,203,71,225,226,43,29,222,153,113,127,246,174,254,59,79,204,228,154,29,232,210,147,122],\"Nonce\":17896,\"Timestamp\":1681637015943956949,\"SessionId\":[128,110,2,127,244,141,21,166,181,69,17,219,133,71,54,162,59,166,238,105,98,71,162,150,196,171,106,95,23,6,38,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[184,115,251,1,232,139,76,55,125,173,50,84,183,95,139,215,124,26,88,233,73,37,194,157,101,201,5,97,143,28,45,89]],\"IhSequenceStart\":3,\"IhSequenceEnd\":3},\"Signature\":\"D371Dod6sY8oDTXxKafuZfNoN64AyhVJ7bCC6M9EkHq4+D9D+fQWmmjNImUvZnOA5T8teLoRlj3/JyjZ+XMU4g==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637017159756641}
+Vertex no received:  2
+Transaction received from other gateway 7
+Received vertex from the network:  0000df531670eae92d64cefd1bd1afd1f1d0be2c1a7dbdf537bdbf3915e2b9bd
+Received message in handle message : {"Type":"ACK","Data":"0000df531670eae92d64cefd1bd1afd1f1d0be2c1a7dbdf537bdbf3915e2b9bd","Timestamp":0}
+ACK received
+vertex confirmed:  0
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":7,\"Vertex_no\":3,\"Tx\":{\"Type\":2,\"Hash\":[0,0,166,139,100,138,237,152,47,210,249,17,186,32,242,27,254,113,159,27,69,152,164,152,36,234,242,45,26,148,125,42],\"From\":[4,153,209,62,210,249,212,186,129,156,46,125,244,165,0,20,31,79,182,184,34,188,103,207,93,227,26,151,171,142,213,51,201,148,159,4,191,62,132,198,222,180,201,213,66,93,221,186,180,116,173,166,132,143,249,120,211,241,186,144,56,118,110,61,146],\"LeftTip\":[0,0,194,212,139,12,51,124,27,216,131,31,200,0,95,225,40,222,220,140,16,120,95,227,71,203,255,35,77,138,106,53],\"RightTip\":[0,0,48,88,114,127,251,48,40,9,159,3,217,52,141,179,48,5,203,148,99,149,166,143,9,143,253,137,69,81,235,147],\"Nonce\":52169,\"Timestamp\":1681637017583151987,\"SessionId\":[128,110,2,127,244,141,21,166,181,69,17,219,133,71,54,162,59,166,238,105,98,71,162,150,196,171,106,95,23,6,38,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[173,28,231,139,156,173,61,246,58,243,186,182,212,87,93,26,100,144,92,215,133,167,85,191,33,208,181,189,140,48,239,27]],\"IhSequenceStart\":4,\"IhSequenceEnd\":4},\"Signature\":\"XZH8T3SdOLcUHEYJtYQiSPwBsX2Jjr5xm40D5Guz6v5VG5ANch37pdR07v/FmyHhQrzeduCCOEanjHzhDx6eDQ==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637020710361571}
+Vertex no received:  3
+Transaction received from other gateway 7
+Received vertex from the network:  0000a68b648aed982fd2f911ba20f21bfe719f1b4598a49824eaf22d1a947d2a
+Received message in handle message : {"Type":"ACK","Data":"0000a68b648aed982fd2f911ba20f21bfe719f1b4598a49824eaf22d1a947d2a","Timestamp":0}
+ACK received
+vertex confirmed:  0
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":7,\"Vertex_no\":4,\"Tx\":{\"Type\":2,\"Hash\":[0,0,232,198,26,80,67,132,181,195,216,131,70,147,76,127,176,63,65,50,180,30,72,79,66,36,253,167,252,31,193,76],\"From\":[4,153,209,62,210,249,212,186,129,156,46,125,244,165,0,20,31,79,182,184,34,188,103,207,93,227,26,151,171,142,213,51,201,148,159,4,191,62,132,198,222,180,201,213,66,93,221,186,180,116,173,166,132,143,249,120,211,241,186,144,56,118,110,61,146],\"LeftTip\":[0,0,166,139,100,138,237,152,47,210,249,17,186,32,242,27,254,113,159,27,69,152,164,152,36,234,242,45,26,148,125,42],\"RightTip\":[0,0,166,139,100,138,237,152,47,210,249,17,186,32,242,27,254,113,159,27,69,152,164,152,36,234,242,45,26,148,125,42],\"Nonce\":45126,\"Timestamp\":1681637021496589945,\"SessionId\":[128,110,2,127,244,141,21,166,181,69,17,219,133,71,54,162,59,166,238,105,98,71,162,150,196,171,106,95,23,6,38,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[92,185,240,205,219,77,213,191,48,10,27,38,235,107,79,68,244,0,58,96,208,110,59,51,170,147,130,248,183,219,182,66],[69,213,185,147,116,49,0,103,196,108,225,120,218,138,187,234,75,69,167,124,195,66,231,185,139,150,215,243,250,23,182,28],[233,173,129,16,176,50,162,197,175,242,114,27,202,209,71,237,143,189,143,143,11,28,70,83,60,126,162,84,7,128,71,86]],\"IhSequenceStart\":5,\"IhSequenceEnd\":7},\"Signature\":\"9oB7xtyMuwoT+RJEEpwgNFg77hiV7+ilpqS+V8I2FeX1jzoFnCfOemORTzdD+Tp45p7ivjuAMFfL8Kg/8TykMg==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637024516044629}
+Received message in handle message : {"Type":"ACK","Data":"000081877793ca0099a3a4d5d3df1d879482cb432318dbc1f5d5b24e968dbb7d","Timestamp":0}
+ACK received
+vertex confirmed:  0
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00006e0306fae5fbe1b984071f1e5ad3846235ef7d40e5f09fd3b73d8c71aa59","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000cfd0d992fd5271e9228b78a72b055464309a433a94497018fc9c88934a24","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000df531670eae92d64cefd1bd1afd1f1d0be2c1a7dbdf537bdbf3915e2b9bd","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000a68b648aed982fd2f911ba20f21bfe719f1b4598a49824eaf22d1a947d2a","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000ee7dbf9d6f4b185e3ecfc55ec213ae5a76b109e5d25e790eb7eda1bc76c1","Timestamp":0}
+ACK received
+vertex confirmed:  0
+Received message in handle message : {"Type":"ACK","Data":"0000e8c61a504384b5c3d88346934c7fb03f4132b41e484f4224fda7fc1fc14c","Timestamp":0}
+ACK received
+vertex confirmed:  0
+*************************************
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":7,\"Vertex_no\":10,\"Tx\":{\"Type\":2,\"Hash\":[0,0,129,135,119,147,202,0,153,163,164,213,211,223,29,135,148,130,203,67,35,24,219,193,245,213,178,78,150,141,187,125],\"From\":[4,153,209,62,210,249,212,186,129,156,46,125,244,165,0,20,31,79,182,184,34,188,103,207,93,227,26,151,171,142,213,51,201,148,159,4,191,62,132,198,222,180,201,213,66,93,221,186,180,116,173,166,132,143,249,120,211,241,186,144,56,118,110,61,146],\"LeftTip\":[0,0,27,226,227,218,223,42,241,20,48,76,82,200,242,42,114,63,66,119,196,153,64,155,124,235,153,123,65,142,148,67],\"RightTip\":[0,0,27,226,227,218,223,42,241,20,48,76,82,200,242,42,114,63,66,119,196,153,64,155,124,235,153,123,65,142,148,67],\"Nonce\":37151,\"Timestamp\":1681637053814769618,\"SessionId\":[128,110,2,127,244,141,21,166,181,69,17,219,133,71,54,162,59,166,238,105,98,71,162,150,196,171,106,95,23,6,38,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[199,9,60,183,150,20,31,52,98,208,227,14,112,126,130,234,139,71,176,211,2,15,242,197,110,216,86,145,237,252,81,242],[160,0,83,151,164,237,35,79,0,133,12,95,65,15,159,79,115,239,13,144,28,3,67,54,228,94,115,194,148,173,110,112],[178,30,237,236,60,26,122,15,44,141,238,124,223,46,238,185,214,254,233,248,61,204,176,172,143,79,79,6,116,206,163,226],[247,9,88,5,49,1,107,54,10,135,244,242,20,216,204,45,22,107,172,204,163,137,19,236,11,124,64,13,131,200,211,6],[92,179,69,102,237,105,201,117,247,66,78,178,250,4,225,127,158,45,144,41,112,161,51,18,120,59,136,227,56,112,76,136],[29,22,80,219,156,178,18,142,20,109,77,95,43,160,105,95,211,113,182,146,191,244,224,245,27,7,89,42,222,228,168,40]],\"IhSequenceStart\":23,\"IhSequenceEnd\":28},\"Signature\":\"M7LIS5yYPaYVW6VhEZoB1/wA2AtR0YHjjpaDmzMb8eOyARyUOJjyf0BkZHjFDsXDoMxTYQPH2Hv6w+P7KfOsrQ==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637058066373336}
+Vertex no received:  10
+Transaction received from other gateway 7
+Vertex already exists in the dag
+*************************************
+Vertex no received:  4
+Transaction received from other gateway 7
+Vertex already exists in the dag
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000081877793ca0099a3a4d5d3df1d879482cb432318dbc1f5d5b24e968dbb7d","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000ccecf212b989ac8f5f7acb8f46c4c31b69d0af49a186a529267421ee13f3","Timestamp":0}
+ACK received
+vertex confirmed:  4
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000ccecf212b989ac8f5f7acb8f46c4c31b69d0af49a186a529267421ee13f3","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000ccecf212b989ac8f5f7acb8f46c4c31b69d0af49a186a529267421ee13f3","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000db47b706b44c4f965dd22e5934a1e266dc2c160d8d51819c2bf5ef20fabd","Timestamp":0}
+ACK received
+vertex confirmed:  0
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000a603d6bbb2655cf6f857951e0545dd2ab3d629dfb9619ca670be2357904d","Timestamp":0}
+ACK received
+vertex confirmed:  0
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":7,\"Vertex_no\":5,\"Tx\":{\"Type\":2,\"Hash\":[0,0,166,3,214,187,178,101,92,246,248,87,149,30,5,69,221,42,179,214,41,223,185,97,156,166,112,190,35,87,144,77],\"From\":[4,153,209,62,210,249,212,186,129,156,46,125,244,165,0,20,31,79,182,184,34,188,103,207,93,227,26,151,171,142,213,51,201,148,159,4,191,62,132,198,222,180,201,213,66,93,221,186,180,116,173,166,132,143,249,120,211,241,186,144,56,118,110,61,146],\"LeftTip\":[0,0,166,139,100,138,237,152,47,210,249,17,186,32,242,27,254,113,159,27,69,152,164,152,36,234,242,45,26,148,125,42],\"RightTip\":[0,0,21,160,99,10,31,206,143,203,71,225,226,43,29,222,153,113,127,246,174,254,59,79,204,228,154,29,232,210,147,122],\"Nonce\":14865,\"Timestamp\":1681637025905336719,\"SessionId\":[128,110,2,127,244,141,21,166,181,69,17,219,133,71,54,162,59,166,238,105,98,71,162,150,196,171,106,95,23,6,38,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[36,152,60,187,84,4,193,19,190,121,3,137,152,127,138,236,152,98,206,138,160,136,38,214,137,202,115,142,116,69,220,43],[50,134,36,6,23,77,90,114,64,96,24,135,219,71,65,106,129,85,118,90,32,11,70,150,163,238,49,207,148,208,14,105],[58,93,242,94,104,122,127,167,102,189,225,251,26,102,116,25,141,25,130,216,65,171,75,177,88,64,170,123,191,187,1,182]],\"IhSequenceStart\":8,\"IhSequenceEnd\":10},\"Signature\":\"tGvAyUiNrUhlWiwljIKU7ua5MoNrbqoTGK/kG4H0by1RRH4vhK+DcMo6KcG5zwIstWM0owiCJ8zgw+OMr2y/JQ==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637027299044336}
+Vertex no received:  5
+Transaction received from other gateway 7
+Vertex already exists in the dag
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000e8c61a504384b5c3d88346934c7fb03f4132b41e484f4224fda7fc1fc14c","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000a603d6bbb2655cf6f857951e0545dd2ab3d629dfb9619ca670be2357904d","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":7,\"Vertex_no\":6,\"Tx\":{\"Type\":2,\"Hash\":[0,0,219,71,183,6,180,76,79,150,93,210,46,89,52,161,226,102,220,44,22,13,141,81,129,156,43,245,239,32,250,189],\"From\":[4,153,209,62,210,249,212,186,129,156,46,125,244,165,0,20,31,79,182,184,34,188,103,207,93,227,26,151,171,142,213,51,201,148,159,4,191,62,132,198,222,180,201,213,66,93,221,186,180,116,173,166,132,143,249,120,211,241,186,144,56,118,110,61,146],\"LeftTip\":[0,0,207,208,217,146,253,82,113,233,34,139,120,167,43,5,84,100,48,154,67,58,148,73,112,24,252,156,136,147,74,36],\"RightTip\":[0,0,166,3,214,187,178,101,92,246,248,87,149,30,5,69,221,42,179,214,41,223,185,97,156,166,112,190,35,87,144,77],\"Nonce\":12556,\"Timestamp\":1681637028656080021,\"SessionId\":[128,110,2,127,244,141,21,166,181,69,17,219,133,71,54,162,59,166,238,105,98,71,162,150,196,171,106,95,23,6,38,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[92,73,130,11,148,70,120,41,101,141,106,190,188,80,252,14,242,170,122,15,248,241,133,244,197,195,248,210,231,113,4,124]],\"IhSequenceStart\":11,\"IhSequenceEnd\":11},\"Signature\":\"WOMprTkBGIDf23T27zqW2OgLZMon4bV/wShnoZdVBytXSY4mX+sDf0R3rjt6lsjtXmvuZ4azhheHoXn6xSlNrA==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637029831893486}
+Vertex no received:  6
+Transaction received from other gateway 7
+Vertex already exists in the dag
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000db47b706b44c4f965dd22e5934a1e266dc2c160d8d51819c2bf5ef20fabd","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":7,\"Vertex_no\":7,\"Tx\":{\"Type\":2,\"Hash\":[0,0,238,125,191,157,111,75,24,94,62,207,197,94,194,19,174,90,118,177,9,229,210,94,121,14,183,237,161,188,118,193],\"From\":[4,153,209,62,210,249,212,186,129,156,46,125,244,165,0,20,31,79,182,184,34,188,103,207,93,227,26,151,171,142,213,51,201,148,159,4,191,62,132,198,222,180,201,213,66,93,221,186,180,116,173,166,132,143,249,120,211,241,186,144,56,118,110,61,146],\"LeftTip\":[0,0,166,3,214,187,178,101,92,246,248,87,149,30,5,69,221,42,179,214,41,223,185,97,156,166,112,190,35,87,144,77],\"RightTip\":[0,0,166,3,214,187,178,101,92,246,248,87,149,30,5,69,221,42,179,214,41,223,185,97,156,166,112,190,35,87,144,77],\"Nonce\":18919,\"Timestamp\":1681637030203785607,\"SessionId\":[128,110,2,127,244,141,21,166,181,69,17,219,133,71,54,162,59,166,238,105,98,71,162,150,196,171,106,95,23,6,38,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[40,60,91,182,46,164,190,173,59,197,148,64,238,56,87,85,85,116,252,183,207,147,131,47,90,224,24,223,242,209,163,127]],\"IhSequenceStart\":12,\"IhSequenceEnd\":12},\"Signature\":\"abMJdoVDeiBTrruaOY9t2rEp0P65oq8TgGu4ejd76JzRgDxOs2r05YBtKqAGiEGkyHy8QKwsplUhK8+Sk8h4Kw==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637031738055502}
+Vertex no received:  7
+Transaction received from other gateway 7
+Vertex already exists in the dag
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00001be2e3dadf2af114304c52c8f22a723f4277c499409b7ceb997b418e9443","Timestamp":0}
+ACK received
+vertex confirmed:  0
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":7,\"Vertex_no\":8,\"Tx\":{\"Type\":2,\"Hash\":[0,0,27,226,227,218,223,42,241,20,48,76,82,200,242,42,114,63,66,119,196,153,64,155,124,235,153,123,65,142,148,67],\"From\":[4,153,209,62,210,249,212,186,129,156,46,125,244,165,0,20,31,79,182,184,34,188,103,207,93,227,26,151,171,142,213,51,201,148,159,4,191,62,132,198,222,180,201,213,66,93,221,186,180,116,173,166,132,143,249,120,211,241,186,144,56,118,110,61,146],\"LeftTip\":[0,0,207,208,217,146,253,82,113,233,34,139,120,167,43,5,84,100,48,154,67,58,148,73,112,24,252,156,136,147,74,36],\"RightTip\":[0,0,51,156,226,222,154,230,155,44,221,238,249,5,249,116,236,1,254,196,203,185,68,11,64,169,148,13,10,176,15,20],\"Nonce\":155376,\"Timestamp\":1681637032164008845,\"SessionId\":[128,110,2,127,244,141,21,166,181,69,17,219,133,71,54,162,59,166,238,105,98,71,162,150,196,171,106,95,23,6,38,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[140,57,94,171,250,198,255,113,68,146,148,99,151,97,194,183,106,59,73,235,129,182,254,89,47,136,250,138,198,157,192,59],[8,74,111,105,238,43,182,33,31,202,72,226,44,236,87,228,163,151,126,169,41,4,55,169,164,168,83,118,224,157,76,245]],\"IhSequenceStart\":13,\"IhSequenceEnd\":14},\"Signature\":\"kdhskazshfh3BO8RjcT2o1BbXeslUcUWP1xN2sB4EqmGE9op+jmJ+MVzQ/0x6hxHcROKepnIQFLVLH0znQtO9Q==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637044238205159}
+Vertex no received:  8
+Transaction received from other gateway 7
+Vertex already exists in the dag
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000bbe76f4f25c02b63a794f69d15bb38a949612a6c0c189a3737059e487c61","Timestamp":0}
+ACK received
+vertex confirmed:  0
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000bbe76f4f25c02b63a794f69d15bb38a949612a6c0c189a3737059e487c61","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000ee7dbf9d6f4b185e3ecfc55ec213ae5a76b109e5d25e790eb7eda1bc76c1","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00001be2e3dadf2af114304c52c8f22a723f4277c499409b7ceb997b418e9443","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":7,\"Vertex_no\":9,\"Tx\":{\"Type\":2,\"Hash\":[0,0,187,231,111,79,37,192,43,99,167,148,246,157,21,187,56,169,73,97,42,108,12,24,154,55,55,5,158,72,124,97],\"From\":[4,153,209,62,210,249,212,186,129,156,46,125,244,165,0,20,31,79,182,184,34,188,103,207,93,227,26,151,171,142,213,51,201,148,159,4,191,62,132,198,222,180,201,213,66,93,221,186,180,116,173,166,132,143,249,120,211,241,186,144,56,118,110,61,146],\"LeftTip\":[0,0,238,125,191,157,111,75,24,94,62,207,197,94,194,19,174,90,118,177,9,229,210,94,121,14,183,237,161,188,118,193],\"RightTip\":[0,0,238,125,191,157,111,75,24,94,62,207,197,94,194,19,174,90,118,177,9,229,210,94,121,14,183,237,161,188,118,193],\"Nonce\":30046,\"Timestamp\":1681637045185834885,\"SessionId\":[128,110,2,127,244,141,21,166,181,69,17,219,133,71,54,162,59,166,238,105,98,71,162,150,196,171,106,95,23,6,38,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[12,174,56,93,98,187,6,23,139,213,221,172,97,187,122,76,23,51,137,14,108,30,133,253,35,207,44,81,87,217,202,62],[88,39,225,107,240,199,128,216,120,72,41,73,87,144,221,5,1,255,167,134,213,205,103,192,122,69,79,75,73,95,72,10],[173,77,183,64,236,225,209,162,148,253,13,230,201,81,142,45,162,45,64,106,29,82,162,215,235,216,72,128,246,97,7,32],[191,214,106,230,194,84,145,3,118,125,112,9,119,173,168,191,49,36,62,1,86,142,57,149,180,11,162,161,11,18,157,77],[101,81,51,193,16,117,190,99,209,170,43,49,226,90,231,118,64,24,214,238,141,221,145,247,16,209,166,225,27,177,55,211],[149,56,67,163,9,60,107,29,126,139,3,255,47,104,10,2,62,249,14,139,138,125,255,22,112,74,226,139,177,117,138,35],[70,189,32,103,246,30,131,208,2,134,211,138,29,165,0,164,202,1,254,55,176,110,207,9,0,13,45,200,104,212,109,240],[119,133,102,67,38,142,216,64,101,98,185,188,56,128,78,75,35,246,73,157,222,70,114,39,165,102,179,97,74,165,53,22]],\"IhSequenceStart\":15,\"IhSequenceEnd\":22},\"Signature\":\"ImBQrWnTaDZrI6DaxaQLuIYB/3C+X7rKfa3JTYEYXYYwMNgsF2dnBk6FptFhuwuyZHnuI47kgk1RM8H+uxcqCQ==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637050149671834}
+Vertex no received:  9
+Transaction received from other gateway 7
+Vertex already exists in the dag
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":7,\"Vertex_no\":11,\"Tx\":{\"Type\":2,\"Hash\":[0,0,110,3,6,250,229,251,225,185,132,7,31,30,90,211,132,98,53,239,125,64,229,240,159,211,183,61,140,113,170,89],\"From\":[4,153,209,62,210,249,212,186,129,156,46,125,244,165,0,20,31,79,182,184,34,188,103,207,93,227,26,151,171,142,213,51,201,148,159,4,191,62,132,198,222,180,201,213,66,93,221,186,180,116,173,166,132,143,249,120,211,241,186,144,56,118,110,61,146],\"LeftTip\":[0,0,27,226,227,218,223,42,241,20,48,76,82,200,242,42,114,63,66,119,196,153,64,155,124,235,153,123,65,142,148,67],\"RightTip\":[0,0,223,83,22,112,234,233,45,100,206,253,27,209,175,209,241,208,190,44,26,125,189,245,55,189,191,57,21,226,185,189],\"Nonce\":82888,\"Timestamp\":1681637060725831359,\"SessionId\":[128,110,2,127,244,141,21,166,181,69,17,219,133,71,54,162,59,166,238,105,98,71,162,150,196,171,106,95,23,6,38,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[86,104,12,68,234,234,45,240,63,4,215,126,104,85,117,55,223,226,110,38,16,4,10,160,116,62,18,196,170,0,224,134],[107,121,225,229,34,143,80,167,75,35,221,144,100,113,23,85,213,100,205,224,152,33,56,139,45,93,149,86,233,117,127,73],[225,19,205,13,199,237,79,138,92,129,144,164,243,8,122,39,33,40,235,146,199,180,145,71,250,114,173,49,220,104,181,41],[25,182,129,73,247,139,95,150,142,17,170,210,87,34,67,129,165,126,61,181,230,238,210,204,191,183,161,174,149,156,111,40],[215,47,132,147,128,33,16,88,88,84,178,126,206,100,31,2,159,232,174,184,21,157,24,66,14,2,224,34,126,236,45,19]],\"IhSequenceStart\":29,\"IhSequenceEnd\":33},\"Signature\":\"IIwR5ekVw3FjRybnKW4bUV4QU3DtBjeSoKqUbW/BPjdK3dmnmXYzKncov5+9hG0XQl1moDsfYTAfhpcNaIefmQ==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637069666035511}
+Vertex no received:  11
+Transaction received from other gateway 7
+Vertex already exists in the dag
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":4,\"Vertex_no\":4,\"Tx\":{\"Type\":2,\"Hash\":[0,0,204,236,242,18,185,137,172,143,95,122,203,143,70,196,195,27,105,208,175,73,161,134,165,41,38,116,33,238,19,243],\"From\":[4,203,182,194,93,38,167,132,50,142,177,190,159,127,112,6,127,233,178,240,97,226,20,177,150,204,93,10,37,71,58,210,168,237,76,218,183,83,202,136,196,75,47,109,64,252,165,67,131,173,113,159,152,39,23,239,122,103,78,219,151,237,198,220,176],\"LeftTip\":[0,0,21,160,99,10,31,206,143,203,71,225,226,43,29,222,153,113,127,246,174,254,59,79,204,228,154,29,232,210,147,122],\"RightTip\":[0,0,250,170,248,173,84,51,81,66,35,160,138,84,91,119,232,150,169,81,149,174,164,242,147,127,82,162,242,220,252,128],\"Nonce\":8008,\"Timestamp\":1681637022475286701,\"SessionId\":[77,176,149,1,67,46,234,38,103,74,166,119,92,85,168,104,163,212,32,108,152,36,227,197,247,41,158,12,63,138,193,237],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[255,119,248,9,52,143,163,131,87,254,7,232,248,106,26,136,116,172,232,81,52,190,84,133,212,92,70,49,162,87,213,0],[48,107,87,88,106,55,250,177,255,65,45,47,83,133,249,175,180,16,98,39,80,159,204,8,187,101,8,154,63,122,137,91],[141,58,1,44,55,90,22,202,63,226,45,130,149,230,198,143,221,61,240,18,187,114,252,34,65,158,88,160,85,102,8,71]],\"IhSequenceStart\":10,\"IhSequenceEnd\":12},\"Signature\":\"Q8VhDvktICCN+JUjFwC7S9Nz9+Y4VZIk4LaGCtOF3zzIE1Qq50M0AqjKkMravstbnWPTGgGbKUiXXN/vh+/7aw==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637023459663585}
+Vertex no received:  4
+Transaction received from other gateway 4
+Vertex already exists in the dag
+*************************************
+POW IH End

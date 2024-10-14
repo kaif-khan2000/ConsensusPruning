@@ -1,0 +1,7 @@
+go 1.19
+
+use ./CSS
+use ./DiscoveryNode
+use ./IOT_App
+use ./LSDI_Gateway
+use ./StorageNode

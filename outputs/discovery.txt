@@ -1,0 +1,86 @@
+Hello World from discovery_node
+Received:  STORAGE_NODE
+150.0.0.2:37294
+new cluster created and no.of sn clusters:  1
+Data before serialize :  {map[4: 8:] map[1: 15:] map[8: 12:] [8 4] [] [] map[1:f1458684-468a-4cd5-8abd-ecaabc4f59bf 4:8b04bf34-a163-4fb4-ab22-1557ccf836ab 8:9efccf4d-1ada-4790-a2e5-d31de2861994 12:8b204a70-51d6-424f-aaa8-a6cbdd2911bb 15:40d9552e-0afb-431c-8cc4-7ea6e60e189e] 15cef5c8-f15b-4e36-b79c-7272c180475c 0 0}
+Data:  {"Gn":{"4":"","8":""},"Adj":{"1":"","15":""},"Aux":{"12":"","8":""},"Gn_order":[8,4],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"1":"f1458684-468a-4cd5-8abd-ecaabc4f59bf","12":"8b204a70-51d6-424f-aaa8-a6cbdd2911bb","15":"40d9552e-0afb-431c-8cc4-7ea6e60e189e","4":"8b04bf34-a163-4fb4-ab22-1557ccf836ab","8":"9efccf4d-1ada-4790-a2e5-d31de2861994"},"Own_token":"15cef5c8-f15b-4e36-b79c-7272c180475c","Own_nodeno":0,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.3:39358
+breakpoint 1
+Data before serialize :  {map[5: 9:] map[0:150.0.0.2 2:] map[9: 13:] [9 5] [] [] map[0:15cef5c8-f15b-4e36-b79c-7272c180475c 2:a3a1b0d6-8f7b-49e6-9460-d9a4a416c482 5:ba3c392e-4d55-4e74-8668-354d8243fcef 9:05a8c459-121b-41d6-80fb-4835fbc83147 13:9499355a-dbd3-435a-8203-823ad1002574] f1458684-468a-4cd5-8abd-ecaabc4f59bf 1 0}
+Data:  {"Gn":{"5":"","9":""},"Adj":{"0":"150.0.0.2","2":""},"Aux":{"13":"","9":""},"Gn_order":[9,5],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"0":"15cef5c8-f15b-4e36-b79c-7272c180475c","13":"9499355a-dbd3-435a-8203-823ad1002574","2":"a3a1b0d6-8f7b-49e6-9460-d9a4a416c482","5":"ba3c392e-4d55-4e74-8668-354d8243fcef","9":"05a8c459-121b-41d6-80fb-4835fbc83147"},"Own_token":"f1458684-468a-4cd5-8abd-ecaabc4f59bf","Own_nodeno":1,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.4:52834
+breakpoint 1
+Data before serialize :  {map[6: 10:] map[1:150.0.0.3 3:] map[10: 14:] [10 6] [] [] map[1:f1458684-468a-4cd5-8abd-ecaabc4f59bf 3:8e7f8fa6-db83-4b77-9764-a938aec6c86a 6:818f9d80-fddc-4fc6-90ad-cf0701b9aead 10:f3debd94-375a-4ab6-a3ce-9aa0958d4484 14:fa83b437-340f-4408-b79b-7cea27e85394] a3a1b0d6-8f7b-49e6-9460-d9a4a416c482 2 0}
+Data:  {"Gn":{"10":"","6":""},"Adj":{"1":"150.0.0.3","3":""},"Aux":{"10":"","14":""},"Gn_order":[10,6],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"1":"f1458684-468a-4cd5-8abd-ecaabc4f59bf","10":"f3debd94-375a-4ab6-a3ce-9aa0958d4484","14":"fa83b437-340f-4408-b79b-7cea27e85394","3":"8e7f8fa6-db83-4b77-9764-a938aec6c86a","6":"818f9d80-fddc-4fc6-90ad-cf0701b9aead"},"Own_token":"a3a1b0d6-8f7b-49e6-9460-d9a4a416c482","Own_nodeno":2,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.5:44106
+breakpoint 1
+Data before serialize :  {map[7: 11:] map[2:150.0.0.4 4:] map[11: 15:] [11 7] [] [] map[2:a3a1b0d6-8f7b-49e6-9460-d9a4a416c482 4:8b04bf34-a163-4fb4-ab22-1557ccf836ab 7:cdd420c9-a488-45a5-a265-26a7a2b55acb 11:c4b1e3a1-1c69-429e-958b-d658db3c8acb 15:40d9552e-0afb-431c-8cc4-7ea6e60e189e] 8e7f8fa6-db83-4b77-9764-a938aec6c86a 3 0}
+Data:  {"Gn":{"11":"","7":""},"Adj":{"2":"150.0.0.4","4":""},"Aux":{"11":"","15":""},"Gn_order":[11,7],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"11":"c4b1e3a1-1c69-429e-958b-d658db3c8acb","15":"40d9552e-0afb-431c-8cc4-7ea6e60e189e","2":"a3a1b0d6-8f7b-49e6-9460-d9a4a416c482","4":"8b04bf34-a163-4fb4-ab22-1557ccf836ab","7":"cdd420c9-a488-45a5-a265-26a7a2b55acb"},"Own_token":"8e7f8fa6-db83-4b77-9764-a938aec6c86a","Own_nodeno":3,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.6:60726
+breakpoint 1
+Data before serialize :  {map[8: 12:] map[3:150.0.0.5 5:] map[0:150.0.0.2 12:] [12 8] [] [] map[0:15cef5c8-f15b-4e36-b79c-7272c180475c 3:8e7f8fa6-db83-4b77-9764-a938aec6c86a 5:ba3c392e-4d55-4e74-8668-354d8243fcef 8:9efccf4d-1ada-4790-a2e5-d31de2861994 12:8b204a70-51d6-424f-aaa8-a6cbdd2911bb] 8b04bf34-a163-4fb4-ab22-1557ccf836ab 4 0}
+Data:  {"Gn":{"12":"","8":""},"Adj":{"3":"150.0.0.5","5":""},"Aux":{"0":"150.0.0.2","12":""},"Gn_order":[12,8],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"0":"15cef5c8-f15b-4e36-b79c-7272c180475c","12":"8b204a70-51d6-424f-aaa8-a6cbdd2911bb","3":"8e7f8fa6-db83-4b77-9764-a938aec6c86a","5":"ba3c392e-4d55-4e74-8668-354d8243fcef","8":"9efccf4d-1ada-4790-a2e5-d31de2861994"},"Own_token":"8b04bf34-a163-4fb4-ab22-1557ccf836ab","Own_nodeno":4,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.7:56864
+breakpoint 1
+Data before serialize :  {map[9: 13:] map[4:150.0.0.6 6:] map[1:150.0.0.3 13:] [13 9] [] [] map[1:f1458684-468a-4cd5-8abd-ecaabc4f59bf 4:8b04bf34-a163-4fb4-ab22-1557ccf836ab 6:818f9d80-fddc-4fc6-90ad-cf0701b9aead 9:05a8c459-121b-41d6-80fb-4835fbc83147 13:9499355a-dbd3-435a-8203-823ad1002574] ba3c392e-4d55-4e74-8668-354d8243fcef 5 0}
+Data:  {"Gn":{"13":"","9":""},"Adj":{"4":"150.0.0.6","6":""},"Aux":{"1":"150.0.0.3","13":""},"Gn_order":[13,9],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"1":"f1458684-468a-4cd5-8abd-ecaabc4f59bf","13":"9499355a-dbd3-435a-8203-823ad1002574","4":"8b04bf34-a163-4fb4-ab22-1557ccf836ab","6":"818f9d80-fddc-4fc6-90ad-cf0701b9aead","9":"05a8c459-121b-41d6-80fb-4835fbc83147"},"Own_token":"ba3c392e-4d55-4e74-8668-354d8243fcef","Own_nodeno":5,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.8:59510
+breakpoint 1
+Data before serialize :  {map[10: 14:] map[5:150.0.0.7 7:] map[2:150.0.0.4 14:] [14 10] [] [] map[2:a3a1b0d6-8f7b-49e6-9460-d9a4a416c482 5:ba3c392e-4d55-4e74-8668-354d8243fcef 7:cdd420c9-a488-45a5-a265-26a7a2b55acb 10:f3debd94-375a-4ab6-a3ce-9aa0958d4484 14:fa83b437-340f-4408-b79b-7cea27e85394] 818f9d80-fddc-4fc6-90ad-cf0701b9aead 6 0}
+Data:  {"Gn":{"10":"","14":""},"Adj":{"5":"150.0.0.7","7":""},"Aux":{"14":"","2":"150.0.0.4"},"Gn_order":[14,10],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"10":"f3debd94-375a-4ab6-a3ce-9aa0958d4484","14":"fa83b437-340f-4408-b79b-7cea27e85394","2":"a3a1b0d6-8f7b-49e6-9460-d9a4a416c482","5":"ba3c392e-4d55-4e74-8668-354d8243fcef","7":"cdd420c9-a488-45a5-a265-26a7a2b55acb"},"Own_token":"818f9d80-fddc-4fc6-90ad-cf0701b9aead","Own_nodeno":6,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.9:51426
+breakpoint 1
+Data before serialize :  {map[11: 15:] map[6:150.0.0.8 8:] map[3:150.0.0.5 15:] [15 11] [] [] map[3:8e7f8fa6-db83-4b77-9764-a938aec6c86a 6:818f9d80-fddc-4fc6-90ad-cf0701b9aead 8:9efccf4d-1ada-4790-a2e5-d31de2861994 11:c4b1e3a1-1c69-429e-958b-d658db3c8acb 15:40d9552e-0afb-431c-8cc4-7ea6e60e189e] cdd420c9-a488-45a5-a265-26a7a2b55acb 7 0}
+Data:  {"Gn":{"11":"","15":""},"Adj":{"6":"150.0.0.8","8":""},"Aux":{"15":"","3":"150.0.0.5"},"Gn_order":[15,11],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"11":"c4b1e3a1-1c69-429e-958b-d658db3c8acb","15":"40d9552e-0afb-431c-8cc4-7ea6e60e189e","3":"8e7f8fa6-db83-4b77-9764-a938aec6c86a","6":"818f9d80-fddc-4fc6-90ad-cf0701b9aead","8":"9efccf4d-1ada-4790-a2e5-d31de2861994"},"Own_token":"cdd420c9-a488-45a5-a265-26a7a2b55acb","Own_nodeno":7,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.10:51098
+breakpoint 1
+Data before serialize :  {map[0:150.0.0.2 12:] map[7:150.0.0.9 9:] map[0:150.0.0.2 4:150.0.0.6] [0 12] [] [] map[0:15cef5c8-f15b-4e36-b79c-7272c180475c 4:8b04bf34-a163-4fb4-ab22-1557ccf836ab 7:cdd420c9-a488-45a5-a265-26a7a2b55acb 9:05a8c459-121b-41d6-80fb-4835fbc83147 12:8b204a70-51d6-424f-aaa8-a6cbdd2911bb] 9efccf4d-1ada-4790-a2e5-d31de2861994 8 0}
+Data:  {"Gn":{"0":"150.0.0.2","12":""},"Adj":{"7":"150.0.0.9","9":""},"Aux":{"0":"150.0.0.2","4":"150.0.0.6"},"Gn_order":[0,12],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"0":"15cef5c8-f15b-4e36-b79c-7272c180475c","12":"8b204a70-51d6-424f-aaa8-a6cbdd2911bb","4":"8b04bf34-a163-4fb4-ab22-1557ccf836ab","7":"cdd420c9-a488-45a5-a265-26a7a2b55acb","9":"05a8c459-121b-41d6-80fb-4835fbc83147"},"Own_token":"9efccf4d-1ada-4790-a2e5-d31de2861994","Own_nodeno":8,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.11:49824
+breakpoint 1
+Data before serialize :  {map[1:150.0.0.3 13:] map[8:150.0.0.10 10:] map[1:150.0.0.3 5:150.0.0.7] [1 13] [] [] map[1:f1458684-468a-4cd5-8abd-ecaabc4f59bf 5:ba3c392e-4d55-4e74-8668-354d8243fcef 8:9efccf4d-1ada-4790-a2e5-d31de2861994 10:f3debd94-375a-4ab6-a3ce-9aa0958d4484 13:9499355a-dbd3-435a-8203-823ad1002574] 05a8c459-121b-41d6-80fb-4835fbc83147 9 0}
+Data:  {"Gn":{"1":"150.0.0.3","13":""},"Adj":{"10":"","8":"150.0.0.10"},"Aux":{"1":"150.0.0.3","5":"150.0.0.7"},"Gn_order":[1,13],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"1":"f1458684-468a-4cd5-8abd-ecaabc4f59bf","10":"f3debd94-375a-4ab6-a3ce-9aa0958d4484","13":"9499355a-dbd3-435a-8203-823ad1002574","5":"ba3c392e-4d55-4e74-8668-354d8243fcef","8":"9efccf4d-1ada-4790-a2e5-d31de2861994"},"Own_token":"05a8c459-121b-41d6-80fb-4835fbc83147","Own_nodeno":9,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.12:41654
+breakpoint 1
+Data before serialize :  {map[2:150.0.0.4 14:] map[9:150.0.0.11 11:] map[2:150.0.0.4 6:150.0.0.8] [2 14] [] [] map[2:a3a1b0d6-8f7b-49e6-9460-d9a4a416c482 6:818f9d80-fddc-4fc6-90ad-cf0701b9aead 9:05a8c459-121b-41d6-80fb-4835fbc83147 11:c4b1e3a1-1c69-429e-958b-d658db3c8acb 14:fa83b437-340f-4408-b79b-7cea27e85394] f3debd94-375a-4ab6-a3ce-9aa0958d4484 10 0}
+Data:  {"Gn":{"14":"","2":"150.0.0.4"},"Adj":{"11":"","9":"150.0.0.11"},"Aux":{"2":"150.0.0.4","6":"150.0.0.8"},"Gn_order":[2,14],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"11":"c4b1e3a1-1c69-429e-958b-d658db3c8acb","14":"fa83b437-340f-4408-b79b-7cea27e85394","2":"a3a1b0d6-8f7b-49e6-9460-d9a4a416c482","6":"818f9d80-fddc-4fc6-90ad-cf0701b9aead","9":"05a8c459-121b-41d6-80fb-4835fbc83147"},"Own_token":"f3debd94-375a-4ab6-a3ce-9aa0958d4484","Own_nodeno":10,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.13:56846
+breakpoint 1
+Data before serialize :  {map[3:150.0.0.5 15:] map[10:150.0.0.12 12:] map[3:150.0.0.5 7:150.0.0.9] [3 15] [] [] map[3:8e7f8fa6-db83-4b77-9764-a938aec6c86a 7:cdd420c9-a488-45a5-a265-26a7a2b55acb 10:f3debd94-375a-4ab6-a3ce-9aa0958d4484 12:8b204a70-51d6-424f-aaa8-a6cbdd2911bb 15:40d9552e-0afb-431c-8cc4-7ea6e60e189e] c4b1e3a1-1c69-429e-958b-d658db3c8acb 11 0}
+Data:  {"Gn":{"15":"","3":"150.0.0.5"},"Adj":{"10":"150.0.0.12","12":""},"Aux":{"3":"150.0.0.5","7":"150.0.0.9"},"Gn_order":[3,15],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"10":"f3debd94-375a-4ab6-a3ce-9aa0958d4484","12":"8b204a70-51d6-424f-aaa8-a6cbdd2911bb","15":"40d9552e-0afb-431c-8cc4-7ea6e60e189e","3":"8e7f8fa6-db83-4b77-9764-a938aec6c86a","7":"cdd420c9-a488-45a5-a265-26a7a2b55acb"},"Own_token":"c4b1e3a1-1c69-429e-958b-d658db3c8acb","Own_nodeno":11,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.14:59322
+breakpoint 1
+Data before serialize :  {map[0:150.0.0.2 4:150.0.0.6] map[11:150.0.0.13 13:] map[4:150.0.0.6 8:150.0.0.10] [4 0] [] [] map[0:15cef5c8-f15b-4e36-b79c-7272c180475c 4:8b04bf34-a163-4fb4-ab22-1557ccf836ab 8:9efccf4d-1ada-4790-a2e5-d31de2861994 11:c4b1e3a1-1c69-429e-958b-d658db3c8acb 13:9499355a-dbd3-435a-8203-823ad1002574] 8b204a70-51d6-424f-aaa8-a6cbdd2911bb 12 0}
+Data:  {"Gn":{"0":"150.0.0.2","4":"150.0.0.6"},"Adj":{"11":"150.0.0.13","13":""},"Aux":{"4":"150.0.0.6","8":"150.0.0.10"},"Gn_order":[4,0],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"0":"15cef5c8-f15b-4e36-b79c-7272c180475c","11":"c4b1e3a1-1c69-429e-958b-d658db3c8acb","13":"9499355a-dbd3-435a-8203-823ad1002574","4":"8b04bf34-a163-4fb4-ab22-1557ccf836ab","8":"9efccf4d-1ada-4790-a2e5-d31de2861994"},"Own_token":"8b204a70-51d6-424f-aaa8-a6cbdd2911bb","Own_nodeno":12,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.15:60654
+breakpoint 1
+Data before serialize :  {map[1:150.0.0.3 5:150.0.0.7] map[12:150.0.0.14 14:] map[5:150.0.0.7 9:150.0.0.11] [5 1] [] [] map[1:f1458684-468a-4cd5-8abd-ecaabc4f59bf 5:ba3c392e-4d55-4e74-8668-354d8243fcef 9:05a8c459-121b-41d6-80fb-4835fbc83147 12:8b204a70-51d6-424f-aaa8-a6cbdd2911bb 14:fa83b437-340f-4408-b79b-7cea27e85394] 9499355a-dbd3-435a-8203-823ad1002574 13 0}
+Data:  {"Gn":{"1":"150.0.0.3","5":"150.0.0.7"},"Adj":{"12":"150.0.0.14","14":""},"Aux":{"5":"150.0.0.7","9":"150.0.0.11"},"Gn_order":[5,1],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"1":"f1458684-468a-4cd5-8abd-ecaabc4f59bf","12":"8b204a70-51d6-424f-aaa8-a6cbdd2911bb","14":"fa83b437-340f-4408-b79b-7cea27e85394","5":"ba3c392e-4d55-4e74-8668-354d8243fcef","9":"05a8c459-121b-41d6-80fb-4835fbc83147"},"Own_token":"9499355a-dbd3-435a-8203-823ad1002574","Own_nodeno":13,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.16:41582
+breakpoint 1
+Data before serialize :  {map[2:150.0.0.4 6:150.0.0.8] map[13:150.0.0.15 15:] map[6:150.0.0.8 10:150.0.0.12] [6 2] [] [] map[2:a3a1b0d6-8f7b-49e6-9460-d9a4a416c482 6:818f9d80-fddc-4fc6-90ad-cf0701b9aead 10:f3debd94-375a-4ab6-a3ce-9aa0958d4484 13:9499355a-dbd3-435a-8203-823ad1002574 15:40d9552e-0afb-431c-8cc4-7ea6e60e189e] fa83b437-340f-4408-b79b-7cea27e85394 14 0}
+Data:  {"Gn":{"2":"150.0.0.4","6":"150.0.0.8"},"Adj":{"13":"150.0.0.15","15":""},"Aux":{"10":"150.0.0.12","6":"150.0.0.8"},"Gn_order":[6,2],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"10":"f3debd94-375a-4ab6-a3ce-9aa0958d4484","13":"9499355a-dbd3-435a-8203-823ad1002574","15":"40d9552e-0afb-431c-8cc4-7ea6e60e189e","2":"a3a1b0d6-8f7b-49e6-9460-d9a4a416c482","6":"818f9d80-fddc-4fc6-90ad-cf0701b9aead"},"Own_token":"fa83b437-340f-4408-b79b-7cea27e85394","Own_nodeno":14,"Own_cluster":0}
+Received:  STORAGE_NODE
+150.0.0.17:52560
+breakpoint 1
+Data before serialize :  {map[3:150.0.0.5 7:150.0.0.9] map[0:150.0.0.2 14:150.0.0.16] map[7:150.0.0.9 11:150.0.0.13] [7 3] [] [] map[0:15cef5c8-f15b-4e36-b79c-7272c180475c 3:8e7f8fa6-db83-4b77-9764-a938aec6c86a 7:cdd420c9-a488-45a5-a265-26a7a2b55acb 11:c4b1e3a1-1c69-429e-958b-d658db3c8acb 14:fa83b437-340f-4408-b79b-7cea27e85394] 40d9552e-0afb-431c-8cc4-7ea6e60e189e 15 0}
+Data:  {"Gn":{"3":"150.0.0.5","7":"150.0.0.9"},"Adj":{"0":"150.0.0.2","14":"150.0.0.16"},"Aux":{"11":"150.0.0.13","7":"150.0.0.9"},"Gn_order":[7,3],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"0":"15cef5c8-f15b-4e36-b79c-7272c180475c","11":"c4b1e3a1-1c69-429e-958b-d658db3c8acb","14":"fa83b437-340f-4408-b79b-7cea27e85394","3":"8e7f8fa6-db83-4b77-9764-a938aec6c86a","7":"cdd420c9-a488-45a5-a265-26a7a2b55acb"},"Own_token":"40d9552e-0afb-431c-8cc4-7ea6e60e189e","Own_nodeno":15,"Own_cluster":0}
+Received:  GATEWAY_NODE
+hello from gateway node : 150.0.0.18:48646
+gw token is  33cf4090-bed8-42c8-956c-99259e3a0da4
+Data before serialize :  {[] [150.0.0.17] map[] 40d9552e-0afb-431c-8cc4-7ea6e60e189e 33cf4090-bed8-42c8-956c-99259e3a0da4 0}
+Data:  {"Gw":null,"Sn":["150.0.0.17"],"Token_gw":{},"Token_sn":"40d9552e-0afb-431c-8cc4-7ea6e60e189e","Own_token_gw":"33cf4090-bed8-42c8-956c-99259e3a0da4","Own_nodeno":0}

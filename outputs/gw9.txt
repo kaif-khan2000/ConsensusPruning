@@ -1,0 +1,3643 @@
+New Session Id:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+successfully generated keys for the gateway
+
+gateway private key:  &{{{0xc00009c380} 99778667263513202647152563539257457487296909957798925258571786056179219674800 105278476388883176379482907271958650887384571602026622758672314276232038049908} 49325396707555051485731871351060559120670613930859239629578048837129436382215}
+
+gateway public key:  {{0xc00009c380} 99778667263513202647152563539257457487296909957798925258571786056179219674800 105278476388883176379482907271958650887384571602026622758672314276232038049908}
+
+session id:  [77 127 113 55 166 101 154 172 145 143 226 167 243 140 133 63 50 151 32 216 118 207 70 96 135 134 109 223 97 208 150 76]
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /pics/*filepath           --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /pics/*filepath           --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /getDagImage              --> main.getDagImage (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :4000
+successfully connected to the css
+
+successfully created genesis transaction
+Pruning the DAG
+prune: total  0  transactions
+Pruned  0  transactions
+
+successfully added genesis transaction to the dag
+Received before clustering :  {"Gw":["150.0.0.6","150.0.0.7","150.0.0.13"],"Sn":["150.0.0.4"],"Token_gw":{"150.0.0.13":"c0cb5e1d-2f55-47b8-909c-f5751133a892","150.0.0.6":"11a9edda-cb57-42a0-b777-dd61be6ff9c4","150.0.0.7":"685b3421-82fb-431a-a541-30ca71a0a53f"},"Token_sn":"6fd061bf-4b59-4718-882d-87e4caa73152","Own_token_gw":"f0832348-5e9b-4ecf-985c-a96858b4382d","Own_nodeno":9}
+Pinging neighbours
+Listening to socket -  4242
+Downloading dag
+Sending request to  150.0.0.13
+Gateway is ready to receive transactions
+I am not the generator node
+P2P code finished
+Received message in handle message : {"Type":"DOWNLOAD_DAG_RESPONSE","Data":"{\"Gateway_no\":0,\"Vertex_no\":0,\"Tx\":{\"Type\":0,\"Hash\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"From\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"LeftTip\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"RightTip\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"Nonce\":8447,\"Timestamp\":0,\"SessionId\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":null,\"IhSequenceStart\":0,\"IhSequenceEnd\":0},\"Signature\":\"+83wxVy10oTXXYoIzOBpOnMdiVgl4NWtliAvnIrvFZi1LSfh5ujHhElhxrc612FWCh9RwzTjvfIKUZcPHvstWg==\",\"Neighbours\":[],\"Weight\":1,\"Confirmed\":true}","Timestamp":0}
+DAG download vertex from gateway 0
+Vertex no downloaded:  0
+Pruning the DAG
+prune: total  0  transactions
+Pruned  0  transactions
+*************************************
+false
+Sensor is running
+noOfRecordsPerChunk:  7
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":8,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,119,59,28,144,228,33,178,151,227,249,12,120,17,181,63,117,197,33,240,13,169,185,25,11,215,52,9,55,212,20],\"From\":[4,31,13,164,115,164,178,225,120,135,118,139,147,234,46,193,168,184,211,175,61,6,236,109,147,77,118,2,85,214,111,14,186,22,188,14,36,230,13,71,147,186,136,124,31,228,72,203,70,120,163,66,43,61,198,97,151,131,185,208,40,245,20,59,94],\"LeftTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"RightTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"Nonce\":4169,\"Timestamp\":1681637026612223640,\"SessionId\":[215,210,186,3,33,148,208,70,44,208,33,231,234,208,77,131,207,188,144,196,190,169,184,214,5,94,239,93,5,105,35,239],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[21,17,63,149,239,239,208,144,219,35,115,3,255,210,50,100,39,86,16,22,177,249,66,89,173,19,6,119,125,149,217,191],[103,124,192,59,26,251,27,177,194,67,113,236,158,255,123,251,174,41,47,6,166,187,93,177,121,123,223,108,136,247,132,211],[233,130,24,60,227,218,235,230,194,201,144,63,180,205,158,206,233,245,152,218,215,159,211,7,43,139,102,42,140,139,21,33]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"fM+3dSMF2OP/V4KXQYAK6bgY8k0zAJekRGzaupM8y9sZk1cPvHb9ocBfVNS/r4HTz0hQTj8XKMDvghZ5ePmgFQ==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637027009879421}
+Vertex no received:  1
+Transaction received from other gateway 8
+Received vertex from the network:  0000773b1c90e421b297e3f90c7811b53f75c521f00da9b9190bd7340937d414
+Pruning the DAG
+prune: total  0  transactions
+Pruned  0  transactions
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000773b1c90e421b297e3f90c7811b53f75c521f00da9b9190bd7340937d414","Timestamp":0}
+ACK received
+vertex confirmed:  1
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000773b1c90e421b297e3f90c7811b53f75c521f00da9b9190bd7340937d414","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  0  transactions
+Pruned  0  transactions
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+Received message in handle message : {"Type":"ACK","Data":"0000b929a97a76d073eef855bdb097e32a933387402ad0b6ce2100b048d936ba","Timestamp":0}
+ACK received
+vertex confirmed:  1
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":9,\"Vertex_no\":1,\"Tx\":{\"Type\":2,\"Hash\":[0,0,185,41,169,122,118,208,115,238,248,85,189,176,151,227,42,147,51,135,64,42,208,182,206,33,0,176,72,217,54,186],\"From\":[4,220,152,185,111,54,80,169,169,175,38,219,39,216,14,228,148,155,5,99,236,127,5,3,246,82,62,61,188,14,47,182,176,232,193,129,137,145,3,124,165,101,222,163,104,135,104,120,212,62,231,170,151,152,68,42,216,176,233,21,63,54,57,232,116],\"LeftTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"RightTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"Nonce\":68830,\"Timestamp\":1681637027516046906,\"SessionId\":[77,127,113,55,166,101,154,172,145,143,226,167,243,140,133,63,50,151,32,216,118,207,70,96,135,134,109,223,97,208,150,76],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[112,24,77,118,88,67,4,73,19,191,136,16,83,93,244,4,243,208,243,228,226,172,79,244,127,216,84,40,19,193,105,146],[210,143,104,10,37,193,226,187,202,241,235,173,18,202,247,234,157,195,150,195,112,33,198,14,37,198,152,128,94,227,151,188],[149,93,160,60,166,205,171,185,11,109,172,251,151,230,145,211,84,70,185,127,138,45,195,43,32,42,189,74,89,125,96,250]],\"IhSequenceStart\":0,\"IhSequenceEnd\":2},\"Signature\":\"HSamEoO3z2NYRgGPt9oaxSEGg22GdWYNC4eeA+9pebOise9oeIZVTRUG54wlMbHchewDDLZQMq9NojI01BalpA==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637034452176320}
+Vertex no received:  1
+Transaction received from other gateway 9
+Vertex already exists in the dag
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000b929a97a76d073eef855bdb097e32a933387402ad0b6ce2100b048d936ba","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":8,\"Vertex_no\":2,\"Tx\":{\"Type\":2,\"Hash\":[0,0,151,136,130,187,70,48,187,204,130,104,67,193,234,211,55,157,136,135,231,73,212,182,75,218,90,144,22,253,157,182],\"From\":[4,31,13,164,115,164,178,225,120,135,118,139,147,234,46,193,168,184,211,175,61,6,236,109,147,77,118,2,85,214,111,14,186,22,188,14,36,230,13,71,147,186,136,124,31,228,72,203,70,120,163,66,43,61,198,97,151,131,185,208,40,245,20,59,94],\"LeftTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"RightTip\":[0,7,177,251,81,192,125,74,121,93,235,107,79,250,11,123,94,107,49,153,239,153,183,24,167,110,26,223,125,89,63,203],\"Nonce\":111632,\"Timestamp\":1681637028393928878,\"SessionId\":[215,210,186,3,33,148,208,70,44,208,33,231,234,208,77,131,207,188,144,196,190,169,184,214,5,94,239,93,5,105,35,239],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[84,70,10,92,41,123,199,36,18,126,80,75,49,117,249,26,183,165,149,12,169,151,110,237,144,164,14,205,203,194,10,81]],\"IhSequenceStart\":3,\"IhSequenceEnd\":3},\"Signature\":\"ucz/loS6RNza9xfYUe4i8gLZNwISYFF7ofRpPPGH4/Le+kaeKMjvw7IIMUNMgxHMQog7NQ4uk1Uzj1d9gWpYVw==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637036663870035}
+Vertex no received:  2
+Transaction received from other gateway 8
+Received vertex from the network:  0000978882bb4630bbcc826843c1ead3379d8887e749d4b64bda5a9016fd9db6
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000978882bb4630bbcc826843c1ead3379d8887e749d4b64bda5a9016fd9db6","Timestamp":0}
+ACK received
+vertex confirmed:  2
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000978882bb4630bbcc826843c1ead3379d8887e749d4b64bda5a9016fd9db6","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":8,\"Vertex_no\":3,\"Tx\":{\"Type\":2,\"Hash\":[0,0,118,91,71,66,100,14,175,33,119,178,195,84,247,171,122,228,74,199,81,130,249,50,241,162,10,233,150,83,118,156],\"From\":[4,31,13,164,115,164,178,225,120,135,118,139,147,234,46,193,168,184,211,175,61,6,236,109,147,77,118,2,85,214,111,14,186,22,188,14,36,230,13,71,147,186,136,124,31,228,72,203,70,120,163,66,43,61,198,97,151,131,185,208,40,245,20,59,94],\"LeftTip\":[0,0,185,41,169,122,118,208,115,238,248,85,189,176,151,227,42,147,51,135,64,42,208,182,206,33,0,176,72,217,54,186],\"RightTip\":[0,0,119,59,28,144,228,33,178,151,227,249,12,120,17,181,63,117,197,33,240,13,169,185,25,11,215,52,9,55,212,20],\"Nonce\":42834,\"Timestamp\":1681637037387237149,\"SessionId\":[215,210,186,3,33,148,208,70,44,208,33,231,234,208,77,131,207,188,144,196,190,169,184,214,5,94,239,93,5,105,35,239],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[108,17,120,145,43,50,155,10,253,150,200,140,220,212,46,139,194,208,222,167,81,33,220,117,65,83,23,10,213,233,247,179],[206,200,104,134,1,142,151,32,142,9,105,17,51,235,82,85,173,181,190,147,214,227,161,170,173,63,250,66,151,63,74,222],[164,101,158,55,18,6,172,100,0,181,125,29,56,59,73,202,123,12,217,132,55,236,27,187,79,184,227,141,120,125,101,4],[206,229,228,174,225,103,114,73,242,178,251,121,184,147,106,93,45,75,230,233,124,238,122,108,114,98,207,248,111,187,80,155],[144,195,74,149,186,85,174,191,66,2,30,218,107,97,128,136,136,198,253,188,168,250,48,255,157,170,36,14,123,60,140,122],[40,145,2,110,65,60,231,17,3,104,202,85,237,74,176,209,44,249,245,161,149,160,234,182,210,41,146,119,49,218,86,116]],\"IhSequenceStart\":4,\"IhSequenceEnd\":9},\"Signature\":\"Gh0tc+dXiyULH/WKtZQU6UsVLbmQqpWxH5tYj439Fxhbxrz6NcgpxCUnmQwtrtgR8y+KcpS43lgqZiJUbRtbTg==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637041472560181}
+Vertex no received:  3
+Transaction received from other gateway 8
+Received vertex from the network:  0000765b4742640eaf2177b2c354f7ab7ae44ac75182f932f1a20ae99653769c
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000765b4742640eaf2177b2c354f7ab7ae44ac75182f932f1a20ae99653769c","Timestamp":0}
+ACK received
+vertex confirmed:  3
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000765b4742640eaf2177b2c354f7ab7ae44ac75182f932f1a20ae99653769c","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":9,\"Vertex_no\":2,\"Tx\":{\"Type\":2,\"Hash\":[0,0,195,115,82,238,214,11,39,227,209,127,151,104,84,95,151,163,94,217,85,203,198,250,233,105,192,246,72,35,92,254],\"From\":[4,220,152,185,111,54,80,169,169,175,38,219,39,216,14,228,148,155,5,99,236,127,5,3,246,82,62,61,188,14,47,182,176,232,193,129,137,145,3,124,165,101,222,163,104,135,104,120,212,62,231,170,151,152,68,42,216,176,233,21,63,54,57,232,116],\"LeftTip\":[0,0,185,41,169,122,118,208,115,238,248,85,189,176,151,227,42,147,51,135,64,42,208,182,206,33,0,176,72,217,54,186],\"RightTip\":[0,0,119,59,28,144,228,33,178,151,227,249,12,120,17,181,63,117,197,33,240,13,169,185,25,11,215,52,9,55,212,20],\"Nonce\":58971,\"Timestamp\":1681637035919489772,\"SessionId\":[77,127,113,55,166,101,154,172,145,143,226,167,243,140,133,63,50,151,32,216,118,207,70,96,135,134,109,223,97,208,150,76],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[71,114,84,47,113,20,222,66,81,63,109,150,115,24,230,76,231,38,105,198,38,169,196,98,209,166,99,190,63,147,227,128],[44,184,112,200,92,47,201,109,159,62,69,29,227,159,195,107,67,37,60,52,222,142,24,76,40,46,73,224,71,189,253,46],[11,145,67,212,55,116,192,172,191,202,53,216,114,106,133,174,88,70,148,48,81,169,101,64,26,117,156,36,70,178,211,206],[155,44,43,120,12,31,158,72,202,54,67,171,32,2,67,192,206,117,46,28,108,21,105,101,248,95,56,164,49,174,70,105],[79,96,91,65,26,105,230,201,99,229,56,9,77,12,250,48,3,246,96,77,243,159,31,10,249,194,93,36,212,75,36,236],[2,113,36,48,91,113,175,30,136,129,233,54,3,169,131,232,197,84,146,46,200,60,229,118,82,30,170,231,199,57,39,116]],\"IhSequenceStart\":3,\"IhSequenceEnd\":8},\"Signature\":\"M0qGXxm69hXJ3nzvSG9w2tJZalNrFnZ+aX0oDiy3+QCrVDDDqYQaJGjINk88zlXwmRmWofq3QFS/8b4MB2mHCw==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637042141844161}
+Received message in handle message : {"Type":"ACK","Data":"0000c37352eed60b27e3d17f9768545f97a35ed955cbc6fae969c0f648235cfe","Timestamp":0}
+Vertex no received:  2
+Transaction received from other gateway 9
+ACK received
+vertex confirmed:  2
+*************************************
+Vertex already exists in the dag
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000c37352eed60b27e3d17f9768545f97a35ed955cbc6fae969c0f648235cfe","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+Received message in handle message : {"Type":"ACK","Data":"00002c5d49212df1ee327c2dfda50d5c777a2ad4cf65f3745c3eca3d016f755e","Timestamp":0}
+ACK received
+vertex confirmed:  3
+*************************************
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+Received message in handle message : {"Type":"ACK","Data":"00002c5d49212df1ee327c2dfda50d5c777a2ad4cf65f3745c3eca3d016f755e","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":8,\"Vertex_no\":4,\"Tx\":{\"Type\":2,\"Hash\":[0,0,68,123,69,198,131,225,186,147,144,90,103,46,220,48,86,73,104,94,148,184,143,2,239,70,51,236,226,187,126,72],\"From\":[4,31,13,164,115,164,178,225,120,135,118,139,147,234,46,193,168,184,211,175,61,6,236,109,147,77,118,2,85,214,111,14,186,22,188,14,36,230,13,71,147,186,136,124,31,228,72,203,70,120,163,66,43,61,198,97,151,131,185,208,40,245,20,59,94],\"LeftTip\":[0,0,118,91,71,66,100,14,175,33,119,178,195,84,247,171,122,228,74,199,81,130,249,50,241,162,10,233,150,83,118,156],\"RightTip\":[0,0,195,115,82,238,214,11,39,227,209,127,151,104,84,95,151,163,94,217,85,203,198,250,233,105,192,246,72,35,92,254],\"Nonce\":30371,\"Timestamp\":1681637044984470846,\"SessionId\":[215,210,186,3,33,148,208,70,44,208,33,231,234,208,77,131,207,188,144,196,190,169,184,214,5,94,239,93,5,105,35,239],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[124,58,157,187,165,239,46,197,243,86,231,149,131,120,182,150,101,54,254,26,233,1,28,93,176,108,87,201,240,75,95,102],[154,11,31,238,144,102,41,170,145,188,205,46,127,236,30,221,1,175,16,139,123,61,167,193,136,86,43,134,148,110,4,68],[18,244,68,23,134,217,151,214,104,49,229,169,180,50,8,212,238,244,162,52,227,231,13,168,168,143,93,139,236,165,255,236],[102,209,57,152,149,127,2,89,253,253,226,186,182,44,174,109,92,132,230,196,110,230,188,205,132,33,158,123,209,153,226,38],[243,79,123,73,69,152,135,35,227,233,196,66,167,67,57,169,69,2,142,235,91,124,70,12,130,220,21,200,25,96,193,160]],\"IhSequenceStart\":10,\"IhSequenceEnd\":14},\"Signature\":\"iKvQm7S2ONeb3iP16KRHHE1dTnYWnI5alH8cumbxm+gGCdnwU7HzrH6V6XjlzvERWDYitgpTTsr4uvWEJi0ZRQ==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637048665500257}
+Vertex no received:  4
+Transaction received from other gateway 8
+Received vertex from the network:  0000447b45c683e1ba93905a672edc305649685e94b88f02ef4633ece2bb7e48
+Pruning the DAG
+prune: total  3  transactions
+Pruned  2  transactions
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000447b45c683e1ba93905a672edc305649685e94b88f02ef4633ece2bb7e48","Timestamp":0}
+ACK received
+vertex confirmed:  4
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000447b45c683e1ba93905a672edc305649685e94b88f02ef4633ece2bb7e48","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":9,\"Vertex_no\":4,\"Tx\":{\"Type\":2,\"Hash\":[0,0,49,231,194,152,190,236,182,8,13,236,249,224,188,196,53,63,48,80,0,15,104,39,163,252,76,202,72,134,123,34],\"From\":[4,220,152,185,111,54,80,169,169,175,38,219,39,216,14,228,148,155,5,99,236,127,5,3,246,82,62,61,188,14,47,182,176,232,193,129,137,145,3,124,165,101,222,163,104,135,104,120,212,62,231,170,151,152,68,42,216,176,233,21,63,54,57,232,116],\"LeftTip\":[0,0,195,115,82,238,214,11,39,227,209,127,151,104,84,95,151,163,94,217,85,203,198,250,233,105,192,246,72,35,92,254],\"RightTip\":[0,0,195,115,82,238,214,11,39,227,209,127,151,104,84,95,151,163,94,217,85,203,198,250,233,105,192,246,72,35,92,254],\"Nonce\":12837,\"Timestamp\":1681637048570663135,\"SessionId\":[77,127,113,55,166,101,154,172,145,143,226,167,243,140,133,63,50,151,32,216,118,207,70,96,135,134,109,223,97,208,150,76],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[13,95,93,193,202,217,4,178,226,51,235,174,53,8,14,75,64,212,251,207,136,75,254,70,156,231,141,18,222,161,138,17],[54,242,208,161,189,46,213,240,53,9,54,67,149,173,188,107,28,179,126,97,3,138,19,238,69,119,56,12,78,88,137,122]],\"IhSequenceStart\":15,\"IhSequenceEnd\":16},\"Signature\":\"jZqM69pRzcdP68Q6Nxi5V03jwLVbizpPApGFOKF8iJjKHEZaMtDoL0ig041vfUhpYLHb4pkZqCCNQYTd1FaCHw==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637049634152556}
+Vertex no received:  4
+Transaction received from other gateway 9
+Vertex already exists in the dag
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000031e7c298beecb6080decf9e0bcc4353f3050000f6827a3fc4cca48867b22","Timestamp":0}
+ACK received
+vertex confirmed:  4
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000031e7c298beecb6080decf9e0bcc4353f3050000f6827a3fc4cca48867b22","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+Received message in handle message : {"Type":"ACK","Data":"0000dfec5dfcfbdfbbc34f8f79f0ce8a82decd790dc33b48cdcababeb2cb4a00","Timestamp":0}
+ACK received
+vertex confirmed:  5
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000dfec5dfcfbdfbbc34f8f79f0ce8a82decd790dc33b48cdcababeb2cb4a00","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":8,\"Vertex_no\":5,\"Tx\":{\"Type\":2,\"Hash\":[0,0,85,117,236,207,95,235,188,61,244,255,148,132,236,170,54,226,59,157,73,246,12,211,64,59,171,227,39,106,244,87],\"From\":[4,31,13,164,115,164,178,225,120,135,118,139,147,234,46,193,168,184,211,175,61,6,236,109,147,77,118,2,85,214,111,14,186,22,188,14,36,230,13,71,147,186,136,124,31,228,72,203,70,120,163,66,43,61,198,97,151,131,185,208,40,245,20,59,94],\"LeftTip\":[0,0,68,123,69,198,131,225,186,147,144,90,103,46,220,48,86,73,104,94,148,184,143,2,239,70,51,236,226,187,126,72],\"RightTip\":[0,0,151,136,130,187,70,48,187,204,130,104,67,193,234,211,55,157,136,135,231,73,212,182,75,218,90,144,22,253,157,182],\"Nonce\":46242,\"Timestamp\":1681637050626145566,\"SessionId\":[215,210,186,3,33,148,208,70,44,208,33,231,234,208,77,131,207,188,144,196,190,169,184,214,5,94,239,93,5,105,35,239],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[128,227,28,96,197,152,87,125,84,117,81,110,252,58,221,216,39,8,243,140,241,149,172,29,175,4,197,56,156,76,117,229],[166,49,79,128,208,177,11,104,104,123,123,200,82,28,4,108,187,18,13,173,22,133,91,242,25,156,212,216,175,2,62,16],[83,250,83,140,104,15,36,27,198,180,94,240,229,167,117,28,172,26,115,39,215,151,25,9,52,9,91,153,4,88,251,91],[255,255,64,42,179,14,21,238,197,67,182,233,200,72,121,204,156,72,53,76,131,27,226,7,33,92,86,188,164,105,52,171]],\"IhSequenceStart\":15,\"IhSequenceEnd\":18},\"Signature\":\"PJWECaFTngRRNJsQdC8so8VH51shqtwVBrl4y8zJPEFT2oGeNtbpvzdnaPnj1pS+x5owMmmFFlBT9d3RmpdsYw==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637055472617450}
+Vertex no received:  5
+Transaction received from other gateway 8
+Received vertex from the network:  00005575eccf5febbc3df4ff9484ecaa36e23b9d49f60cd3403babe3276af457
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00005575eccf5febbc3df4ff9484ecaa36e23b9d49f60cd3403babe3276af457","Timestamp":0}
+ACK received
+vertex confirmed:  5
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00005575eccf5febbc3df4ff9484ecaa36e23b9d49f60cd3403babe3276af457","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":8,\"Vertex_no\":6,\"Tx\":{\"Type\":2,\"Hash\":[0,0,249,109,76,71,240,40,142,26,65,230,72,150,64,96,236,28,35,45,47,104,239,140,25,222,86,159,8,194,99,80],\"From\":[4,31,13,164,115,164,178,225,120,135,118,139,147,234,46,193,168,184,211,175,61,6,236,109,147,77,118,2,85,214,111,14,186,22,188,14,36,230,13,71,147,186,136,124,31,228,72,203,70,120,163,66,43,61,198,97,151,131,185,208,40,245,20,59,94],\"LeftTip\":[0,0,151,136,130,187,70,48,187,204,130,104,67,193,234,211,55,157,136,135,231,73,212,182,75,218,90,144,22,253,157,182],\"RightTip\":[0,0,118,91,71,66,100,14,175,33,119,178,195,84,247,171,122,228,74,199,81,130,249,50,241,162,10,233,150,83,118,156],\"Nonce\":15510,\"Timestamp\":1681637056971742003,\"SessionId\":[215,210,186,3,33,148,208,70,44,208,33,231,234,208,77,131,207,188,144,196,190,169,184,214,5,94,239,93,5,105,35,239],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[63,32,4,255,17,189,237,25,84,2,226,229,233,175,78,245,45,216,211,43,48,244,110,127,3,21,188,253,231,212,55,94],[236,139,106,137,164,58,59,83,124,192,70,112,146,183,200,59,109,218,204,67,120,220,220,54,85,187,141,193,30,208,4,131],[198,135,24,198,116,12,45,207,157,226,235,226,181,179,57,217,229,39,229,145,165,58,110,158,241,172,121,127,131,33,133,181],[171,224,53,240,198,8,193,152,242,245,255,67,81,83,106,164,157,112,45,238,238,182,50,73,254,250,207,197,140,52,5,241]],\"IhSequenceStart\":19,\"IhSequenceEnd\":22},\"Signature\":\"bjQa1lQixXQwOiBCszmxdgI0MCLcnWveodCk5ssrOX+lmnoYPKrZ7NJH/2L9k6ab8nx7fqlMgenLY4Z/VcAJ7g==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637058299047834}
+Vertex no received:  6
+Transaction received from other gateway 8
+Received vertex from the network:  0000f96d4c47f0288e1a41e648964060ec1c232d2f68ef8c19de569f08c26350
+Pruning the DAG
+prune: total  3  transactions
+Pruned  2  transactions
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000f96d4c47f0288e1a41e648964060ec1c232d2f68ef8c19de569f08c26350","Timestamp":0}
+ACK received
+vertex confirmed:  6
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000f96d4c47f0288e1a41e648964060ec1c232d2f68ef8c19de569f08c26350","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+Received message in handle message : {"Type":"ACK","Data":"0000e183156da4a160d544ea21a81210896019d1f2221cc2b34a983a48202c6b","Timestamp":0}
+ACK received
+vertex confirmed:  6
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000e183156da4a160d544ea21a81210896019d1f2221cc2b34a983a48202c6b","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":8,\"Vertex_no\":7,\"Tx\":{\"Type\":2,\"Hash\":[0,0,38,132,229,116,141,59,63,165,64,41,7,119,197,107,210,152,219,129,124,106,143,52,67,77,239,82,116,39,24,201],\"From\":[4,31,13,164,115,164,178,225,120,135,118,139,147,234,46,193,168,184,211,175,61,6,236,109,147,77,118,2,85,214,111,14,186,22,188,14,36,230,13,71,147,186,136,124,31,228,72,203,70,120,163,66,43,61,198,97,151,131,185,208,40,245,20,59,94],\"LeftTip\":[0,0,68,123,69,198,131,225,186,147,144,90,103,46,220,48,86,73,104,94,148,184,143,2,239,70,51,236,226,187,126,72],\"RightTip\":[0,0,223,236,93,252,251,223,187,195,79,143,121,240,206,138,130,222,205,121,13,195,59,72,205,202,186,190,178,203,74,0],\"Nonce\":29202,\"Timestamp\":1681637059988696478,\"SessionId\":[215,210,186,3,33,148,208,70,44,208,33,231,234,208,77,131,207,188,144,196,190,169,184,214,5,94,239,93,5,105,35,239],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[192,55,78,123,140,217,129,253,216,241,103,163,217,226,26,188,158,164,29,170,235,183,109,15,106,98,1,6,87,254,247,143],[219,193,81,235,152,44,216,83,149,89,52,153,171,238,122,39,242,37,201,170,210,140,146,31,12,115,41,8,207,54,143,230],[237,178,76,205,158,28,10,43,65,34,27,0,150,152,51,143,77,53,73,62,97,198,180,162,106,11,112,232,242,32,233,172]],\"IhSequenceStart\":23,\"IhSequenceEnd\":25},\"Signature\":\"p0rJJcBwdRDKRq8ZC34LDrJUgqC3L8xipR2XeC+DqmIHWShjuMOTvGNoCab9dhjslOCPUIFcHSiGESZcz0x0JQ==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637062828575286}
+Vertex no received:  7
+Transaction received from other gateway 8
+Received vertex from the network:  00002684e5748d3b3fa540290777c56bd298db817c6a8f34434def52742718c9
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00002684e5748d3b3fa540290777c56bd298db817c6a8f34434def52742718c9","Timestamp":0}
+ACK received
+vertex confirmed:  7
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00002684e5748d3b3fa540290777c56bd298db817c6a8f34434def52742718c9","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+Received message in handle message : {"Type":"ACK","Data":"000036b0e5c5e145e08522f572fabc4e14d94c5b3d5f87ab5326f85318d1cf5c","Timestamp":0}
+ACK received
+vertex confirmed:  7
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000036b0e5c5e145e08522f572fabc4e14d94c5b3d5f87ab5326f85318d1cf5c","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+Received message in handle message : {"Type":"GW_TRANSACTION","Data":"{\"Gateway_no\":8,\"Vertex_no\":8,\"Tx\":{\"Type\":2,\"Hash\":[0,0,155,229,187,243,109,172,191,25,104,94,167,253,1,135,70,58,72,145,24,172,236,5,109,189,251,166,148,47,69,79],\"From\":[4,31,13,164,115,164,178,225,120,135,118,139,147,234,46,193,168,184,211,175,61,6,236,109,147,77,118,2,85,214,111,14,186,22,188,14,36,230,13,71,147,186,136,124,31,228,72,203,70,120,163,66,43,61,198,97,151,131,185,208,40,245,20,59,94],\"LeftTip\":[0,0,223,236,93,252,251,223,187,195,79,143,121,240,206,138,130,222,205,121,13,195,59,72,205,202,186,190,178,203,74,0],\"RightTip\":[0,0,249,109,76,71,240,40,142,26,65,230,72,150,64,96,236,28,35,45,47,104,239,140,25,222,86,159,8,194,99,80],\"Nonce\":53283,\"Timestamp\":1681637064190408662,\"SessionId\":[215,210,186,3,33,148,208,70,44,208,33,231,234,208,77,131,207,188,144,196,190,169,184,214,5,94,239,93,5,105,35,239],\"MerkleRoot\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"IntermediateHashes\":[[77,199,107,104,227,157,18,38,242,185,76,111,151,225,34,8,78,143,81,250,156,107,165,187,62,223,242,243,40,148,141,199],[191,66,16,164,135,83,66,42,107,121,243,154,66,92,60,63,90,1,201,143,230,57,208,223,186,227,176,170,62,178,47,22]],\"IhSequenceStart\":26,\"IhSequenceEnd\":27},\"Signature\":\"bvdwSm5rvgUpdM0nM5xkXNRSn5h3zv6AGHYLlL/mz0fel/5W0ybG+7g+YXAtuYdIa5Qomg3KJlfysXzspOMXKg==\",\"Neighbours\":[],\"Weight\":0,\"Confirmed\":false}","Timestamp":1681637068238651810}
+Vertex no received:  8
+Transaction received from other gateway 8
+Received vertex from the network:  00009be5bbf36dacbf19685ea7fd0187463a489118acec056dbdfba6942f454f
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00009be5bbf36dacbf19685ea7fd0187463a489118acec056dbdfba6942f454f","Timestamp":0}
+ACK received
+vertex confirmed:  8
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00009be5bbf36dacbf19685ea7fd0187463a489118acec056dbdfba6942f454f","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+Received message in handle message : {"Type":"ACK","Data":"0000493aef59172fe0fad49838d21c67bd97fe25966dc4cd817b76171f7ab8a1","Timestamp":0}
+ACK received
+vertex confirmed:  8
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000493aef59172fe0fad49838d21c67bd97fe25966dc4cd817b76171f7ab8a1","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000493aef59172fe0fad49838d21c67bd97fe25966dc4cd817b76171f7ab8a1","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000493aef59172fe0fad49838d21c67bd97fe25966dc4cd817b76171f7ab8a1","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+Received message in handle message : {"Type":"ACK","Data":"00003d9fda1ec7508fae7b450dfb7928c24fbb22e0a8aa78654eb34558fa4ad6","Timestamp":0}
+ACK received
+vertex confirmed:  9
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00003d9fda1ec7508fae7b450dfb7928c24fbb22e0a8aa78654eb34558fa4ad6","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00003d9fda1ec7508fae7b450dfb7928c24fbb22e0a8aa78654eb34558fa4ad6","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+Received message in handle message : {"Type":"ACK","Data":"0000e7108f48a361ee19a26b3d232c8afaaf2eecb70f4b29e5ad4b4ea6b09896","Timestamp":0}
+ACK received
+vertex confirmed:  10
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000e7108f48a361ee19a26b3d232c8afaaf2eecb70f4b29e5ad4b4ea6b09896","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000e7108f48a361ee19a26b3d232c8afaaf2eecb70f4b29e5ad4b4ea6b09896","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+Received message in handle message : {"Type":"ACK","Data":"00004208aa1f5f7523802015759596a2d36ade667e7f63ced4501eafd91e5b9a","Timestamp":0}
+ACK received
+vertex confirmed:  11
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00004208aa1f5f7523802015759596a2d36ade667e7f63ced4501eafd91e5b9a","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00004208aa1f5f7523802015759596a2d36ade667e7f63ced4501eafd91e5b9a","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+Received message in handle message : {"Type":"ACK","Data":"0000f5248e9d307018719e52b004f300799b01313fb9db41f8ef63e06c964845","Timestamp":0}
+ACK received
+vertex confirmed:  12
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000f5248e9d307018719e52b004f300799b01313fb9db41f8ef63e06c964845","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000f5248e9d307018719e52b004f300799b01313fb9db41f8ef63e06c964845","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  4d7f7137a6659aac918fe2a7f38c853f329720d876cf466087866ddf61d0964c
+Received message in handle message : {"Type":"ACK","Data":"00001f60290ad6d495c6997a076fce801ffaceb50f658f32342ab3d3a007da33","Timestamp":0}
+ACK received
+vertex confirmed:  13
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00001f60290ad6d495c6997a076fce801ffaceb50f658f32342ab3d3a007da33","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00001f60290ad6d495c6997a076fce801ffaceb50f658f32342ab3d3a007da33","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Generating MerkleRoot...
+New Session Id:  9d727826bcba99e1c9ab7e88ae93b554f673594fd75a562a0b8846f9bd1ecc22
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+generateMerkleRoot:  123
+generateMerkleRoot:  62
+generateMerkleRoot:  31
+generateMerkleRoot:  16
+generateMerkleRoot:  8
+generateMerkleRoot:  4
+generateMerkleRoot:  2
+generateMerkleRoot:  1
+Tip Selection Merkle
+Tip Selection Merkle END
+POW merkle Start
+POW merkle End
+Pruning the DAG
+prune: total  3  transactions
+Pruned  2  transactions
+Time taken to generate merkle root:  1.095848856s
+Received message in handle message : {"Type":"ACK","Data":"0000536e666f9c666348ab860a6a662767faf47cf66ddb1d408c625d99b431e5","Timestamp":0}
+ACK received
+vertex confirmed:  14
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000536e666f9c666348ab860a6a662767faf47cf66ddb1d408c625d99b431e5","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000536e666f9c666348ab860a6a662767faf47cf66ddb1d408c625d99b431e5","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  9d727826bcba99e1c9ab7e88ae93b554f673594fd75a562a0b8846f9bd1ecc22
+Received message in handle message : {"Type":"ACK","Data":"0000d3ebe16428ff79d59f80403e0e7cb0dfb14cb4ebf97e8401a5a50dbb6b90","Timestamp":0}
+ACK received
+vertex confirmed:  15
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000d3ebe16428ff79d59f80403e0e7cb0dfb14cb4ebf97e8401a5a50dbb6b90","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+Received message in handle message : {"Type":"ACK","Data":"0000d3ebe16428ff79d59f80403e0e7cb0dfb14cb4ebf97e8401a5a50dbb6b90","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  9d727826bcba99e1c9ab7e88ae93b554f673594fd75a562a0b8846f9bd1ecc22
+Received message in handle message : {"Type":"ACK","Data":"00004b8cd57764a0842f61420b06b80999f4a3d29eceada2b0a25940a323e1ca","Timestamp":0}
+ACK received
+vertex confirmed:  16
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00004b8cd57764a0842f61420b06b80999f4a3d29eceada2b0a25940a323e1ca","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00004b8cd57764a0842f61420b06b80999f4a3d29eceada2b0a25940a323e1ca","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  3  transactions
+Pruned  2  transactions
+sessionStr:  9d727826bcba99e1c9ab7e88ae93b554f673594fd75a562a0b8846f9bd1ecc22
+handleIhTx: chunk sent to css
+Received message in handle message : {"Type":"ACK","Data":"00004f82dbdf9082efbcf31bdfa9ae9cd7403d9f66d87b12ab1f77c89b6cd49a","Timestamp":0}
+ACK received
+vertex confirmed:  17
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00004f82dbdf9082efbcf31bdfa9ae9cd7403d9f66d87b12ab1f77c89b6cd49a","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00004f82dbdf9082efbcf31bdfa9ae9cd7403d9f66d87b12ab1f77c89b6cd49a","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  9d727826bcba99e1c9ab7e88ae93b554f673594fd75a562a0b8846f9bd1ecc22
+Received message in handle message : {"Type":"ACK","Data":"00005875a72cd5f0259d6500129036d58b47bebea44b8c12232512f656811aa9","Timestamp":0}
+ACK received
+vertex confirmed:  18
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00005875a72cd5f0259d6500129036d58b47bebea44b8c12232512f656811aa9","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00005875a72cd5f0259d6500129036d58b47bebea44b8c12232512f656811aa9","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Generating MerkleRoot...
+New Session Id:  fc3d10e61de0742e588f223e23cf4a32ad24e55b36a22fe32994a2565cbadc74
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+generateMerkleRoot:  102
+generateMerkleRoot:  51
+generateMerkleRoot:  26
+generateMerkleRoot:  13
+generateMerkleRoot:  7
+generateMerkleRoot:  4
+generateMerkleRoot:  2
+generateMerkleRoot:  1
+Tip Selection Merkle
+Tip Selection Merkle END
+POW merkle Start
+POW merkle End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+Time taken to generate merkle root:  4.159329678s
+Received message in handle message : {"Type":"ACK","Data":"0000767dcc2ab2880a4722c1e9338365d6559b620dd29034e14a1ce69f99162a","Timestamp":0}
+ACK received
+vertex confirmed:  19
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000767dcc2ab2880a4722c1e9338365d6559b620dd29034e14a1ce69f99162a","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000767dcc2ab2880a4722c1e9338365d6559b620dd29034e14a1ce69f99162a","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  fc3d10e61de0742e588f223e23cf4a32ad24e55b36a22fe32994a2565cbadc74
+Received message in handle message : {"Type":"ACK","Data":"000018c324849f264178710fa2e1d3f32b3bdd36fd96287a28f2daf7d5678204","Timestamp":0}
+ACK received
+vertex confirmed:  20
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000018c324849f264178710fa2e1d3f32b3bdd36fd96287a28f2daf7d5678204","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000018c324849f264178710fa2e1d3f32b3bdd36fd96287a28f2daf7d5678204","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  4  transactions
+Pruned  3  transactions
+sessionStr:  fc3d10e61de0742e588f223e23cf4a32ad24e55b36a22fe32994a2565cbadc74
+Received message in handle message : {"Type":"ACK","Data":"0000fa2d42c76b3b59105c2699fa5d3fdfbfcbb418a34a6bf60e9d008a7678ac","Timestamp":0}
+ACK received
+vertex confirmed:  21
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000fa2d42c76b3b59105c2699fa5d3fdfbfcbb418a34a6bf60e9d008a7678ac","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000fa2d42c76b3b59105c2699fa5d3fdfbfcbb418a34a6bf60e9d008a7678ac","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  fc3d10e61de0742e588f223e23cf4a32ad24e55b36a22fe32994a2565cbadc74
+Received message in handle message : {"Type":"ACK","Data":"000008651b65092da09141cf7a1b5caa338b4f8df75839fc850e25ceb56fa2d2","Timestamp":0}
+ACK received
+vertex confirmed:  22
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000008651b65092da09141cf7a1b5caa338b4f8df75839fc850e25ceb56fa2d2","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000008651b65092da09141cf7a1b5caa338b4f8df75839fc850e25ceb56fa2d2","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  fc3d10e61de0742e588f223e23cf4a32ad24e55b36a22fe32994a2565cbadc74
+Received message in handle message : {"Type":"ACK","Data":"00007382a3871d99c3ec72c31d1839656570431e4997f4754cf13a47757cc9f2","Timestamp":0}
+ACK received
+vertex confirmed:  23
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00007382a3871d99c3ec72c31d1839656570431e4997f4754cf13a47757cc9f2","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00007382a3871d99c3ec72c31d1839656570431e4997f4754cf13a47757cc9f2","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  fc3d10e61de0742e588f223e23cf4a32ad24e55b36a22fe32994a2565cbadc74
+Received message in handle message : {"Type":"ACK","Data":"00003f4c2eaeac9dc351b587ab0a75b4ebf823994daccc665e21d5a63c8ac5ee","Timestamp":0}
+ACK received
+vertex confirmed:  24
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00003f4c2eaeac9dc351b587ab0a75b4ebf823994daccc665e21d5a63c8ac5ee","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00003f4c2eaeac9dc351b587ab0a75b4ebf823994daccc665e21d5a63c8ac5ee","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  fc3d10e61de0742e588f223e23cf4a32ad24e55b36a22fe32994a2565cbadc74
+Received message in handle message : {"Type":"ACK","Data":"0000fd5ee2eee4981c4faa67f81866089a89ce67de3cb5678edaabcad653bedc","Timestamp":0}
+ACK received
+vertex confirmed:  25
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000fd5ee2eee4981c4faa67f81866089a89ce67de3cb5678edaabcad653bedc","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+Received message in handle message : {"Type":"ACK","Data":"0000fd5ee2eee4981c4faa67f81866089a89ce67de3cb5678edaabcad653bedc","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  fc3d10e61de0742e588f223e23cf4a32ad24e55b36a22fe32994a2565cbadc74
+Received message in handle message : {"Type":"ACK","Data":"0000271afff301eb8628b0e698da7312655849b2903985696c17f9bcca4da270","Timestamp":0}
+ACK received
+vertex confirmed:  26
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000271afff301eb8628b0e698da7312655849b2903985696c17f9bcca4da270","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000271afff301eb8628b0e698da7312655849b2903985696c17f9bcca4da270","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  fc3d10e61de0742e588f223e23cf4a32ad24e55b36a22fe32994a2565cbadc74
+Received message in handle message : {"Type":"ACK","Data":"00006768f5ea7fe2608befca0dcaaded4c887d973515344669df90e744bcf9b3","Timestamp":0}
+ACK received
+vertex confirmed:  27
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00006768f5ea7fe2608befca0dcaaded4c887d973515344669df90e744bcf9b3","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00006768f5ea7fe2608befca0dcaaded4c887d973515344669df90e744bcf9b3","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  fc3d10e61de0742e588f223e23cf4a32ad24e55b36a22fe32994a2565cbadc74
+Received message in handle message : {"Type":"ACK","Data":"0000da4bec9162aa4ff414962c241c1dbe90714a9b9ebfaf8e0dc75314b7d2b0","Timestamp":0}
+ACK received
+vertex confirmed:  28
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000da4bec9162aa4ff414962c241c1dbe90714a9b9ebfaf8e0dc75314b7d2b0","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000da4bec9162aa4ff414962c241c1dbe90714a9b9ebfaf8e0dc75314b7d2b0","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  fc3d10e61de0742e588f223e23cf4a32ad24e55b36a22fe32994a2565cbadc74
+Received message in handle message : {"Type":"ACK","Data":"0000a028a6320c9876e068cb995d2020f93678949fbca081dd3b6b89fd2c640b","Timestamp":0}
+ACK received
+vertex confirmed:  29
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000a028a6320c9876e068cb995d2020f93678949fbca081dd3b6b89fd2c640b","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000a028a6320c9876e068cb995d2020f93678949fbca081dd3b6b89fd2c640b","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Generating MerkleRoot...
+New Session Id:  70f5c57329d649d015e7f79d260c2feeb3fb417dacd80c70ff771ca542c4f02c
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+generateMerkleRoot:  117
+generateMerkleRoot:  59
+generateMerkleRoot:  30
+generateMerkleRoot:  15
+generateMerkleRoot:  8
+generateMerkleRoot:  4
+generateMerkleRoot:  2
+generateMerkleRoot:  1
+Tip Selection Merkle
+Tip Selection Merkle END
+POW merkle Start
+POW merkle End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+Time taken to generate merkle root:  130.087303ms
+Received message in handle message : {"Type":"ACK","Data":"0000653c0ed5c31495c2fb0555581edc46cff2ec177d59b948e8752965c6d156","Timestamp":0}
+ACK received
+vertex confirmed:  30
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000653c0ed5c31495c2fb0555581edc46cff2ec177d59b948e8752965c6d156","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000653c0ed5c31495c2fb0555581edc46cff2ec177d59b948e8752965c6d156","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  70f5c57329d649d015e7f79d260c2feeb3fb417dacd80c70ff771ca542c4f02c
+Received message in handle message : {"Type":"ACK","Data":"0000d6d830924d464a217f7f170e3100ab14573b8d5a633fd5bb45d371718766","Timestamp":0}
+ACK received
+vertex confirmed:  31
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000d6d830924d464a217f7f170e3100ab14573b8d5a633fd5bb45d371718766","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000d6d830924d464a217f7f170e3100ab14573b8d5a633fd5bb45d371718766","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+sessionStr:  70f5c57329d649d015e7f79d260c2feeb3fb417dacd80c70ff771ca542c4f02c
+Received message in handle message : {"Type":"ACK","Data":"00000cd8a22a916f7076cc6ee238cf4642410fd9811e605308551f1e52b51274","Timestamp":0}
+ACK received
+vertex confirmed:  32
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00000cd8a22a916f7076cc6ee238cf4642410fd9811e605308551f1e52b51274","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00000cd8a22a916f7076cc6ee238cf4642410fd9811e605308551f1e52b51274","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  3  transactions
+Pruned  2  transactions
+sessionStr:  70f5c57329d649d015e7f79d260c2feeb3fb417dacd80c70ff771ca542c4f02c
+Received message in handle message : {"Type":"ACK","Data":"00003ccafe6617091363923ed594619a953b7947b5a7971568c45c79c8866306","Timestamp":0}
+ACK received
+vertex confirmed:  33
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00003ccafe6617091363923ed594619a953b7947b5a7971568c45c79c8866306","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00003ccafe6617091363923ed594619a953b7947b5a7971568c45c79c8866306","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  70f5c57329d649d015e7f79d260c2feeb3fb417dacd80c70ff771ca542c4f02c
+Received message in handle message : {"Type":"ACK","Data":"0000d666ad217b9e9d44b7a16ab6cf5498b5de8a062b51ff610672382bb94f66","Timestamp":0}
+ACK received
+vertex confirmed:  34
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000d666ad217b9e9d44b7a16ab6cf5498b5de8a062b51ff610672382bb94f66","Timestamp":0}
+Received message in handle message : {"Type":"ACK","Data":"0000d666ad217b9e9d44b7a16ab6cf5498b5de8a062b51ff610672382bb94f66","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  3  transactions
+Pruned  2  transactions
+sessionStr:  70f5c57329d649d015e7f79d260c2feeb3fb417dacd80c70ff771ca542c4f02c
+Received message in handle message : {"Type":"ACK","Data":"00001192dd02a4eeddf8a1295d62518eb106fbe53e288496ae6c891fd7976e8f","Timestamp":0}
+ACK received
+vertex confirmed:  35
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00001192dd02a4eeddf8a1295d62518eb106fbe53e288496ae6c891fd7976e8f","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+Received message in handle message : {"Type":"ACK","Data":"00001192dd02a4eeddf8a1295d62518eb106fbe53e288496ae6c891fd7976e8f","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  70f5c57329d649d015e7f79d260c2feeb3fb417dacd80c70ff771ca542c4f02c
+Received message in handle message : {"Type":"ACK","Data":"000062a5c1171f379ec5de9c161a686759d9a1f02670e0d2b923a2c7e37b5aaa","Timestamp":0}
+ACK received
+vertex confirmed:  36
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000062a5c1171f379ec5de9c161a686759d9a1f02670e0d2b923a2c7e37b5aaa","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000062a5c1171f379ec5de9c161a686759d9a1f02670e0d2b923a2c7e37b5aaa","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  4  transactions
+Pruned  3  transactions
+sessionStr:  70f5c57329d649d015e7f79d260c2feeb3fb417dacd80c70ff771ca542c4f02c
+Received message in handle message : {"Type":"ACK","Data":"00000cd8c6ddebed32d6d5930f9e7bdf36fb0c4733d9b0f793029877943afac2","Timestamp":0}
+ACK received
+vertex confirmed:  37
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00000cd8c6ddebed32d6d5930f9e7bdf36fb0c4733d9b0f793029877943afac2","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00000cd8c6ddebed32d6d5930f9e7bdf36fb0c4733d9b0f793029877943afac2","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  70f5c57329d649d015e7f79d260c2feeb3fb417dacd80c70ff771ca542c4f02c
+Received message in handle message : {"Type":"ACK","Data":"0000c61fd2a111549be2963f95de6378ba75e56f58b5970b707a099e475e6876","Timestamp":0}
+ACK received
+vertex confirmed:  38
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000c61fd2a111549be2963f95de6378ba75e56f58b5970b707a099e475e6876","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000c61fd2a111549be2963f95de6378ba75e56f58b5970b707a099e475e6876","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  70f5c57329d649d015e7f79d260c2feeb3fb417dacd80c70ff771ca542c4f02c
+Received message in handle message : {"Type":"ACK","Data":"0000449ad76c96b6631c416162f1c01a16592b6d3cc0232b79824bca375e8325","Timestamp":0}
+ACK received
+vertex confirmed:  39
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000449ad76c96b6631c416162f1c01a16592b6d3cc0232b79824bca375e8325","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000449ad76c96b6631c416162f1c01a16592b6d3cc0232b79824bca375e8325","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+Received message in handle message : {"Type":"ACK","Data":"0000279d8978bbd17454a41bda0109c27f38a1eae460621548f132e63b1b2697","Timestamp":0}
+ACK received
+vertex confirmed:  40
+*************************************
+sessionStr:  70f5c57329d649d015e7f79d260c2feeb3fb417dacd80c70ff771ca542c4f02c
+Received message in handle message : {"Type":"ACK","Data":"0000279d8978bbd17454a41bda0109c27f38a1eae460621548f132e63b1b2697","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000279d8978bbd17454a41bda0109c27f38a1eae460621548f132e63b1b2697","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+sessionStr:  70f5c57329d649d015e7f79d260c2feeb3fb417dacd80c70ff771ca542c4f02c
+Received message in handle message : {"Type":"ACK","Data":"00009af68d55e592fd8c0911ee70d01677c722c7b670ee8a66e98b5d9032ca21","Timestamp":0}
+ACK received
+vertex confirmed:  41
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00009af68d55e592fd8c0911ee70d01677c722c7b670ee8a66e98b5d9032ca21","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00009af68d55e592fd8c0911ee70d01677c722c7b670ee8a66e98b5d9032ca21","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Generating MerkleRoot...
+New Session Id:  e09e3c442d4c20272c2b6e0855cdb7d902d490ef78c058dfd8a0b1a865c09023
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+generateMerkleRoot:  138
+generateMerkleRoot:  69
+generateMerkleRoot:  35
+generateMerkleRoot:  18
+generateMerkleRoot:  9
+generateMerkleRoot:  5
+generateMerkleRoot:  3
+generateMerkleRoot:  2
+generateMerkleRoot:  1
+Tip Selection Merkle
+Tip Selection Merkle END
+POW merkle Start
+POW merkle End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+Time taken to generate merkle root:  13.098075438s
+Received message in handle message : {"Type":"ACK","Data":"00001fb3e99113cb0ce671b8d31426b3aefb2ec235a4cc85ace1f353cc6cdc91","Timestamp":0}
+ACK received
+vertex confirmed:  42
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00001fb3e99113cb0ce671b8d31426b3aefb2ec235a4cc85ace1f353cc6cdc91","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00001fb3e99113cb0ce671b8d31426b3aefb2ec235a4cc85ace1f353cc6cdc91","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+POW IH End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+Error writing to socket
+sessionStr:  e09e3c442d4c20272c2b6e0855cdb7d902d490ef78c058dfd8a0b1a865c09023
+Received message in handle message : {"Type":"ACK","Data":"0000f24e4488f1ac909a8ce630a568a3487097c325751feb9cbdacb3d7a1e21b","Timestamp":0}
+ACK received
+vertex confirmed:  43
+Error writing to socket
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000f24e4488f1ac909a8ce630a568a3487097c325751feb9cbdacb3d7a1e21b","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"0000f24e4488f1ac909a8ce630a568a3487097c325751feb9cbdacb3d7a1e21b","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Generating MerkleRoot...
+New Session Id:  87b83362e69a4a2ec3e76107491343348f4b1709e667214c051148efd44c03a5
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+generateMerkleRoot:  110
+generateMerkleRoot:  55
+generateMerkleRoot:  28
+generateMerkleRoot:  14
+generateMerkleRoot:  7
+generateMerkleRoot:  4
+generateMerkleRoot:  2
+generateMerkleRoot:  1
+Tip Selection Merkle
+Tip Selection Merkle END
+POW merkle Start
+POW merkle End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+Error writing to socket
+Time taken to generate merkle root:  5.406834531s
+Received message in handle message : {"Type":"ACK","Data":"00001a5d0ddaa3ce40592eb85f4711f926453f95a9ffc7b6addba5aaa787026c","Timestamp":0}
+ACK received
+vertex confirmed:  44
+Error writing to socket
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00001a5d0ddaa3ce40592eb85f4711f926453f95a9ffc7b6addba5aaa787026c","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00001a5d0ddaa3ce40592eb85f4711f926453f95a9ffc7b6addba5aaa787026c","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+POW IH End
+Pruning the DAG
+prune: total  3  transactions
+Pruned  2  transactions
+Error writing to socket
+sessionStr:  87b83362e69a4a2ec3e76107491343348f4b1709e667214c051148efd44c03a5
+Received message in handle message : {"Type":"ACK","Data":"00005bbe30ecaa2e311eeec86d992b51f783ee84ce392530843b81d1f72d0cd2","Timestamp":0}
+ACK received
+vertex confirmed:  45
+Error writing to socket
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00005bbe30ecaa2e311eeec86d992b51f783ee84ce392530843b81d1f72d0cd2","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00005bbe30ecaa2e311eeec86d992b51f783ee84ce392530843b81d1f72d0cd2","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Generating MerkleRoot...
+New Session Id:  80bc385c470b90a27064519adf7161cae373f3fe74666e416f27e49b4845f14b
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+generateMerkleRoot:  375
+generateMerkleRoot:  188
+generateMerkleRoot:  94
+generateMerkleRoot:  47
+generateMerkleRoot:  24
+generateMerkleRoot:  12
+generateMerkleRoot:  6
+generateMerkleRoot:  3
+generateMerkleRoot:  2
+generateMerkleRoot:  1
+Tip Selection Merkle
+Tip Selection Merkle END
+POW merkle Start
+POW merkle End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+Error writing to socket
+Received message in handle message : {"Type":"ACK","Data":"00004c0622b26c7b0b7a12773245bc7ee35ab7f8ca8c1f9e188d9eb109a1c2f9","Timestamp":0}
+ACK received
+vertex confirmed:  46
+Error writing to socket
+*************************************
+Time taken to generate merkle root:  4.595924377s
+Received message in handle message : {"Type":"ACK","Data":"00004c0622b26c7b0b7a12773245bc7ee35ab7f8ca8c1f9e188d9eb109a1c2f9","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"00004c0622b26c7b0b7a12773245bc7ee35ab7f8ca8c1f9e188d9eb109a1c2f9","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+POW IH End
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+Error writing to socket
+sessionStr:  80bc385c470b90a27064519adf7161cae373f3fe74666e416f27e49b4845f14b
+Received message in handle message : {"Type":"ACK","Data":"000070628fa6ebca2ad947565d10468569feb0c3db2ac693962cbeeb7c768d08","Timestamp":0}
+ACK received
+vertex confirmed:  47
+Error writing to socket
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000070628fa6ebca2ad947565d10468569feb0c3db2ac693962cbeeb7c768d08","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000070628fa6ebca2ad947565d10468569feb0c3db2ac693962cbeeb7c768d08","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+Generating MerkleRoot...
+New Session Id:  daedea1ef9919522c54a405bb3700f0fcc203e826bc9891c7b257348c8f1a8fa
+Tip Selection IH
+Tip Selection IH END
+POW IH Start
+generateMerkleRoot:  229
+generateMerkleRoot:  115
+generateMerkleRoot:  58
+generateMerkleRoot:  29
+generateMerkleRoot:  15
+generateMerkleRoot:  8
+generateMerkleRoot:  4
+generateMerkleRoot:  2
+generateMerkleRoot:  1
+Tip Selection Merkle
+Tip Selection Merkle END
+POW merkle Start
+POW merkle End
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+Error writing to socket
+Time taken to generate merkle root:  2.100691334s
+Received message in handle message : {"Type":"ACK","Data":"000052d300f79f3bc12bdb50f77e54a2039f171d217207bcb1cfbebd38dd6489","Timestamp":0}
+ACK received
+vertex confirmed:  48
+Received message in handle message : {"Type":"ACK","Data":"000052d300f79f3bc12bdb50f77e54a2039f171d217207bcb1cfbebd38dd6489","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Received message in handle message : {"Type":"ACK","Data":"000052d300f79f3bc12bdb50f77e54a2039f171d217207bcb1cfbebd38dd6489","Timestamp":0}
+ACK received
+Duplicate message received of ACK
+*************************************
+Error writing to socket
+*************************************

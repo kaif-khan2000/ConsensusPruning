@@ -1,0 +1,125 @@
+enter the number of storage nodes
+enter the number of gateway nodes
+Untagged: sto:1.0
+Deleted: sha256:295609aeee993df0be6f1149584933de42577a9537b96d54049e42efe0519f38
+Untagged: gw:1.0
+Deleted: sha256:8cdc16630b40cbabea6f4fc00fd8cac0f7ee7ab16ce97aa9e145bb68fb0ef98f
+Untagged: disc:1.0
+Deleted: sha256:23db53e20a5133bab495017ae656cfd79aec87b4af9102f1c3dd6708e0252404
+Attaching to iotbc_discovery_1, iotbc_storage0_1, iotbc_gateway0_1
+[32mstorage0_1   |[0m Storage node started successfully
+[33mgateway0_1   |[0m New Session Id:  68baaa4e90cd78ff05288288642827139f925d46e54750298f3a255f373aeef1
+[33mgateway0_1   |[0m successfully generated keys for the gateway
+[33mgateway0_1   |[0m 
+[33mgateway0_1   |[0m gateway private key:  &{{{0xc000076340} 61070331185801636741773819404981133082697573184849609989305876229558859574376 45097871144355234084999875078929244446011790663190299444287513862627735079361} 83793128912071865335383754913864563208550355593252289690644909925885089248282}
+[33mgateway0_1   |[0m 
+[33mgateway0_1   |[0m gateway public key:  {{0xc000076340} 61070331185801636741773819404981133082697573184849609989305876229558859574376 45097871144355234084999875078929244446011790663190299444287513862627735079361}
+[33mgateway0_1   |[0m 
+[33mgateway0_1   |[0m session id:  [104 186 170 78 144 205 120 255 5 40 130 136 100 40 39 19 159 146 93 70 229 71 80 41 143 58 37 95 55 58 238 241]
+[36mdiscovery_1  |[0m Hello World from discovery_node
+[33mgateway0_1   |[0m [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+[33mgateway0_1   |[0m 
+[33mgateway0_1   |[0m [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+[33mgateway0_1   |[0m  - using env:	export GIN_MODE=release
+[33mgateway0_1   |[0m  - using code:	gin.SetMode(gin.ReleaseMode)
+[33mgateway0_1   |[0m 
+[32mstorage0_1   |[0m [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+[32mstorage0_1   |[0m 
+[32mstorage0_1   |[0m [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+[32mstorage0_1   |[0m  - using env:	export GIN_MODE=release
+[32mstorage0_1   |[0m  - using code:	gin.SetMode(gin.ReleaseMode)
+[32mstorage0_1   |[0m 
+[32mstorage0_1   |[0m [GIN-debug] GET    /pics/*filepath           --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[32mstorage0_1   |[0m [GIN-debug] HEAD   /pics/*filepath           --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[32mstorage0_1   |[0m [GIN-debug] GET    /getTransaction/:hash     --> main.getTransaction (3 handlers)
+[32mstorage0_1   |[0m [GIN-debug] POST   /getIH                    --> main.getIH (3 handlers)
+[32mstorage0_1   |[0m [GIN-debug] GET    /getMH/:txId              --> main.getMH (3 handlers)
+[32mstorage0_1   |[0m [GIN-debug] GET    /getDagImage              --> main.getDagImage (3 handlers)
+[32mstorage0_1   |[0m [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+[32mstorage0_1   |[0m Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[32mstorage0_1   |[0m [GIN-debug] Listening and serving HTTP on 0.0.0.0:4000
+[36mdiscovery_1  |[0m Received:  STORAGE_NODE
+[36mdiscovery_1  |[0m 150.0.0.2:42152
+[36mdiscovery_1  |[0m new cluster created and no.of sn clusters:  1
+[36mdiscovery_1  |[0m Data before serialize :  {map[4: 8:] map[1: 15:] map[8: 12:] [8 4] [] [] map[1:1b29683c-0fea-401d-a4da-f8d79f9f98e8 4:ab8958b2-21bb-44b3-8054-fdc99f8e09a2 8:a53d43c9-631e-4c15-b5fc-aa28c2f9d00f 12:31331295-72ee-41ff-b034-d8f8d9bfa0e2 15:08cf19d6-2ffc-4534-9ecc-8d4f09784cd7] db562bbe-d249-47e3-933a-4322422e63de 0 0}
+[33mgateway0_1   |[0m [GIN-debug] GET    /pics/*filepath           --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[33mgateway0_1   |[0m successfully connected to the css
+[33mgateway0_1   |[0m [GIN-debug] HEAD   /pics/*filepath           --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[33mgateway0_1   |[0m [GIN-debug] GET    /getDagImage              --> main.getDagImage (3 handlers)
+[36mdiscovery_1  |[0m Data:  {"Gn":{"4":"","8":""},"Adj":{"1":"","15":""},"Aux":{"12":"","8":""},"Gn_order":[8,4],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"1":"1b29683c-0fea-401d-a4da-f8d79f9f98e8","12":"31331295-72ee-41ff-b034-d8f8d9bfa0e2","15":"08cf19d6-2ffc-4534-9ecc-8d4f09784cd7","4":"ab8958b2-21bb-44b3-8054-fdc99f8e09a2","8":"a53d43c9-631e-4c15-b5fc-aa28c2f9d00f"},"Own_token":"db562bbe-d249-47e3-933a-4322422e63de","Own_nodeno":0,"Own_cluster":0}
+[32mstorage0_1   |[0m Received neighbours from DN:  {"Gn":{"4":"","8":""},"Adj":{"1":"","15":""},"Aux":{"12":"","8":""},"Gn_order":[8,4],"Routing_nodes":null,"Routing_nodes_token":null,"SN_token":{"1":"1b29683c-0fea-401d-a4da-f8d79f9f98e8","12":"31331295-72ee-41ff-b034-d8f8d9bfa0e2","15":"08cf19d6-2ffc-4534-9ecc-8d4f09784cd7","4":"ab8958b2-21bb-44b3-8054-fdc99f8e09a2","8":"a53d43c9-631e-4c15-b5fc-aa28c2f9d00f"},"Own_token":"db562bbe-d249-47e3-933a-4322422e63de","Own_nodeno":0,"Own_cluster":0}
+[33mgateway0_1   |[0m [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+[33mgateway0_1   |[0m Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[33mgateway0_1   |[0m [GIN-debug] Listening and serving HTTP on :4000
+[33mgateway0_1   |[0m 
+[33mgateway0_1   |[0m successfully created genesis transaction
+[33mgateway0_1   |[0m dag acquiring by addtodag
+[33mgateway0_1   |[0m dag acquired by addtodag
+[33mgateway0_1   |[0m dag released by addtodag
+[33mgateway0_1   |[0m dag acquiring by addtodag
+[33mgateway0_1   |[0m dag acquired by addtodag
+[33mgateway0_1   |[0m dag released by addtodag
+[33mgateway0_1   |[0m Updating weights for:  0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb
+[33mgateway0_1   |[0m weights updated
+[33mgateway0_1   |[0m Pruning the DAG
+[33mgateway0_1   |[0m prune: total  0  transactions
+[33mgateway0_1   |[0m Pruned  0  transactions
+[33mgateway0_1   |[0m 
+[33mgateway0_1   |[0m successfully added genesis transaction to the dag
+[33mgateway0_1   |[0m Error in adding the edge:  target vertex : vertex not found
+[33mgateway0_1   |[0m Graph created, &{0xc0004801e0} <nil>
+[33mgateway0_1   |[0m [GIN] 2023/04/18 - 06:46:31 | 200 |   34.842287ms |       150.0.0.1 | GET      "/getDagImage"
+[33mgateway0_1   |[0m [GIN] 2023/04/18 - 06:46:31 | 200 |     107.965µs |       150.0.0.1 | GET      "/pics/image.png"
+[33mgateway0_1   |[0m [GIN] 2023/04/18 - 06:46:31 | 404 |         412ns |       150.0.0.1 | GET      "/favicon.ico"
+[32mstorage0_1   |[0m Error in adding the edge:  target vertex : vertex not found
+[32mstorage0_1   |[0m Graph created, &{0xc00008e240} <nil>
+[32mstorage0_1   |[0m [GIN] 2023/04/18 - 06:46:41 | 200 |   674.21444ms |       150.0.0.1 | GET      "/getDagImage"
+[32mstorage0_1   |[0m [GIN] 2023/04/18 - 06:46:41 | 200 |       96.07µs |       150.0.0.1 | GET      "/pics/image.png"
+[32mstorage0_1   |[0m [GIN] 2023/04/18 - 06:46:41 | 404 |         503ns |       150.0.0.1 | GET      "/favicon.ico"
+[36mdiscovery_1  |[0m Received:  GATEWAY_NODE
+[36mdiscovery_1  |[0m hello from gateway node : 150.0.0.3:44186
+[36mdiscovery_1  |[0m gw token is  347606bd-c401-4341-993f-d71e742990ef
+[36mdiscovery_1  |[0m Data before serialize :  {[] [150.0.0.2] map[] db562bbe-d249-47e3-933a-4322422e63de 347606bd-c401-4341-993f-d71e742990ef 0}
+[33mgateway0_1   |[0m Received before clustering :  {"Gw":null,"Sn":["150.0.0.2"],"Token_gw":{},"Token_sn":"db562bbe-d249-47e3-933a-4322422e63de","Own_token_gw":"347606bd-c401-4341-993f-d71e742990ef","Own_nodeno":0}
+[33mgateway0_1   |[0m Pinging neighbours
+[33mgateway0_1   |[0m Listening to socket -  4242
+[33mgateway0_1   |[0m Gateway is ready to receive transactions
+[33mgateway0_1   |[0m I am the generator node
+[33mgateway0_1   |[0m P2P code finished
+[33mgateway0_1   |[0m true
+[33mgateway0_1   |[0m Sensor is running
+[36mdiscovery_1  |[0m Data:  {"Gw":null,"Sn":["150.0.0.2"],"Token_gw":{},"Token_sn":"db562bbe-d249-47e3-933a-4322422e63de","Own_token_gw":"347606bd-c401-4341-993f-d71e742990ef","Own_nodeno":0}
+[33mgateway0_1   |[0m noOfRecordsPerChunk:  7
+[32mstorage0_1   |[0m Received data:  { -1  GW_PING -1 } 150.0.0.3:47904
+[32mstorage0_1   |[0m Ping from gateway
+[33mgateway0_1   |[0m ihHash:  [233 71 183 39 217 249 2 222 92 26 15 205 162 195 146 225 237 8 22 156 163 46 241 115 251 19 14 98 230 129 149 150]
+[33mgateway0_1   |[0m ihHash:  [21 211 121 251 204 5 109 66 66 214 70 222 170 14 124 46 187 0 123 150 34 187 54 154 103 15 122 138 235 184 57 96]
+[33mgateway0_1   |[0m ihHash:  [36 33 98 94 126 99 195 233 247 83 161 183 247 64 121 67 98 250 200 237 47 10 81 207 205 67 110 130 232 162 174 46]
+[33mgateway0_1   |[0m acquired session lock in handleIHTx
+[33mgateway0_1   |[0m unlocked IH lock in IHTx
+[33mgateway0_1   |[0m creating IHTx
+[33mgateway0_1   |[0m :Tip Selection IH
+[33mgateway0_1   |[0m Possible tips:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+[33mgateway0_1   |[0m ihHash:  [35 228 105 214 132 175 45 189 98 241 145 226 0 83 24 63 10 154 96 142 0 97 88 84 11 232 162 252 52 95 191 27]
+[33mgateway0_1   |[0m ihHash:  [140 147 116 28 241 199 193 59 161 7 27 179 164 150 91 225 246 141 171 66 147 121 80 23 251 185 105 113 108 129 20 11]
+[33mgateway0_1   |[0m ihHash:  [195 125 200 207 220 228 28 242 21 24 174 240 211 12 82 137 129 29 136 162 251 245 215 169 177 79 168 8 217 201 235 173]
+[33mgateway0_1   |[0m ihHash:  [61 92 31 216 132 32 110 19 238 163 94 143 104 19 62 70 70 61 185 228 140 24 151 253 107 121 24 44 74 126 209 64]
+[33mgateway0_1   |[0m generated 100 records
+[33mgateway0_1   |[0m ihHash:  [188 110 153 27 216 175 72 181 89 13 68 100 43 163 135 75 223 31 134 223 91 114 201 190 43 208 175 47 121 82 3 166]
+[33mgateway0_1   |[0m ihHash:  [136 135 236 33 88 140 208 55 218 122 199 139 247 68 139 224 43 126 165 126 156 29 8 100 36 78 29 155 211 68 102 101]
+[32mstorage0_1   |[0m Error in adding the edge:  target vertex : vertex not found
+[32mstorage0_1   |[0m Graph created, &{0xc00002a240} <nil>
+[32mstorage0_1   |[0m [GIN] 2023/04/18 - 06:47:11 | 304 |   12.483331ms |       150.0.0.1 | GET      "/getDagImage"
+[32mstorage0_1   |[0m [GIN] 2023/04/18 - 06:47:11 | 200 |      93.098µs |       150.0.0.1 | GET      "/pics/image.png"
+[33mgateway0_1   |[0m ihHash:  [209 190 8 194 117 217 193 47 147 226 138 90 106 103 249 242 190 113 93 215 170 69 194 42 170 65 24 35 89 95 44 140]
+[33mgateway0_1   |[0m ihHash:  [195 46 244 210 16 162 120 37 222 111 59 169 75 194 15 215 57 229 12 248 146 107 237 172 241 137 113 58 93 160 36 173]
+[33mgateway0_1   |[0m ihHash:  [103 119 105 3 243 157 106 18 233 207 114 229 144 185 142 183 81 168 55 209 28 139 146 4 159 48 203 96 182 95 59 64]
+[33mgateway0_1   |[0m ihHash:  [48 253 83 58 175 216 91 157 36 251 126 31 87 174 169 115 183 193 148 191 98 124 212 204 53 197 166 110 90 171 34 124]
+[33mgateway0_1   |[0m ihHash:  [32 188 124 19 189 62 65 50 134 205 95 123 143 189 94 190 205 32 239 215 96 136 246 181 150 174 68 85 45 214 84 236]
+[33mgateway0_1   |[0m generated 100 records
+[33mgateway0_1   |[0m ihHash:  [111 250 34 15 38 176 71 252 173 8 114 139 57 251 53 184 13 101 86 215 44 173 83 57 218 43 97 13 10 11 127 205]
+[33mgateway0_1   |[0m ihHash:  [53 214 230 186 155 157 2 134 168 125 41 8 165 213 71 42 97 147 83 25 27 118 11 55 162 135 222 153 232 184 63 178]
+[33mgateway0_1   |[0m ihHash:  [241 87 10 19 63 64 4 188 40 246 115 162 67 26 125 185 78 27 141 78 45 96 27 13 248 15 228 39 29 23 206 17]
+[33mgateway0_1   |[0m ihHash:  [126 205 33 158 246 125 25 213 169 171 6 192 69 173 34 243 87 8 198 29 10 103 200 195 164 66 31 152 238 87 191 14]
+[33mgateway0_1   |[0m ihHash:  [96 101 9 177 57 55 180 126 178 23 128 68 117 178 48 241 96 219 243 7 23 119 123 193 191 62 31 140 36 168 223 11]
+Gracefully stopping... (press Ctrl+C again to force)

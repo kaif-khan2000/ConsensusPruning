@@ -1,0 +1,1260 @@
+New Session Id:  df67e086b7354e033a2724c3ee39e423284ae2f2988951687af120823a20309a
+successfully generated keys for the gateway
+
+gateway private key:  &{{{0xc000438480} 68655124540948185256790545578364612412529645302962432283483377887577489521012 12048130395120567148301867817716832181978129854919250432442312871063158766328} 89748597295285285857661553603656811597477236263820047119731772315778193103107}
+
+gateway public key:  {{0xc000438480} 68655124540948185256790545578364612412529645302962432283483377887577489521012 12048130395120567148301867817716832181978129854919250432442312871063158766328}
+
+session id:  [223 103 224 134 183 53 78 3 58 39 36 195 238 57 228 35 40 74 226 242 152 137 81 104 122 241 32 130 58 32 48 154]
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /pics/*filepath           --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /pics/*filepath           --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /getDagImage              --> main.getDagImage (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :4000
+successfully connected to the css
+
+successfully created genesis transaction
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+Updating weights for:  0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb
+weights updated
+Pruning the DAG
+prune: total  0  transactions
+Pruned  0  transactions
+
+successfully added genesis transaction to the dag
+Received before clustering :  {"Gw":null,"Sn":["150.0.0.17"],"Token_gw":{},"Token_sn":"40d9552e-0afb-431c-8cc4-7ea6e60e189e","Own_token_gw":"33cf4090-bed8-42c8-956c-99259e3a0da4","Own_nodeno":0}
+Pinging neighbours
+Listening to socket -  4242
+Gateway is ready to receive transactions
+I am the generator node
+P2P code finished
+true
+Sensor is running
+noOfRecordsPerChunk:  7
+ihHash:  [208 10 241 212 195 66 118 124 27 3 103 80 81 37 12 183 225 247 243 49 190 202 109 46 243 230 57 207 26 161 194 128]
+ihHash:  [91 221 135 154 73 65 214 82 4 66 178 210 56 215 183 157 18 10 117 21 56 43 3 46 205 35 230 66 30 73 7 209]
+ihHash:  [241 45 232 88 36 52 62 59 240 1 44 221 251 248 220 200 46 238 210 78 145 103 112 173 239 57 113 78 239 152 85 33]
+acquired session lock in handleIHTx
+unlocked IH lock in IHTx
+creating IHTx
+:Tip Selection IH
+Possible tips:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+Possible tips:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+:Tip Selection IH END
+POW IH Start
+ihHash:  [119 29 185 14 222 130 205 41 192 22 129 42 154 127 84 182 41 45 188 97 106 214 113 133 95 92 90 153 39 113 84 52]
+ihHash:  [37 93 145 191 112 64 53 195 126 234 247 220 64 211 85 235 158 139 196 64 33 177 193 251 165 154 112 84 227 153 255 51]
+POW IH End
+created IHTx
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+Updating weights for:  0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071
+weights updated
+Pruning the DAG
+prune: total  0  transactions
+Pruned  0  transactions
+Broadcasting message to gateways:  []
+Broadcasting to SN:  [150.0.0.17]
+ACK received
+vertex confirmed:  1
+*************************************
+sessionStr:  df67e086b7354e033a2724c3ee39e423284ae2f2988951687af120823a20309a
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+ihHash:  [233 45 189 31 186 134 84 47 155 94 146 32 215 62 83 5 125 223 181 64 51 175 138 38 228 4 84 132 15 38 123 1]
+handleIhTx: IHTx sent to CSS
+unlocked session lock in IHTx
+acquired session lock in handleIHTx
+unlocked IH lock in IHTx
+creating IHTx
+:Tip Selection IH
+Possible tips:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+Possible tips:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+:Tip Selection IH END
+POW IH Start
+ihHash:  [7 68 228 102 2 57 44 28 5 66 218 128 202 77 117 3 219 229 187 231 115 236 69 58 41 229 44 44 99 155 247 86]
+generated 100 records
+ihHash:  [153 75 155 229 28 9 116 218 184 125 81 27 18 112 189 161 42 169 254 215 170 219 100 16 16 3 22 243 201 0 239 176]
+ihHash:  [176 140 84 137 144 225 182 185 147 27 229 154 77 101 19 182 121 234 41 236 232 226 84 87 8 161 127 173 133 54 113 80]
+ihHash:  [130 239 216 229 4 202 120 71 147 61 239 142 141 49 131 135 99 157 193 51 243 219 45 140 218 136 228 229 191 197 195 212]
+POW IH End
+created IHTx
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+Updating weights for:  00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a
+weights updated
+Pruning the DAG
+prune: total  0  transactions
+Pruned  0  transactions
+Broadcasting message to gateways:  []
+Broadcasting to SN:  [150.0.0.17]
+sessionStr:  df67e086b7354e033a2724c3ee39e423284ae2f2988951687af120823a20309a
+ACK received
+vertex confirmed:  2
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+ihHash:  [232 91 81 116 159 43 248 171 209 170 210 57 197 0 244 227 113 78 205 138 61 56 136 86 238 43 38 177 31 48 145 159]
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: IHTx sent to CSS
+unlocked session lock in IHTx
+acquired session lock in handleIHTx
+unlocked IH lock in IHTx
+creating IHTx
+:Tip Selection IH
+Possible tips:  [0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+Possible tips:  [0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+:Tip Selection IH END
+POW IH Start
+ihHash:  [255 179 219 13 70 102 210 151 209 230 106 5 140 88 192 232 109 252 71 145 83 56 43 179 93 54 151 61 203 141 32 37]
+ihHash:  [159 117 37 150 131 85 65 180 169 114 202 157 4 34 153 42 53 255 35 8 43 25 159 104 232 225 186 45 246 67 85 218]
+ihHash:  [7 38 124 204 233 3 109 104 7 60 248 182 122 110 7 5 241 87 52 63 58 38 26 41 89 195 178 6 14 202 192 215]
+generated 100 records
+ihHash:  [101 26 119 38 229 162 97 200 76 14 23 31 85 74 203 199 211 40 203 198 234 21 18 48 114 2 108 227 48 189 116 147]
+ihHash:  [244 153 194 155 207 16 100 133 196 20 74 112 237 227 221 27 247 37 3 244 217 132 149 230 211 133 42 245 6 149 167 199]
+POW IH End
+created IHTx
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+Updating weights for:  000067fec87e69f4a83b8c961f40e50cf3bcaaf862b9c90294c21910140bda96
+weights updated
+Pruning the DAG
+prune: total  0  transactions
+Pruned  0  transactions
+Broadcasting message to gateways:  []
+Broadcasting to SN:  [150.0.0.17]
+sessionStr:  df67e086b7354e033a2724c3ee39e423284ae2f2988951687af120823a20309a
+ACK received
+vertex confirmed:  3
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+ihHash:  [208 155 19 153 60 162 198 142 141 9 134 233 224 43 68 24 132 179 115 42 21 150 188 156 141 92 23 130 100 132 36 47]
+handleIhTx: IHTx sent to CSS
+unlocked session lock in IHTx
+acquired session lock in handleIHTx
+unlocked IH lock in IHTx
+creating IHTx
+:Tip Selection IH
+Possible tips:  [0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 000067fec87e69f4a83b8c961f40e50cf3bcaaf862b9c90294c21910140bda96]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+Possible tips:  [0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 000067fec87e69f4a83b8c961f40e50cf3bcaaf862b9c90294c21910140bda96]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+:Tip Selection IH END
+POW IH Start
+ihHash:  [203 103 192 27 114 92 186 225 157 31 214 83 229 122 146 25 237 241 218 15 84 78 158 181 90 107 207 19 91 69 108 213]
+ihHash:  [170 96 92 208 136 61 119 49 7 147 208 156 234 108 92 9 162 73 1 131 201 10 250 110 236 241 251 162 4 32 227 215]
+ihHash:  [213 238 36 73 83 147 124 112 10 0 202 208 210 12 233 50 100 148 115 83 178 211 139 55 81 202 202 58 95 22 253 55]
+ihHash:  [206 31 152 171 251 15 152 156 14 112 49 235 8 62 179 99 134 109 64 223 149 99 235 131 87 13 32 242 228 204 246 11]
+generated 100 records
+POW IH End
+created IHTx
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+Updating weights for:  000077a26bd34f1ffc403cd9e7bc181322c14ddfab514c9a578a0b8de9edf1a1
+weights updated
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+Broadcasting message to gateways:  []
+Broadcasting to SN:  [150.0.0.17]
+sessionStr:  df67e086b7354e033a2724c3ee39e423284ae2f2988951687af120823a20309a
+ACK received
+vertex confirmed:  4
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+ihHash:  [2 86 162 56 217 150 195 116 133 114 108 95 18 162 179 131 84 14 216 10 13 105 186 37 19 120 20 166 208 23 149 39]
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+ihHash:  [77 106 92 180 201 213 32 43 28 74 223 98 245 146 236 104 54 97 150 128 153 41 199 28 31 43 74 63 97 200 39 20]
+handleIhTx: IHTx sent to CSS
+unlocked session lock in IHTx
+acquired session lock in handleIHTx
+unlocked IH lock in IHTx
+creating IHTx
+:Tip Selection IH
+Possible tips:  [000067fec87e69f4a83b8c961f40e50cf3bcaaf862b9c90294c21910140bda96 000077a26bd34f1ffc403cd9e7bc181322c14ddfab514c9a578a0b8de9edf1a1 0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+Possible tips:  [000077a26bd34f1ffc403cd9e7bc181322c14ddfab514c9a578a0b8de9edf1a1 0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071 000067fec87e69f4a83b8c961f40e50cf3bcaaf862b9c90294c21910140bda96]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+:Tip Selection IH END
+POW IH Start
+ihHash:  [46 245 22 118 182 166 247 11 111 84 64 117 191 118 62 227 255 52 124 5 85 135 83 70 154 14 160 239 77 20 172 19]
+ihHash:  [207 216 163 17 4 19 122 68 230 151 163 224 191 91 30 213 219 82 156 114 127 255 173 46 44 64 214 21 125 214 7 3]
+ihHash:  [39 127 147 7 136 38 35 84 202 19 56 146 116 138 166 152 130 171 143 107 246 141 34 68 247 161 3 195 168 83 6 123]
+ihHash:  [26 157 117 8 141 55 151 18 250 71 25 147 238 37 6 89 1 192 248 209 19 180 145 98 190 46 181 187 197 123 100 40]
+ihHash:  [205 126 183 40 227 72 16 219 1 252 82 203 117 184 245 30 47 87 234 113 74 50 0 16 88 70 9 253 201 188 117 13]
+POW IH End
+created IHTx
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+Updating weights for:  0000062b18948c4022cfa23876419c8f053ebab0af58c9b15f2c39296730495f
+weights updated
+Pruning the DAG
+prune: total  1  transactions
+Pruned  0  transactions
+Broadcasting message to gateways:  []
+Broadcasting to SN:  [150.0.0.17]
+sessionStr:  df67e086b7354e033a2724c3ee39e423284ae2f2988951687af120823a20309a
+ACK received
+vertex confirmed:  5
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+generated 100 records
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+ihHash:  [27 100 8 49 86 224 218 15 248 32 150 131 224 90 56 156 244 221 141 253 134 200 254 152 196 55 105 48 188 153 216 213]
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+ihHash:  [178 214 193 181 187 43 238 186 148 247 33 134 143 59 5 141 125 79 113 76 70 180 96 136 37 177 78 134 11 62 196 131]
+handleIhTx: IHTx sent to CSS
+unlocked session lock in IHTx
+acquired session lock in handleIHTx
+unlocked IH lock in IHTx
+creating IHTx
+:Tip Selection IH
+Possible tips:  [000067fec87e69f4a83b8c961f40e50cf3bcaaf862b9c90294c21910140bda96 000077a26bd34f1ffc403cd9e7bc181322c14ddfab514c9a578a0b8de9edf1a1 0000062b18948c4022cfa23876419c8f053ebab0af58c9b15f2c39296730495f 0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+Possible tips:  [000077a26bd34f1ffc403cd9e7bc181322c14ddfab514c9a578a0b8de9edf1a1 0000062b18948c4022cfa23876419c8f053ebab0af58c9b15f2c39296730495f 0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071 000067fec87e69f4a83b8c961f40e50cf3bcaaf862b9c90294c21910140bda96]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb 0007b1fb51c07d4a795deb6b4ffa0b7b5e6b3199ef99b718a76e1adf7d593fcb]
+:Tip Selection IH END
+POW IH Start
+ihHash:  [51 123 230 19 42 86 224 168 52 145 233 230 123 126 52 144 186 91 193 12 71 82 25 152 46 89 8 49 80 8 129 23]
+ihHash:  [9 51 210 56 146 131 209 146 164 64 132 41 124 155 111 26 161 117 127 152 115 184 154 46 102 36 43 229 177 183 105 93]
+POW IH End
+created IHTx
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+dag acquiring by addtodag
+dag acquired by addtodag
+dag released by addtodag
+Updating weights for:  00000112e1b3a696bdfab4bd19748f070845fbbb63d2a36fb6c5997a8cd46471
+weights updated
+Pruning the DAG
+prune: total  2  transactions
+Pruned  1  transactions
+Broadcasting message to gateways:  []
+Broadcasting to SN:  [150.0.0.17]
+sessionStr:  df67e086b7354e033a2724c3ee39e423284ae2f2988951687af120823a20309a
+ACK received
+vertex confirmed:  6
+*************************************
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+ihHash:  [221 159 210 135 34 5 4 42 236 2 67 241 233 3 235 43 195 44 174 177 181 227 143 90 223 196 82 145 104 169 246 86]
+handleIhTx: chunk sent to css
+handleIhTx: chunk sent to css2
+ihHash:  [171 107 134 87 29 6 3 164 211 203 138 165 116 98 179 68 88 228 75 189 208 31 170 198 221 59 78 203 169 242 122 116]
+handleIhTx: IHTx sent to CSS
+unlocked session lock in IHTx
+acquired session lock in handleIHTx
+unlocked IH lock in IHTx
+creating IHTx
+:Tip Selection IH
+Possible tips:  [00000112e1b3a696bdfab4bd19748f070845fbbb63d2a36fb6c5997a8cd46471 0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071 000067fec87e69f4a83b8c961f40e50cf3bcaaf862b9c90294c21910140bda96 0000062b18948c4022cfa23876419c8f053ebab0af58c9b15f2c39296730495f]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071 0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a]
+Possible tips:  [0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071 000067fec87e69f4a83b8c961f40e50cf3bcaaf862b9c90294c21910140bda96 0000062b18948c4022cfa23876419c8f053ebab0af58c9b15f2c39296730495f 00000112e1b3a696bdfab4bd19748f070845fbbb63d2a36fb6c5997a8cd46471]
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+in get start
+dag acquired by getstart
+dag released by getstart
+dag acquired - 2 by getstart
+dag released - 2 by getstart
+Starts:  [0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071 0000f316d08816cbb86be4869cc2321e839a498e1a1d4cdc3be84fb1edf7d071 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a 00005cd597dfd2d5d2f606c3ca7ef06e9d6d98367769afe236ea0420fe78ae5a]
+:Tip Selection IH END
+POW IH Start
+ihHash:  [113 134 131 34 110 203 156 93 193 73 51 33 205 200 153 188 127 206 79 38 224 213 211 215 78 33 198 53 113 220 209 233]
+generated 100 records
+ihHash:  [148 150 75 120 170 200 216 224 157 211 183 113 8 153 225 240 179 167 7 228 62 47 46 149 68 182 245 66 237 184 100 69]
+ihHash:  [189 156 89 152 177 123 191 127 188 49 42 28 36 132 2 201 15 42 66 172 57 64 109 164 9 121 172 163 182 102 122 101]
+ihHash:  [169 36 40 218 46 222 177 110 165 234 171 136 151 242 52 36 183 202 245 69 35 133 208 121 91 179 169 94 129 212 72 254]
+ihHash:  [0 41 64 128 235 214 32 123 95 138 111 15 180 134 123 60 152 243 235 78 77 156 12 255 169 207 232 37 136 149 96 218]
+ihHash:  [124 57 236 123 207 31 19 185 233 52 188 60 31 195 14 155 115 114 173 246 125 129 86 79 215 206 252 245 23 132 82 198]
+ihHash:  [149 165 120 242 72 238 144 242 15 187 251 151 224 183 22 241 73 131 182 183 160 12 43 221 86 119 184 101 142 30 191 179]
+ihHash:  [94 131 156 58 39 61 66 117 248 130 179 144 191 241 65 188 112 162 166 59 182 239 100 30 77 52 131 177 44 231 38 225]
+generated 100 records
+ihHash:  [29 154 17 194 250 59 65 111 59 185 136 105 24 113 224 109 92 4 45 207 173 193 19 250 225 177 48 25 254 225 209 252]
