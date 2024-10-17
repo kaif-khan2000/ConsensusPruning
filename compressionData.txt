@@ -1,0 +1,166 @@
+PruneListCompression: ( 71 3 4.225352112676056 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 197 4 2.030456852791878 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 324 4 1.2345679012345678 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 452 3 0.6637168141592921 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 576 6 1.0416666666666665 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 688 4 0.5813953488372093 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 820 5 0.6097560975609756 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 951 4 0.4206098843322818 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 1100 4 0.36363636363636365 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 1211 5 0.41288191577208916 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 1346 3 0.22288261515601782 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 1476 3 0.20325203252032523 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 1602 4 0.24968789013732834 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 1734 3 0.17301038062283738 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 1884 6 0.3184713375796179 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 2042 4 0.1958863858961802 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 2178 3 0.13774104683195593 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 2315 6 0.2591792656587473 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 2444 4 0.16366612111292964 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 2557 5 0.19554165037152915 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 2703 4 0.14798372179060304 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 2829 4 0.14139271827500885 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 2962 3 0.1012829169480081 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 3097 3 0.09686793671294801 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 3232 4 0.12376237623762376 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 3348 3 0.08960573476702509 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 3502 4 0.1142204454597373 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 3616 4 0.11061946902654868 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 3733 5 0.13394053040450038 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 3870 4 0.10335917312661498 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 4010 4 0.0997506234413965 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 4148 5 0.1205400192864031 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 4279 4 0.09347978499649451 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 4402 4 0.09086778736937755 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 4534 4 0.08822232024702249 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 4661 5 0.10727311735679039 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 4809 6 0.12476606363069245 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 4944 4 0.08090614886731393 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 5088 5 0.09827044025157233 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 5202 5 0.09611687812379854 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 5324 4 0.07513148009015778 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 5441 3 0.05513692335967653 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 5585 4 0.07162041181736795 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 5714 4 0.07000350017500875 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 5874 4 0.06809669731018045 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 6002 4 0.06664445184938354 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 6145 4 0.06509357200976403 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 6276 4 0.06373486297004462 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 6410 5 0.078003120124805 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 6548 3 0.04581551618814905 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 6671 5 0.0749512816669165 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 6789 5 0.07364854912358226 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 6921 4 0.05779511631267158 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 7046 4 0.05676979846721544 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 7170 5 0.0697350069735007 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 7291 5 0.06857769853243725 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 7441 5 0.0671952694530305 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 7570 3 0.03963011889035667 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 7703 3 0.03894586524730624 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 7841 4 0.05101390128810101 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 7986 5 0.06260956674179814 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 8133 6 0.07377351530800443 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 8259 6 0.0726480203414457 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 8414 3 0.03565486094604231 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 8546 4 0.0468055230517201 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 8668 4 0.046146746654360866 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 8800 4 0.045454545454545456 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 8935 4 0.04476776720761052 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 9064 3 0.03309796999117388 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 9187 6 0.06530967671710025 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 9324 4 0.0429000429000429 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 9481 5 0.05273705305347537 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 9612 4 0.04161464835622139 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 9736 5 0.0513557929334429 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 9882 3 0.030358227079538558 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 10013 5 0.04993508439029262 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 10139 4 0.03945162244797317 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 10281 4 0.03890672113607626 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 10430 5 0.047938638542665384 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 10561 5 0.047344001515008054 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 10699 4 0.03738667165155622 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 10842 4 0.036893562073418186 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 10966 3 0.027357286157213202 %)
+PruneListCompression: Compression successful

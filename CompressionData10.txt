@@ -1,0 +1,9 @@
+PruneListCompression: ( 151 16 10.596026490066226 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 464 15 3.2327586206896552 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 776 15 1.9329896907216495 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 922 10 1.0845986984815619 %)
+PruneListCompression: Compression successful
+PruneListCompression: ( 922 10 1.0845986984815619 %)

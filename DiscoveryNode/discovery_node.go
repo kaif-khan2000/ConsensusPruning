@@ -53,7 +53,7 @@ var total_sn int = 0             // number of storage nodes
 // required for gw_clustering
 var gw_cluster []map[int]string // array of map of clusters (each map contains the Gateway Nodes of a cluster)
 var token_gw []map[int]string   // array of map of tokens (each map contains the tokens of the Gateway Nodes of a cluster)
-var cluster_size_gw int = 8     // number of nodes in a gw_cluster
+var cluster_size_gw int = 16    // number of nodes in a gw_cluster
 var no_of_gw int = -1           // number of gateway nodes
 
 // serialize and deserialize

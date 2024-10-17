@@ -11,6 +11,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"math/rand"
 )
 
 type Transaction struct {
@@ -56,8 +58,9 @@ type DAG struct {
 }
 
 var (
-	bitLen        = 16
-	thresholdTime = (5 * time.Minute).Nanoseconds()
+	bitLen         = 16
+	thresholdTime  = (5 * time.Minute).Nanoseconds()
+	adamIterations = 5
 )
 
 // serializes the object to a byte array
@@ -68,6 +71,86 @@ func Serialize(p interface{}) ([]byte, error) {
 // deserializes the byte array to an object
 func Deserialize(data string, p any) error {
 	return json.Unmarshal(json.RawMessage(data), p)
+}
+
+func getNeighbourWithProbability(dag *DAG, neighbours []string) string {
+	// get the weight of the neighbours
+	weights := make([]int, len(neighbours))
+	totalWeight := 0
+	for i, neighbour := range neighbours {
+		dag.Mux.Lock()
+		if neighbourVertex, ok := dag.Graph[neighbour]; ok {
+			dag.Mux.Unlock()
+			weights[i] = neighbourVertex.Weight
+			totalWeight += neighbourVertex.Weight
+		} else {
+			dag.Mux.Unlock()
+		}
+	}
+
+	// select a random neighbour
+	// fmt.Println("PruneListCompression: Total Weight: ", totalWeight)
+	random := rand.Intn(totalWeight+1) - 1
+	// select the neighbour
+	selectedNeighbour := ""
+	currWeight := 0
+	for i, weight := range weights {
+		currWeight += weight
+		if random < currWeight {
+			selectedNeighbour = neighbours[i]
+			break
+		}
+	}
+
+	return selectedNeighbour
+}
+
+// Random walk of bitLen size path from a node backwards
+func RandomWalk(dag *DAG, hash string, traverseLen int, visited map[string]int) {
+	if hash == "" || traverseLen == 0 {
+		return
+	}
+
+	visited[hash] += 1
+	// get the vertex
+	dag.Mux.Lock()
+	if vertex, ok := dag.Graph[hash]; ok {
+		dag.Mux.Unlock()
+
+		neighbours := vertex.Neighbours
+		if len(neighbours) == 0 {
+			return
+		}
+		selectedNeighbour := getNeighbourWithProbability(dag, neighbours)
+
+		RandomWalk(dag, selectedNeighbour, traverseLen-1, visited)
+	} else {
+		dag.Mux.Unlock()
+	}
+
+}
+
+// find the adamPoint
+func findAdamPoint(dag *DAG, pruneList []string, iterations int) string {
+	// find the adam point
+	visited := make(map[string]int)
+	for _, hash := range pruneList {
+		for i := 0; i < iterations; i++ {
+			RandomWalk(dag, hash, bitLen, visited)
+		}
+	}
+
+	// find the node with max visits
+	maxVisits := 0
+	adamPoint := ""
+	for hash, visits := range visited {
+		if visits > maxVisits {
+			maxVisits = visits
+			adamPoint = hash
+		}
+	}
+
+	return adamPoint
 }
 
 // prune the DAG (from GW's data_handler)
@@ -160,6 +243,15 @@ func GeneratePruneList(dag *DAG) []string {
 		fmt.Println("PruneListCompression: Compression failed")
 	}
 
+	adamPoint := findAdamPoint(dag, compressedPruneList, adamIterations)
+	fmt.Println("Adam Point: ", adamPoint)
+
+	if verifyCompression(dag, compressedPruneList, []string{adamPoint}) {
+		fmt.Println("PruneListCompression: Adampoint Compression successful")
+	} else {
+		fmt.Println("PruneListCompression: Adampoint Compression failed")
+	}
+
 	return compressedPruneList
 }
 
@@ -212,13 +304,14 @@ func verifyCompression(dag *DAG, pruneList []string, compressedPruneList []strin
 	generateChildren(dag, pruneList, compressedPruneList, decompressedPruneMap)
 
 	// check if all the elements from the prune list can be reached from the compressed prune list
+	missed := 0
 	for _, hash := range pruneList {
 		if _, ok := decompressedPruneMap[hash]; !ok {
-			return false
+			missed++
 		}
 	}
-
-	return true
+	fmt.Println("PruneListCompression: Missed: ", missed, " Total: ", len(pruneList))
+	return missed == 0
 }
 
 func updateWeightOfChildren(dag *DAG, children map[string]bool) {
@@ -372,7 +465,7 @@ func AddToDAG(vertex Vertex, dag *DAG) {
 func CreateVertex(transaction Transaction, privateKey *ecdsa.PrivateKey) Vertex {
 	var vertex Vertex
 	vertex.Tx = transaction
-	vertex.Weight = 0
+	vertex.Weight = 1
 	vertex.Neighbours = make([]string, 0)
 	data, _ := Serialize(transaction)
 	vertex.Signature = crypt.Sign(privateKey, data)

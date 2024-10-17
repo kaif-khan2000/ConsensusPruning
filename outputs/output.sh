@@ -1,6 +1,14 @@
 docker logs -f iotbc_discovery_1 > discovery.txt
 docker logs -f iotbc_storage0_1 > sn0.txt
 docker logs -f iotbc_storage1_1 > sn1.txt
+docker logs -f iotbc_storage2_1 > sn2.txt
 docker logs -f iotbc_gateway0_1 > gw0.txt
 docker logs -f iotbc_gateway1_1 > gw1.txt
 docker logs -f iotbc_gateway2_1 > gw2.txt
+docker logs -f iotbc_gateway3_1 > gw3.txt
+docker logs -f iotbc_gateway4_1 > gw4.txt
+docker logs -f iotbc_gateway5_1 > gw5.txt
+docker logs -f iotbc_gateway6_1 > gw6.txt
+docker logs -f iotbc_gateway7_1 > gw7.txt
+docker logs -f iotbc_gateway8_1 > gw8.txt
+docker logs -f iotbc_gateway9_1 > gw9.txt

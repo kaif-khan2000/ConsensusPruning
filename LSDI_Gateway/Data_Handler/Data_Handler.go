@@ -261,7 +261,7 @@ func McmcTipSelect(dag *DAG, alpha int, threshold int) ([32]byte, [32]byte) {
 
 	// get all possible tips
 	tips := getPossibleTips(dag, threshold)
-	fmt.Println("Possible tips: ", tips)
+	// fmt.Println("Possible tips: ", tips)
 	// find the start of each possible tip
 	starts := make([]string, 0)
 
@@ -278,7 +278,7 @@ func McmcTipSelect(dag *DAG, alpha int, threshold int) ([32]byte, [32]byte) {
 		}
 	}
 
-	fmt.Println("Starts: ", starts)
+	// fmt.Println("Starts: ", starts)
 
 	// randomly select one start and keep on moving towards the tip using mcmc algorithm
 	// randomly select a start
@@ -469,7 +469,7 @@ func UpdateWeights(dag *DAG, h string) {
 	dag.Mux.Lock()
 	// vertices := UpdateWeightsHandler(dag, h)
 	vertices := UpdateWeightsHandlerIterative(dag, h)
-	fmt.Println("update:", vertices)
+	// fmt.Println("update:", vertices)
 	fmt.Println("weights updated")
 	for a, v := range vertices {
 		v.Weight++
@@ -600,7 +600,7 @@ func CreateMerkleTx(privateKey *ecdsa.PrivateKey, dag *DAG, merkleHash [32]byte,
 func PrioritySelection(dag *DAG, threshold int) ([32]byte, [32]byte) {
 	tips := getPossibleTips(dag, threshold)
 	fmt.Println("Possible tips Len: ", len(tips))
-	fmt.Println("Possible tips: ", tips)
+	// fmt.Println("Possible tips: ", tips)
 	//select 2 tips probabilistically (equal probability)
 	min := 0
 	max := len(tips)
