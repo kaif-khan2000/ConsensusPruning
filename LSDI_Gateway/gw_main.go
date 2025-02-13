@@ -163,7 +163,7 @@ func demo() {
 	// create keys for the gateway
 	gwPrivateKey, gwPublicKey = ckm.GenerateKeyPair()
 	serPubKey, _ := json.Marshal(gwPublicKey)
-	fmt.Println("Orphan Count: gwPublicKey: ", gwPublicKey)
+	fmt.Println("Orphan Count: gwPublicKey:> ", gwPublicKey)
 	fmt.Println("Orphan Count: ", gwPublicKey.X, gwPublicKey.Y)
 	fmt.Println("Orphan Count: ", string(serPubKey))
 	// sessionExpiry = 3
