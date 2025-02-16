@@ -57,6 +57,20 @@ type DAG struct {
 	RecentTXs []int64
 }
 
+// // sidechain
+// type SideChain struct {
+// 	Hash      [32]byte
+// 	PrevHash  [32]byte
+// 	Timestamp int64
+// 	Data      []byte
+// 	Signature []byte
+// }
+
+type AdamPointState struct {
+	AdamPoint [32]byte
+	PruneList []int
+}
+
 var (
 	bitLen         = 16
 	thresholdTime  = (5 * time.Minute).Nanoseconds()
@@ -231,6 +245,128 @@ func removeChildrenFromPruneList(dag *DAG, pruneList []string) []string {
 
 }
 
+func GetAdamPointState(pruneList []string) AdamPointState {
+	// first value of pruneList is the adam point hash
+	// create an array of bytes where first 32 bytes are the adam point hash
+	// and the rest of the strings in prunelist are binary string convert it to int of 2 bytes and append it to the array
+
+	// first 32 bytes are the adam point hash
+	adamPoint, _ := hex.DecodeString(pruneList[0])
+
+	var adamPointArray [32]byte
+	copy(adamPointArray[:], adamPoint)
+
+	adamPointState := AdamPointState{AdamPoint: adamPointArray}
+
+	// rest of the strings in prunelist are binary string convert it to int of 2 bytes and append it to the array
+	for i := 1; i < len(pruneList); i++ {
+		// convert binary string to int
+		// ex: if the string is "101" then the int in binary should be 00110000000000101 (first 4 bytes are length of binary string) and rest is the number
+		binaryString := pruneList[i]
+		binaryLen := len(binaryString)
+		binaryLen = binaryLen << 27
+		binaryInt := 0
+		for i, bit := range binaryString {
+			if bit == '1' {
+				binaryInt |= 1 << (len(binaryString) - i - 1)
+			}
+		}
+		binaryInt |= binaryLen
+		adamPointState.PruneList = append(adamPointState.PruneList, binaryInt)
+	}
+
+	return adamPointState
+
+}
+
+func adamPathGeneration(dag *DAG, currNode string, path string, pathSet map[string]string, compressedPruneList map[string]bool) {
+	if len(path) >= bitLen || currNode == "" {
+		return
+	}
+	// if the currNode in pathSet then return
+	if _, ok := pathSet[currNode]; ok {
+		return
+	}
+
+	// if currNode in compressedPruneList then add to pathSet
+	if _, ok := compressedPruneList[currNode]; ok {
+		pathSet[currNode] = path
+	}
+
+	// get the vertex
+	dag.Mux.Lock()
+	if vertex, ok := dag.Graph[currNode]; ok {
+		dag.Mux.Unlock()
+		// get the children of the vertex
+		leftTip := hex.EncodeToString(vertex.Tx.LeftTip[:])
+		rightTip := hex.EncodeToString(vertex.Tx.RightTip[:])
+
+		adamPathGeneration(dag, leftTip, path+"0", pathSet, compressedPruneList)
+		adamPathGeneration(dag, rightTip, path+"1", pathSet, compressedPruneList)
+	} else {
+		dag.Mux.Unlock()
+	}
+
+}
+
+func getTransactionFromAdamPoint(dag *DAG, adamPoint string, path string) string {
+	if path == "" {
+		return adamPoint
+	}
+
+	currNode := adamPoint
+	for i := 0; i < len(path); i++ {
+		dag.Mux.Lock()
+		if vertex, ok := dag.Graph[currNode]; ok {
+			dag.Mux.Unlock()
+			if path[i] == '0' {
+				currNode = hex.EncodeToString(vertex.Tx.LeftTip[:])
+			} else {
+				currNode = hex.EncodeToString(vertex.Tx.RightTip[:])
+			}
+		} else {
+			dag.Mux.Unlock()
+		}
+	}
+
+	return currNode
+}
+
+func aprCompression(dag *DAG, adamPoint string, compressedPruneList []string) []string {
+	pathSet := make(map[string]string)
+	compressedPruneListMap := make(map[string]bool)
+	for _, hash := range compressedPruneList {
+		compressedPruneListMap[hash] = true
+	}
+	adamPathGeneration(dag, adamPoint, "", pathSet, compressedPruneListMap)
+
+	// verify the compression
+	missed := 0
+	for _, hash := range compressedPruneList {
+		if _, ok := pathSet[hash]; !ok {
+			missed++
+		}
+	}
+
+	// also check if the paths reach the transaction
+	notReached := 0
+	for hash, path := range pathSet {
+		txHash := getTransactionFromAdamPoint(dag, adamPoint, path)
+		if txHash != hash {
+			notReached++
+		}
+	}
+
+	fmt.Println("aprCompression: Missed: ", missed, " Total: ", len(compressedPruneList), "Unreachable: ", notReached)
+
+	aprList := make([]string, 0)
+	for _, path := range pathSet {
+		aprList = append(aprList, path)
+	}
+
+	return aprList
+}
+
 func GeneratePruneList(dag *DAG) []string {
 	// get the list of transactions to be pruned
 	pruneList := getTxToBePruned(dag)
@@ -252,7 +388,12 @@ func GeneratePruneList(dag *DAG) []string {
 		fmt.Println("PruneListCompression: Adampoint Compression failed")
 	}
 
-	return compressedPruneList
+	adamPointCompressedPruneList := aprCompression(dag, adamPoint, compressedPruneList)
+
+	// add adam point to the prune list at the start of the list
+	adamPointCompressedPruneList = append([]string{adamPoint}, adamPointCompressedPruneList...)
+
+	return adamPointCompressedPruneList
 }
 
 func generateChildren(dag *DAG, pruneList []string, compressedPruneList []string, decompressedPruneMap map[string]bool) {

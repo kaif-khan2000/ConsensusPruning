@@ -330,7 +330,7 @@ func Pow(transaction *Transaction, difficulty int) {
 
 	hexHash := hex.EncodeToString(transaction.Hash[:])
 	if hexHash[:difficulty] != strings.Repeat("0", difficulty) {
-		fmt.Println("Orphan Count: POW verification failed: ", hexHash)
+		fmt.Println("POW verification failed: ", hexHash)
 	}
 
 }

@@ -2,6 +2,7 @@ package P2P_Manager
 
 import (
 	dh "StorageNode/Data_Handler"
+	sc "StorageNode/SC_Handler"
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
@@ -63,6 +64,11 @@ type tx_pool_set struct {
 	m           sync.Mutex
 }
 
+type block_pool_set struct {
+	Block_pool_set map[string]bool
+	m              sync.Mutex
+}
+
 var edges Neighbours
 var nodes_in_cluster int
 var myip_address string
@@ -72,13 +78,19 @@ var cur_pointer int
 var connections map[int]con_info
 var orphan_count int
 var time1 time.Time
+var sc_block_pool_arr []string
+var sc_block_pool block_pool_set
+var block_pool_count int
 
 func init() {
 	time1 = time.Now()
 	fmt.Println("start of dh.")
 }
 
-var dag *dh.DAG
+var (
+	dag   *dh.DAG
+	chain *sc.SideChain
+)
 
 func Serialize(p interface{}) ([]byte, error) {
 	return json.Marshal(p)
@@ -165,6 +177,31 @@ func duplicate_transaction(data dh.Transaction) bool {
 		tx_set.m.Unlock()
 		return true
 	}
+}
+
+func duplicateBlock(block sc.SideChainBlock) bool {
+	block_sha := block.Hash
+	sc_block_pool.m.Lock()
+	_, flag := sc_block_pool.Block_pool_set[string(block_sha[:])]
+	sc_block_pool.m.Unlock()
+	if flag {
+		fmt.Println("Duplicate block", block)
+		return false
+	}
+	cur_size := len(sc_block_pool.Block_pool_set)
+	if cur_size == 100 {
+		sc_block_pool.m.Lock()
+		delete(sc_block_pool.Block_pool_set, sc_block_pool_arr[block_pool_count])
+		sc_block_pool.m.Unlock()
+		sc_block_pool_arr[block_pool_count] = string(block_sha[:])
+		block_pool_count = (block_pool_count + 1) % 100
+	} else {
+		sc_block_pool_arr = append(sc_block_pool_arr, string(block_sha[:]))
+		sc_block_pool.m.Lock()
+		sc_block_pool.Block_pool_set[string(block_sha[:])] = true
+		sc_block_pool.m.Unlock()
+	}
+	return true
 }
 
 func ping_neighbours(data Neighbours) {
@@ -564,9 +601,53 @@ func handle_message(rcv_data send_data, conn net.Conn, err error) {
 			Send_ACK(conn, data)
 
 		}
+	} else if rcv_data.Msg_type == "SC_BLOCK" {
+		fmt.Println("SC_BLOCK from SN ", rcv_data.Data)
+		// still to write the code for SC_BLOCK
+
+		var block sc.SideChainBlock
+		err = Deserialize(rcv_data.Data, &block)
+		if err != nil {
+			fmt.Println("Error in deserializing transaction - p2p sn")
+		}
+
+		if !duplicateBlock(block) {
+			fmt.Println("This is duplicate packet from block broadcast")
+		} else {
+			//verify the block
+			if !block.VerifyBlock() {
+				fmt.Println("Error in verifying the block")
+			} else {
+				//add the block to the side chain
+				sc.AddToSideChain(chain, &block)
+				//broadcast the block
+				BroadcastSCBlock(block)
+			}
+		}
 	} else {
 		fmt.Println("Error in message type", rcv_data, rcv_data.Msg_type)
 	}
+}
+
+func BroadcastSCBlock(block sc.SideChainBlock) {
+
+	var message send_data
+	message.Msg_type = "SC_BLOCK"
+
+	// serialize the prune list
+	data, _ := Serialize(block)
+	message.Data = string(data)
+	message.Own_nodeno = edges.Own_nodeno
+	message.Own_token = edges.Own_token
+	message.Msg_no = -1
+	message.Routing_token = ""
+	gn_broadcast(message)
+	message.Msg_no = len(edges.Gn)
+	adj_broadcast(message)
+	message.Msg_no = 0
+	routing_broadcast(message, "")
+
+	// also change line 569
 }
 
 func broadcast_transaction(tx_brod string, rcv_from_ip string) {
@@ -585,8 +666,9 @@ func broadcast_transaction(tx_brod string, rcv_from_ip string) {
 	routing_broadcast(tx_packet, "")
 }
 
-func StorageNode(dag_t *dh.DAG) {
+func StorageNode(dag_t *dh.DAG, chain_t *sc.SideChain) {
 	dag = dag_t
+	chain = chain_t
 	//start of main function
 	//tx_pool_set is map of transactions which are incoming
 	tx_set.m.Lock()

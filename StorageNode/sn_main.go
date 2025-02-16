@@ -4,6 +4,7 @@ import (
 	crypt "StorageNode/Crypt_key_Manager"
 	dh "StorageNode/Data_Handler"
 	p2p "StorageNode/P2P_Manager"
+	sc "StorageNode/SC_Handler"
 	"bufio"
 	"crypto/ecdsa"
 	"encoding/hex"
@@ -22,6 +23,8 @@ import (
 
 var (
 	dag          dh.DAG
+	chain        sc.SideChain
+	aprBucket    []dh.AdamPointState
 	gwPrivateKey *ecdsa.PrivateKey
 	gwPublicKey  ecdsa.PublicKey
 )
@@ -109,11 +112,106 @@ func getDagImage(c *gin.Context) {
 	c.File("index.html")
 }
 
+// get the image of the dag
+func getChainImage(c *gin.Context) {
+	// sort the dag graph by timestamp
+	chain.Mux.Lock()
+	chainGraph := chain.Chain
+	chain.Mux.Unlock()
+	keys := make([]string, 0, len(chainGraph))
+	for k := range chainGraph {
+		keys = append(keys, k)
+	}
+
+	// sort the keys
+	sort.SliceStable(keys, func(i, j int) bool {
+		return chainGraph[keys[i]].Timestamp < chainGraph[keys[j]].Timestamp
+	})
+
+	keyMap := make(map[string]string)
+	strHash := func(c string) string {
+		return c
+	}
+	// create the dag image
+	g := graph.New(strHash, graph.Directed())
+	for i := range keys {
+		name := strconv.Itoa(i + 1)
+		_ = g.AddVertex(name)
+		keyMap[keys[i]] = name
+	}
+
+	// add the edges
+	dag.Mux.Lock()
+	for key, value := range keyMap {
+		next := chainGraph[key].PrevHash
+		nextNode := hex.EncodeToString(next[:])
+		v1 := keyMap[nextNode]
+		err := g.AddEdge(value, v1, graph.EdgeWeight(1))
+		if err != nil {
+			if err.Error() != "target vertex 0: vertex not found" {
+				fmt.Println("Error in adding the edge: ", err.Error())
+			}
+		}
+	}
+	dag.Mux.Unlock()
+
+	file, err := os.Create("image.gv")
+	_ = draw.DOT(g, file)
+	fmt.Println("Graph created,", file, err)
+
+	_, err = exec.Command("dot", "-Tpng", "image.gv", "-o", "pics/image.png").Output()
+	if err != nil {
+		fmt.Println("Error in creating the image: ", err.Error())
+	}
+	img, err := os.Open("pics/image.png")
+	if err != nil {
+		fmt.Println("Error in opening the image: ", err.Error())
+	}
+	defer img.Close()
+	imgInfo, _ := img.Stat()
+	var size int64 = imgInfo.Size()
+	imgBytes := make([]byte, size)
+	// read image into bytes
+	buffer := bufio.NewReader(img)
+	_, err = buffer.Read(imgBytes)
+	if err != nil {
+		fmt.Println("Error in reading the image: ", err.Error())
+	}
+
+	// conert to base64
+	// imgBase64 := base64.StdEncoding.EncodeToString(imgBytes)
+	// render the image
+	c.File("index.html")
+}
+
 func generatePruningInformation() {
 	for {
 		time.Sleep(10 * time.Minute)
 		pruneList := dh.GeneratePruneList(&dag)
 		fmt.Println("PruneList: ", pruneList)
+
+		// compress the prune list
+		var adamPointState dh.AdamPointState
+		adamPointState = dh.GetAdamPointState(pruneList)
+		fmt.Println("adamPointState: ", adamPointState)
+
+		// create a sc block
+		adamPointStateBytes, _ := dh.Serialize(adamPointState)
+		scBlock := sc.CreateSideChainBlock(string(adamPointStateBytes), time.Now().Unix(), gwPrivateKey)
+		scBlock.Pow()
+		scBlock.SignBlock(gwPrivateKey)
+
+		// check if a new block has been added to the side chain
+		chain.Mux.Lock()
+
+		if chain.LatestBlockHash != hex.EncodeToString(scBlock.Hash[:]) {
+			chain.Mux.Unlock()
+			continue
+		}
+		chain.Mux.Unlock()
+
+		sc.AddToSideChain(&chain, scBlock)
+		p2p.BroadcastSCBlock(*scBlock)
 	}
 }
 
@@ -171,6 +269,7 @@ func gwHTTPServer() {
 	router.POST("/getIH", getIH)
 	router.GET("/getMH/:txId", getMH)
 	router.GET("/getDagImage", getDagImage)
+	router.GET("/getChainImage", getChainImage)
 	router.Run("0.0.0.0:4000")
 }
 
@@ -185,6 +284,8 @@ func main() {
 	// Init DAG
 	dh.InitDag(&dag, genesis, gwPrivateKey)
 
+	chain = *sc.InitSideChain()
+
 	go gwHTTPServer()
 	// // inserting genesis
 	// err = dbh.InsertGenesisTx(db, genesisTx)
@@ -193,7 +294,7 @@ func main() {
 	// 	return
 	// }
 
-	go p2p.StorageNode(&dag)
+	go p2p.StorageNode(&dag, &chain)
 	fmt.Println("Storage node started successfully")
 
 	generatePruningInformation()
