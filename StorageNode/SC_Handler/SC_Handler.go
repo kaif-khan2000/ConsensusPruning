@@ -59,9 +59,13 @@ func SerializeForPow(block *SideChainBlock) ([]byte, error) {
 	})
 }
 
-func CreateSideChainBlock(data string, timestamp int64, privateKey *ecdsa.PrivateKey) *SideChainBlock {
+func CreateSideChainBlock(data string, prevHash string, timestamp int64, privateKey *ecdsa.PrivateKey) *SideChainBlock {
 
-	block := &SideChainBlock{PrevHash: prevHash, Timestamp: timestamp, Data: data}
+	bytes, _ := hex.DecodeString(prevHash)
+	var prevHashBytes [32]byte
+	copy(prevHashBytes[:], bytes)
+
+	block := &SideChainBlock{PrevHash: prevHashBytes, Timestamp: timestamp, Data: data}
 	copy(block.From[:], ckm.SerializePublicKey(privateKey.PublicKey))
 	block.Difficulty = difficulty
 	return block

@@ -10,5 +10,6 @@ RUN apt-get update && apt-get install -y \
 COPY ./LSDI_Gateway ./
 COPY ./image.png ./pics/
 COPY ./index.html ./
+COPY ./config.json ./
 
 CMD ["./LSDI_Gateway"]

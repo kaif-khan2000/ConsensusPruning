@@ -385,7 +385,8 @@ func gn_broadcast(rcv_data send_data) {
 			con := Con.Conn
 			// print connections to whom sending data
 			fmt.Println("SN gossip message send ", edges.Gn_order[i])
-			data_bytes, _ := Serialize(send_data{edges.Own_token, edges.Own_nodeno, rcv_data.Data, "TRANSACTION", i, ""})
+			// data_bytes, _ := Serialize(send_data{edges.Own_token, edges.Own_nodeno, rcv_data.Data, "TRANSACTION", i, ""})
+			data_bytes, _ := Serialize(send_data{edges.Own_token, edges.Own_nodeno, rcv_data.Data, rcv_data.Msg_type, i, ""})
 			//add @ to the start of the message
 			data_bytes = append([]byte("@"), data_bytes...)
 			_, err_gn := con.Write([]byte(data_bytes))
@@ -411,7 +412,8 @@ func adj_broadcast(rcv_data send_data) {
 		} else {
 			con := Con.Conn
 			vtx := rcv_data.Data
-			data, _ := Serialize(send_data{edges.Own_token, edges.Own_nodeno, vtx, "TRANSACTION", rcv_data.Msg_no + 1, ""})
+			// data, _ := Serialize(send_data{edges.Own_token, edges.Own_nodeno, vtx, "TRANSACTION", rcv_data.Msg_no + 1, ""})
+			data, _ := Serialize(send_data{edges.Own_token, edges.Own_nodeno, vtx, rcv_data.Msg_type, rcv_data.Msg_no + 1, ""})
 			//add @ to the start of the message
 			data = append([]byte("@"), data...)
 			_, err_adj := con.Write([]byte(data))
@@ -442,7 +444,8 @@ func routing_broadcast(rcv_data send_data, rcv_from_ip string) {
 				}
 				Con := con.Conn
 				msg_no := 0
-				data_bytes, _ := Serialize(send_data{edges.Routing_nodes_token[i], edges.Own_nodeno, rcv_data.Data, "ROUTING", msg_no, edges.Own_token})
+				// data_bytes, _ := Serialize(send_data{edges.Routing_nodes_token[i], edges.Own_nodeno, rcv_data.Data, "ROUTING", msg_no, edges.Own_token})
+				data_bytes, _ := Serialize(send_data{edges.Routing_nodes_token[i], edges.Own_nodeno, rcv_data.Data, rcv_data.Msg_type, msg_no, edges.Own_token})
 				//add @ to the start of the message
 				data_bytes = append([]byte("@"), data_bytes...)
 				_, err := Con.Write([]byte(data_bytes))
@@ -674,6 +677,12 @@ func StorageNode(dag_t *dh.DAG, chain_t *sc.SideChain) {
 	tx_set.m.Lock()
 	tx_set.Tx_pool_set = make(map[string]bool)
 	tx_set.m.Unlock()
+
+	//sc_block_pool is map of blocks which are incoming
+	sc_block_pool.m.Lock()
+	sc_block_pool.Block_pool_set = make(map[string]bool)
+	sc_block_pool.m.Unlock()
+	
 	//connections is map of connections with other nodes
 	connections = make(map[int]con_info)
 	//fixed nodes in cluster

@@ -560,6 +560,76 @@ func Prune(dag *DAG, threshold int) {
 	fmt.Println("Pruned ", count, " old transactions")
 }
 
+func fetchTxWithReference(adamPoint string, reference string, dag *DAG) string {
+	// from adampoint, for each char of reference move left if char is 0 and right if reference is 1
+	currVertex := dag.Graph[adamPoint]
+	newNodeHash := ""
+	ok := false
+	for _, ref := range reference {
+		if ref == '0' {
+			newNodeHash = hex.EncodeToString(currVertex.Tx.LeftTip[:])
+		} else {
+			newNodeHash = hex.EncodeToString(currVertex.Tx.RightTip[:])
+		}
+		currVertex, ok = dag.Graph[newNodeHash]
+		if !ok {
+			return ""
+		}
+	}
+
+	return newNodeHash
+
+}
+
+func deleteTxAndChildren(txHash string, dag *DAG) {
+	// delete the tx and all its children with recursive calls
+	// get the vertex
+	dag.Mux.Lock()
+	vertex, ok := dag.Graph[txHash]
+	if !ok {
+		dag.Mux.Unlock()
+		return
+	}
+	dag.Mux.Unlock()
+	// delete the children left and right tips if exist in the graph
+	leftTip := hex.EncodeToString(vertex.Tx.LeftTip[:])
+	rightTip := hex.EncodeToString(vertex.Tx.RightTip[:])
+
+	if _, ok := dag.Graph[leftTip]; ok {
+		deleteTxAndChildren(leftTip, dag)
+	}
+
+	if _, ok := dag.Graph[rightTip]; ok {
+		deleteTxAndChildren(rightTip, dag)
+	}
+
+	// delete the vertex
+	dag.Mux.Lock()
+	delete(dag.Graph, txHash)
+	dag.Mux.Unlock()
+
+	fmt.Println("deleted: ", txHash)
+
+}
+
+func AdamPointPrune(adamPoint string, referenceList []string, dag *DAG) {
+	// check if adamPoint is in the dag
+	_, ok := dag.Graph[adamPoint]
+	if !ok {
+		return
+	}
+	// for each reference in the reference list, check if it is in the dag and retrieve its hash
+	for _, reference := range referenceList {
+		txHash := fetchTxWithReference(adamPoint, reference, dag)
+
+		fmt.Println("adampointprune: ", reference, " : ", txHash)
+
+		if txHash != "" {
+			deleteTxAndChildren(txHash, dag)
+		}
+	}
+}
+
 func Ack_orphan_checker(txHash string, dag *DAG) (bool, Vertex) {
 	flag := false
 	fmt.Println("dag acquiring by ack_orphan_checker")
@@ -878,9 +948,9 @@ func AddVtxToDAG(vertex Vertex, dag *DAG, privateKey *ecdsa.PrivateKey) {
 	totalTx += 1
 	// update weight of the vertices
 
-	UpdateWeights(dag, hash)
+	// UpdateWeights(dag, hash)
 	// prune the dag
-	Prune(dag, pruneThreshold)
+	// Prune(dag, pruneThreshold)
 }
 
 // Add the vertex to the dag without verifying the vertex
@@ -915,9 +985,9 @@ func UploadToDAG(vtx Vertex, dag *DAG) {
 	fmt.Println("dag released by upload")
 	totalTx += 1
 	// update weight of the vertices
-	UpdateWeights(dag, hash)
+	// UpdateWeights(dag, hash)
 	// prune the dag
-	Prune(dag, pruneThreshold)
+	// Prune(dag, pruneThreshold)
 }
 
 func InitDag(dag *DAG) {

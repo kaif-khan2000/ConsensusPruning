@@ -264,7 +264,7 @@ func GetAdamPointState(pruneList []string) AdamPointState {
 		// ex: if the string is "101" then the int in binary should be 00110000000000101 (first 4 bytes are length of binary string) and rest is the number
 		binaryString := pruneList[i]
 		binaryLen := len(binaryString)
-		binaryLen = binaryLen << 27
+		binaryLen = binaryLen << 28
 		binaryInt := 0
 		for i, bit := range binaryString {
 			if bit == '1' {

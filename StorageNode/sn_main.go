@@ -197,14 +197,17 @@ func generatePruningInformation() {
 
 		// create a sc block
 		adamPointStateBytes, _ := dh.Serialize(adamPointState)
-		scBlock := sc.CreateSideChainBlock(string(adamPointStateBytes), time.Now().Unix(), gwPrivateKey)
+		scBlock := sc.CreateSideChainBlock(string(adamPointStateBytes), chain.LatestBlockHash, time.Now().Unix(), gwPrivateKey)
 		scBlock.Pow()
+
+		fmt.Println("adamPointState: pow done..........")
 		scBlock.SignBlock(gwPrivateKey)
 
 		// check if a new block has been added to the side chain
 		chain.Mux.Lock()
 
-		if chain.LatestBlockHash != hex.EncodeToString(scBlock.Hash[:]) {
+		if chain.LatestBlockHash != hex.EncodeToString(scBlock.PrevHash[:]) {
+			fmt.Println("adamPointState: useless - ", chain.LatestBlockHash, hex.EncodeToString(scBlock.PrevHash[:]))
 			chain.Mux.Unlock()
 			continue
 		}
@@ -212,6 +215,9 @@ func generatePruningInformation() {
 
 		sc.AddToSideChain(&chain, scBlock)
 		p2p.BroadcastSCBlock(*scBlock)
+		strChain, _ := dh.Serialize(chain)
+
+		fmt.Println("adamPointState: block added to the side chain..........", string(strChain))
 	}
 }
 
@@ -261,6 +267,29 @@ func getMH(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, hash)
 }
 
+func getLatestSCBlock(c *gin.Context) {
+	chain.Mux.Lock()
+	latestBlockHash := chain.LatestBlockHash
+	latestBlock := chain.Chain[latestBlockHash]
+	chain.Mux.Unlock()
+	c.IndentedJSON(http.StatusOK, latestBlock)
+}
+
+func getLatestPruningList(c *gin.Context) {
+	chain.Mux.Lock()
+	latestBlockHash := chain.LatestBlockHash
+	latestBlock := chain.Chain[latestBlockHash]
+	chain.Mux.Unlock()
+	pruningListString := latestBlock.Data
+	if pruningListString == "Genesis Block" {
+		c.IndentedJSON(http.StatusOK, pruningListString)
+		return
+	}
+	var pruningList dh.AdamPointState
+	dh.Deserialize(pruningListString, &pruningList)
+	c.IndentedJSON(http.StatusOK, pruningList)
+}
+
 func gwHTTPServer() {
 	// gin server
 	router := gin.Default()
@@ -270,6 +299,8 @@ func gwHTTPServer() {
 	router.GET("/getMH/:txId", getMH)
 	router.GET("/getDagImage", getDagImage)
 	router.GET("/getChainImage", getChainImage)
+	router.GET("/getLatestSCBlock", getLatestSCBlock)
+	router.GET("/getLatestPruneList", getLatestPruningList)
 	router.Run("0.0.0.0:4000")
 }
 
