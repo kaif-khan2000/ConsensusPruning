@@ -134,6 +134,7 @@ func getDagImage(c *gin.Context) {
 
 func simulateTransactions() {
 	fmt.Println("Running the simulation")
+	time1 := time.Now()
 	for {
 		fmt.Println("new transaction creation")
 		rand.Seed(time.Now().UnixNano())
@@ -142,6 +143,9 @@ func simulateTransactions() {
 		transaction := dh.CreateTx(gwPrivateKey, &dag, tempHash)
 		vertex := dh.AddToDAG(transaction, &dag, gwPrivateKey)
 		p2p.BroadcastVtx(vertex)
+		time2 := time.Now()
+		fmt.Println("transactionRate: ", time2.Sub(time1), " seconds")
+		time1 = time2
 	}
 }
 

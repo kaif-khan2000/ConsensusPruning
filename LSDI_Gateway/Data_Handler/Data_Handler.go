@@ -105,7 +105,7 @@ func init() {
 	pruneThreshold = 10
 	startThreshold = 5
 	powDifficulty = 5
-	tipThreshold = 1
+	tipThreshold = 2
 	totalTx = 0
 	fmt.Println("start of dh.")
 }
@@ -628,6 +628,7 @@ func AdamPointPrune(adamPoint string, referenceList []string, dag *DAG) {
 			deleteTxAndChildren(txHash, dag)
 		}
 	}
+	fmt.Println("SizeInfo: ", len(dag.Graph))
 }
 
 func Ack_orphan_checker(txHash string, dag *DAG) (bool, Vertex) {
@@ -792,11 +793,13 @@ func AddToDAG(transaction Transaction, dag *DAG, privateKey *ecdsa.PrivateKey) V
 
 		dag.Graph[rightTip] = tip
 	}
-	UpdateWeightOfChildren(dag, leftTip, rightTip)
+	// UpdateWeightOfChildren(dag, leftTip, rightTip)
 
 	dag.Mux.Unlock()
 	fmt.Println("dag released by addtodag")
 	totalTx += 1
+
+	UpdateWeights(dag, hash)
 	return vertex
 }
 

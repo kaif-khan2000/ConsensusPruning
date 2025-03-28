@@ -185,8 +185,9 @@ func getChainImage(c *gin.Context) {
 }
 
 func generatePruningInformation() {
+	// time.Sleep(9 * time.Minute)
+	time.Sleep(10 * time.Minute)
 	for {
-		time.Sleep(10 * time.Minute)
 		pruneList := dh.GeneratePruneList(&dag)
 		fmt.Println("PruneList: ", pruneList)
 
@@ -215,9 +216,10 @@ func generatePruningInformation() {
 
 		sc.AddToSideChain(&chain, scBlock)
 		p2p.BroadcastSCBlock(*scBlock)
-		strChain, _ := dh.Serialize(chain)
-
-		fmt.Println("adamPointState: block added to the side chain..........", string(strChain))
+		strBlock, _ := dh.Serialize(scBlock)
+		dh.AdamPointPrune(pruneList[0], pruneList[0:], &dag)
+		fmt.Println("adamPointState: block added to the side chain..........", string(strBlock))
+		time.Sleep(5 * time.Minute)
 	}
 }
 
@@ -230,7 +232,6 @@ func getTransaction(c *gin.Context) {
 	dag.Mux.Unlock()
 
 	c.IndentedJSON(http.StatusOK, tx)
-
 }
 
 func getIH(c *gin.Context) {
@@ -329,5 +330,4 @@ func main() {
 	fmt.Println("Storage node started successfully")
 
 	generatePruningInformation()
-
 }

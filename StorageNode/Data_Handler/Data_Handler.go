@@ -71,11 +71,40 @@ type AdamPointState struct {
 	PruneList []int
 }
 
+type PruningSchedulerParameters struct {
+	alpha                  float64 //learning rate
+	meanTransactionRate    float64
+	averageTransactionSize float64
+	thresholdTime          float64
+	epochTime              float64
+	gwCap                  int
+	txAge                  int64
+	mux                    sync.Mutex `json:"-"`
+}
+
 var (
-	bitLen         = 16
-	thresholdTime  = (5 * time.Minute).Nanoseconds()
-	adamIterations = 5
+	bitLen          = 27
+	txAge           = (18 * time.Minute).Nanoseconds()
+	weightThreshold = 0
+	adamIterations  = 5
+
+	unPrunedTransactions    = make(map[string]bool)
+	unPrunedTransactionsMux sync.Mutex
+
+	pruningSchedulerParameters = PruningSchedulerParameters{
+		alpha:                  0.1,
+		meanTransactionRate:    0.1,
+		averageTransactionSize: 206,
+		thresholdTime:          0.1,
+		epochTime:              0.1,
+		txAge:                  time.Now().UnixNano() + (5 * time.Minute).Nanoseconds(),
+		gwCap:                  50000, //(50kb)
+	}
 )
+
+// func GetPruningSchedulerParameters() ([]byte, error) {
+// 	return json.Marshal(pruningSchedulerParameters)
+// }
 
 // serializes the object to a byte array
 func Serialize(p interface{}) ([]byte, error) {
@@ -167,24 +196,120 @@ func findAdamPoint(dag *DAG, pruneList []string, iterations int) string {
 	return adamPoint
 }
 
+func fetchTxWithReference(adamPoint string, reference string, dag *DAG) string {
+	// from adampoint, for each char of reference move left if char is 0 and right if reference is 1
+	currVertex := dag.Graph[adamPoint]
+	newNodeHash := ""
+	ok := false
+	for _, ref := range reference {
+		if ref == '0' {
+			newNodeHash = hex.EncodeToString(currVertex.Tx.LeftTip[:])
+		} else {
+			newNodeHash = hex.EncodeToString(currVertex.Tx.RightTip[:])
+		}
+		currVertex, ok = dag.Graph[newNodeHash]
+		if !ok {
+			return ""
+		}
+	}
+
+	return newNodeHash
+
+}
+
+func pruneTxAndChildren(txHash string, dag *DAG, deleteCount *int) {
+	// delete the tx and all its children with recursive calls
+	// get the vertex
+	unPrunedTransactionsMux.Lock()
+	if _, ok := unPrunedTransactions[txHash]; !ok {
+		unPrunedTransactionsMux.Unlock()
+		return
+	}
+	unPrunedTransactionsMux.Unlock()
+
+	dag.Mux.Lock()
+	vertex := dag.Graph[txHash]
+	dag.Mux.Unlock()
+
+	// delete the children left and right tips if exist in the graph
+	leftTip := hex.EncodeToString(vertex.Tx.LeftTip[:])
+	rightTip := hex.EncodeToString(vertex.Tx.RightTip[:])
+
+	if _, ok := unPrunedTransactions[leftTip]; ok {
+		pruneTxAndChildren(leftTip, dag, deleteCount)
+	}
+
+	if _, ok := unPrunedTransactions[rightTip]; ok {
+		pruneTxAndChildren(rightTip, dag, deleteCount)
+	}
+
+	// // delete the vertex
+	// dag.Mux.Lock()
+	// delete(dag.Graph, txHash)
+	// dag.Mux.Unlock()
+
+	//delete from unpruned transactions
+	unPrunedTransactionsMux.Lock()
+	delete(unPrunedTransactions, txHash)
+	unPrunedTransactionsMux.Unlock()
+	(*deleteCount)++
+	fmt.Println("pruned: ", txHash)
+}
+
+func AdamPointPrune(adamPoint string, referenceList []string, dag *DAG) {
+	// check if adamPoint is in the dag
+	_, ok := dag.Graph[adamPoint]
+	if !ok {
+		return
+	}
+
+	deleteCount := 0
+	// for each reference in the reference list, check if it is in the dag and retrieve its hash
+	for _, reference := range referenceList {
+		txHash := fetchTxWithReference(adamPoint, reference, dag)
+
+		fmt.Println("adampointprune: ", reference, " : ", txHash)
+
+		if txHash != "" {
+			pruneTxAndChildren(txHash, dag, &deleteCount)
+		}
+	}
+
+	fmt.Println("SizeInfo: ", len(dag.Graph), len(unPrunedTransactions), deleteCount)
+}
+
 // prune the DAG (from GW's data_handler)
 func getTxToBePruned(dag *DAG) []string {
 	fmt.Println("Pruning the DAG")
 	count := 0
 	hashArray := make([]string, 0)
-	dag.Mux.Lock()
+	// dag.Mux.Lock()
 
-	// collect all the transactions that are confirmed and have weight greater than threshold and exceed the threshold time
-	// thresholdTime := (10 * time.Minute).Nanoseconds()
-	for hash, vertex := range dag.Graph {
-		if time.Now().UnixNano()-vertex.Tx.Timestamp > int64(thresholdTime) {
-			// delete(dag.Graph, hash)
-			count++
-			hashArray = append(hashArray, hash)
+	// // collect all the transactions that are confirmed and have weight greater than threshold and exceed the threshold time
+	// // thresholdTime := (10 * time.Minute).Nanoseconds()
+	// for hash, vertex := range dag.Graph {
+	// 	if time.Now().UnixNano()-vertex.Tx.Timestamp > int64(thresholdTime) {
+	// 		// delete(dag.Graph, hash)
+	// 		count++
+	// 		hashArray = append(hashArray, hash)
+	// 	}
+	// }
+	// dag.Mux.Unlock()
+
+	unPrunedTransactionsMux.Lock()
+	for hash := range unPrunedTransactions {
+		dag.Mux.Lock()
+		if vertex, ok := dag.Graph[hash]; ok {
+			dag.Mux.Unlock()
+			if int64(time.Now().UnixNano()-vertex.Tx.Timestamp) > int64(txAge) && vertex.Weight >= weightThreshold {
+				count++
+				hashArray = append(hashArray, hash)
+			}
+		} else {
+			dag.Mux.Unlock()
 		}
 	}
-	dag.Mux.Unlock()
-
+	unPrunedTransactionsMux.Unlock()
 	return hashArray
 }
 
@@ -276,7 +401,6 @@ func GetAdamPointState(pruneList []string) AdamPointState {
 	}
 
 	return adamPointState
-
 }
 
 func adamPathGeneration(dag *DAG, currNode string, path string, pathSet map[string]string, compressedPruneList map[string]bool) {
@@ -567,6 +691,12 @@ func VerifyVertex(vertex Vertex, dag *DAG) (bool, string) {
 	return true, ""
 }
 
+func addToUnPrunedTransactions(hash string) {
+	unPrunedTransactionsMux.Lock()
+	unPrunedTransactions[hash] = true
+	unPrunedTransactionsMux.Unlock()
+}
+
 // adds the vertex to the DAG
 func AddToDAG(vertex Vertex, dag *DAG) {
 
@@ -601,6 +731,8 @@ func AddToDAG(vertex Vertex, dag *DAG) {
 
 	// update the weight of the children
 	UpdateWeight(dag, hash)
+
+	addToUnPrunedTransactions(hash)
 }
 
 func CreateVertex(transaction Transaction, privateKey *ecdsa.PrivateKey) Vertex {
