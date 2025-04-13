@@ -219,7 +219,7 @@ func generatePruningInformation() {
 		strBlock, _ := dh.Serialize(scBlock)
 		dh.AdamPointPrune(pruneList[0], pruneList[0:], &dag)
 		fmt.Println("adamPointState: block added to the side chain..........", string(strBlock))
-		time.Sleep(5 * time.Minute)
+		time.Sleep(2 * time.Minute)
 	}
 }
 

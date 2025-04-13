@@ -83,7 +83,7 @@ type PruningSchedulerParameters struct {
 }
 
 var (
-	bitLen          = 27
+	bitLen          = 40
 	txAge           = (18 * time.Minute).Nanoseconds()
 	weightThreshold = 0
 	adamIterations  = 5

@@ -234,8 +234,9 @@ func periodicallyGetPruningListFromSN() {
 	snIP, snPort := getSNInfoFromConfig()
 	fmt.Println("pruning list: sn ip: ", snIP)
 	fmt.Println("pruning list: sn port: ", snPort)
+	time.Sleep(10 * time.Minute)
 	for {
-		time.Sleep(10 * time.Minute)
+		time.Sleep(3 * time.Minute)
 		// get the pruning list from the sn using the http request
 		pruningList := getPruningListFromSN(snIP, snPort)
 		// fmt.Println("pruning list: ", pruningList)
