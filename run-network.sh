@@ -20,6 +20,12 @@ docker image rm disc:1.0
 go build .
 docker build -t disc:1.0 .
 cd ..
+# delete Pbft primary node
+cd Pbft_Primary_Node
+docker image rm pbft:1.0
+go build .
+docker build -t pbft:1.0 .
+cd ..
 # #delete CSS image
 # cd CSS
 # cd mysql-docker

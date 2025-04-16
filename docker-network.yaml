@@ -13,6 +13,14 @@ services:
       iotblck:
         ipv4_address: 150.0.0.100
 
+  pbft:
+    image: pbft:1.0
+    networks:
+      iotblck:
+        ipv4_address: 150.0.0.101
+    depends_on:
+      - discovery
+
   storage0:
     image: sto:1.0
     networks:
@@ -26,20 +34,13 @@ services:
     depends_on:
       - discovery
       - storage0
-  storage2:
-    image: sto:1.0
-    networks:
-      - iotblck
-    depends_on:
-      - discovery
-      - storage1
   gateway0:
     image: gw:1.0
     networks:
       - iotblck
     depends_on:
       - discovery
-      - storage2
+      - storage1
   gateway1:
     image: gw:1.0
     networks:
