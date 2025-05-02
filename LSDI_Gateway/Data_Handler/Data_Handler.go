@@ -104,7 +104,7 @@ func init() {
 	time1 = time.Now()
 	pruneThreshold = 10
 	startThreshold = 5
-	powDifficulty = 5
+	powDifficulty = 4
 	tipThreshold = 2
 	totalTx = 0
 	fmt.Println("start of dh.")

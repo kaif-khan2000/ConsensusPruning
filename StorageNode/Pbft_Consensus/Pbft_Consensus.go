@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"io"
 	"net"
-	"strings"
 	"time"
 	// ckm "LSDI_Gateway/Crypt_key_Manager"
 )
@@ -19,13 +18,13 @@ type Message struct {
 type PrePrepare struct {
 	SessionId    int
 	Proposal     []byte
-	participants []string
+	Participants []string
 	Signature    []byte
 }
 
 type Vote struct {
 	SessionId int
-	response  string
+	Response  string
 	Signature []byte
 }
 
@@ -39,11 +38,14 @@ type CurrentSession struct {
 }
 
 var (
-	PRIMARY_NODE_IP   = "150.0.0.2"
+	PRIMARY_NODE_IP   = "150.0.0.101"
 	PORT              = "8080"
 	PRIMARY_NODE_CONN net.Conn
 	NextGeneratorPK   = ""
-	isMyTurn chan bool
+	isMyTurn          chan bool
+	proposalChan      chan []byte
+	responseChan      chan bool
+	myPk              string
 	currentSession    CurrentSession
 	ProposalList      [][]byte
 )
@@ -72,26 +74,31 @@ func writeMessage(conn net.Conn, msg Message) error {
 }
 
 func readMessage(conn net.Conn) (Message, error) {
-	var err error
-	var buffer []byte
-	temp_buffer := make([]byte, 1024)
 	for {
-		n, e := conn.Read(temp_buffer)
-		buffer = append(buffer, temp_buffer[:n]...)
-		if n < 1024 || e == io.EOF {
-			break
-		} else {
-			err = e
+		var err error
+		var buffer []byte
+		temp_buffer := make([]byte, 1024)
+		var n int
+		var e error
+		for {
+			n, e = conn.Read(temp_buffer)
+			buffer = append(buffer, temp_buffer[:n]...)
+			if n < 1024 || e == io.EOF {
+				break
+			} else {
+				err = e
+			}
+			//clean temp_buffer
+			temp_buffer = make([]byte, 1024)
 		}
-		//clean temp_buffer
-		temp_buffer = make([]byte, 1024)
+
+		if err != nil {
+			continue
+		}
+		var message Message
+		err = Deserialize(string(buffer), &message)
+		return message, err
 	}
-	if err != nil {
-		return Message{}, err
-	}
-	var message Message
-	err = Deserialize(string(buffer), message)
-	return message, err
 }
 
 func HelloPrimaryNode(pubKey string) {
@@ -99,7 +106,7 @@ func HelloPrimaryNode(pubKey string) {
 	conn, e := net.Dial("tcp", PRIMARY_NODE_IP+":"+PORT)
 	PRIMARY_NODE_CONN = conn
 	if e != nil {
-		fmt.Println("Error connecting to primary node:", e)
+		fmt.Println("pbft: Hello: Error connecting to primary node:", e)
 		return
 	}
 
@@ -111,33 +118,42 @@ func HelloPrimaryNode(pubKey string) {
 	}
 	e = writeMessage(conn, helloMessage)
 	if e != nil {
-		fmt.Println("Error sending message to primary node:", e)
+		fmt.Println("pbft: Hello: Error sending message to primary node:", e)
 		return
 	}
 	// Read the response from the primary node
 	recvMsg, e := readMessage(conn)
 	if e != nil {
-		fmt.Println("Error reading message from primary node:", e)
+		fmt.Println("pbft: Hello: Error reading message from primary node:", e)
 		return
 	}
 
 	// fetch pub key of next generator from the message
-	NextGeneratorPK = strings.Split(string(recvMsg.Data), " ")[1]
+	NextGeneratorPK = string(recvMsg.Data)
 	// Print the response
-	fmt.Println("Received message from primary node:", NextGeneratorPK)
-	
+	fmt.Println("pbft: Hello: Received message from primary node:", NextGeneratorPK)
+	fmt.Println("pbft: Hello: My public key is:", pubKey)
 	go recvFromPrimaryNode()
 	go handleNodeConnections()
+
+	if NextGeneratorPK == pubKey {
+		go func() {
+			isMyTurn <- true
+		}()
+	}
+
+	// isMyTurn <- (NextGeneratorPK == myPk)
+
 }
 
 func Propose(proposal []byte, pubKey string) {
 	conn := PRIMARY_NODE_CONN
 	if conn == nil {
-		fmt.Println("Connection to primary node is not established.")
+		fmt.Println("pbft: Propose: Connection to primary node is not established.")
 		HelloPrimaryNode(pubKey)
 		conn = PRIMARY_NODE_CONN
 		if conn == nil {
-			fmt.Println("Failed to establish connection to primary node.")
+			fmt.Println("pbft: Propose: Failed to establish connection to primary node.")
 			return
 		}
 	}
@@ -149,7 +165,7 @@ func Propose(proposal []byte, pubKey string) {
 	}
 	e := writeMessage(conn, proposeMessage)
 	if e != nil {
-		fmt.Println("Error sending message to primary node:", e)
+		fmt.Println("pbft: Propose: Error sending message to primary node:", e)
 		return
 	}
 }
@@ -157,7 +173,7 @@ func Propose(proposal []byte, pubKey string) {
 func recvFromPrimaryNode() {
 	conn := PRIMARY_NODE_CONN
 	if conn == nil {
-		fmt.Println("Connection to primary node is not established.")
+		fmt.Println("pbft: recvFromPrimaryNode: Connection to primary node is not established.")
 		return
 	}
 	// Read the response from the primary node
@@ -165,19 +181,25 @@ func recvFromPrimaryNode() {
 	for {
 		recvMsg, e := readMessage(conn)
 		if e != nil {
-			fmt.Println("Error reading message from primary node:", e)
+			fmt.Println("pbft: recvFromPrimaryNode: Error reading message from primary node:", e)
 			return
 		}
 		switch recvMsg.Type {
 		case "PrePrepare":
-			fmt.Println("Received proposal from primary node")
+			fmt.Println("pbft: recvFromPrimaryNode: Received proposal from primary node")
 			handlePrePrepare(recvMsg.Data)
 		case "NextGenPK":
 			// fetch pub key of next generator from the message
-			NextGeneratorPK = strings.Split(string(recvMsg.Data), " ")[1]
-			fmt.Println("Received message from primary node:", NextGeneratorPK)
+			NextGeneratorPK = string(recvMsg.Data)
+			fmt.Println("pbft: recvFromPrimaryNode: Received message from primary node:", NextGeneratorPK)
+			fmt.Println("pbft: recvFromPrimaryNode: My public key is:", myPk)
+			if NextGeneratorPK == myPk {
+				go func() {
+					isMyTurn <- true
+				}()
+			}
 		default:
-			fmt.Println("Unknown message type:", recvMsg.Type)
+			fmt.Println("pbft: recvFromPrimaryNode: Unknown message type:", recvMsg.Type)
 		}
 	}
 }
@@ -187,13 +209,13 @@ func handlePrePrepare(msg []byte) {
 	var prePrepare PrePrepare
 	err := Deserialize(string(msg), &prePrepare)
 	if err != nil {
-		fmt.Println("Error deserializing message:", err)
+		fmt.Println("pbft: handlePrePrepare: Error deserializing message:", err)
 		return
 	}
 
 	// store the proposal in the current session
 	currentSession.SessionId = prePrepare.SessionId
-	currentSession.participants = prePrepare.participants
+	currentSession.participants = prePrepare.Participants
 	currentSession.yes = 0
 	currentSession.no = 0
 	currentSession.commit = 0
@@ -205,16 +227,18 @@ func handlePrePrepare(msg []byte) {
 	} else {
 		response = "NO"
 	}
-	fmt.Println(response)
+	fmt.Println("pbft: handlePrePrepare: " + response)
 	Vote := Vote{
 		SessionId: prePrepare.SessionId,
-		response:  response,
+		Response:  response,
 		Signature: []byte("signature"), // yet to implement
 	}
 
+	fmt.Println("pbft: handlePrePrepare: ", prePrepare)
+
 	serailizedVote, err := Serialize(Vote)
 	if err != nil {
-		fmt.Println("Error serializing vote:", err)
+		fmt.Println("pbft: handlePrePrepare: Error serializing vote:", err)
 		return
 	}
 	// message struct
@@ -224,14 +248,14 @@ func handlePrePrepare(msg []byte) {
 		Timestamp: time.Now().UnixNano(),
 	}
 	// broadcast this message to all the nodes
-	for _, participant := range prePrepare.participants {
+	for _, participant := range prePrepare.Participants {
 		connectAndSend(participant, prepareMessage)
 	}
 
 	// send the message to the primary node
 	err = writeMessage(PRIMARY_NODE_CONN, prepareMessage)
 	if err != nil {
-		fmt.Println("Error sending message to primary node:", err)
+		fmt.Println("pbft: handlePrePrepare: Error sending message to primary node:", err)
 		return
 	}
 }
@@ -246,14 +270,16 @@ func validProposal(proposal []byte) bool {
 func connectAndSend(ip string, msg Message) {
 	conn, e := net.Dial("tcp", ip)
 	if e != nil {
-		fmt.Println("Error connecting to node:", e)
+		fmt.Println("pbft: connectAndSend: Error connecting to node:", e)
 		return
 	}
 	defer conn.Close()
-
+	fmt.Println("pbft: connectAndSend: Connected to node:", ip)
+	time.Sleep(1 * time.Second)
 	e = writeMessage(conn, msg)
+	fmt.Println("pbft: connectAndSend: Sent message to node:", ip)
 	if e != nil {
-		fmt.Println("Error sending message to node:", e)
+		fmt.Println("pbft: connectAndSend: Error sending message to node:", e)
 		return
 	}
 }
@@ -262,7 +288,7 @@ func handleNodeConnections() {
 	// listen for incoming connections
 	listener, err := net.Listen("tcp", ":8080")
 	if err != nil {
-		fmt.Println("Error starting server:", err)
+		fmt.Println("pbft: handleNodeConnection: Error starting server:", err)
 		return
 	}
 
@@ -271,7 +297,7 @@ func handleNodeConnections() {
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
-			fmt.Println("Error accepting connection:", err)
+			fmt.Println("pbft: handleNodeConnection: Error accepting connection:", err)
 			continue
 		}
 		go handleNodeMessages(conn)
@@ -282,17 +308,19 @@ func handleNodeMessages(conn net.Conn) {
 	defer conn.Close()
 	msg, err := readMessage(conn)
 	if err != nil {
-		fmt.Println("Error reading message:", err)
+		fmt.Println("pbft: handleNodeMessages: Error reading message:", err)
 		return
 	}
+	fmt.Println("pbft: handleNodeMessages: Received message:", msg.Type)
 	// handle the message based on its type
 	switch msg.Type {
 	case "Vote":
+		fmt.Println("pbft: handleNodeMessages: Received Vote message:", string(msg.Data))
 		handleVote(msg.Data)
-	case "Commit": 
+	case "Commit":
 		handleCommit()
 	default:
-		fmt.Println("Unknown message type:", msg.Type)
+		fmt.Println("pbft: handleNodeMessages: Unknown message type:", msg.Type)
 	}
 
 }
@@ -302,30 +330,39 @@ func handleVote(msg []byte) {
 	var vote Vote
 	err := Deserialize(string(msg), &vote)
 	if err != nil {
-		fmt.Println("Error deserializing vote:", err)
+		fmt.Println("pbft: handleVote: Error deserializing vote:", err)
 		return
 	}
 	if currentSession.SessionId != vote.SessionId {
-		fmt.Println("Vote session id does not match current session id")
+		fmt.Println("pbft: handleVote: Vote session id does not match current session id")
 		return
 	}
+
 	// update the current session with the vote
-	if vote.response == "YES" {
+	if vote.Response == "YES" {
 		currentSession.yes++
 	} else {
 		currentSession.no++
 	}
 
+	fmt.Println("pbft: handleVote: Vote received. Yes:", currentSession.yes, "No:", currentSession.no, "TotalNeeded:", len(currentSession.participants))
+
 	// if all the votes are received
 	// check if the proposal is accepted or rejected
 	if currentSession.yes+currentSession.no == len(currentSession.participants) {
-		if currentSession.yes >= len(currentSession.participants)*2/3 {
+		if float64(currentSession.yes) >= float64(len(currentSession.participants)*2)/3.0 {
 			// proposal is accepted
-			fmt.Println("Proposal accepted")
+			fmt.Println("pbft: handleVote: Proposal accepted")
+			if NextGeneratorPK == myPk {
+				responseChan <- true
+			}
 			// send the commit message to all the nodes
 			sendCommit()
 		} else {
-			fmt.Println("Proposal rejected")
+			if NextGeneratorPK == myPk {
+				responseChan <- false
+			}
+			fmt.Println("pbft: handleVote: Proposal rejected")
 		}
 	}
 }
@@ -345,17 +382,40 @@ func sendCommit() {
 	// send the message to the primary node
 	err := writeMessage(PRIMARY_NODE_CONN, commitMessage)
 	if err != nil {
-		fmt.Println("Error sending message to primary node:", err)
+		fmt.Println("pbft: sendCommit: Error sending message to primary node:", err)
 		return
 	}
-	fmt.Println("Commit message sent to all nodes")
+	fmt.Println("pbft: sendCommit: Commit message sent to all nodes")
 }
 
 func handleCommit() {
 	currentSession.commit++
-	if currentSession.commit >= len(currentSession.participants)*2/3 {
+	if float64(currentSession.commit) >= float64(len(currentSession.participants)*2)/float64(3) {
 		//add proposal to the proposal list
 		ProposalList = append(ProposalList, currentSession.proposal)
+
 		currentSession.commit = 0
+	}
+}
+
+func RunPbftConsensusModule(pk string, turn *chan bool, proposalChannel *chan []byte, responseChannel *chan bool) {
+	myPk = pk
+	isMyTurn = *turn
+	proposalChan = *proposalChannel
+	responseChan = *responseChannel
+	ProposalList = make([][]byte, 0)
+	// connect to the primary node
+	HelloPrimaryNode(pk)
+
+	fmt.Println("pbft: Pbft consensus module started")
+	// wait for the proposal
+	for {
+		proposal := <-proposalChan
+		// check if it is my turn
+		if NextGeneratorPK != myPk {
+			responseChan <- false
+			continue
+		}
+		Propose(proposal, myPk)
 	}
 }

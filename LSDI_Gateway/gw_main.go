@@ -200,12 +200,16 @@ type AdamPointState struct {
 	PruneList []int
 }
 
-func getPruningListFromSN(snIP, snPort string) AdamPointState {
+func getPruningListFromSN(snIP, snPort string, count int) (AdamPointState, error) {
 	// get the pruning list from the sn using the http request
-	url := "http://" + snIP + ":" + snPort + "/getLatestPruneList"
+	// int to string
+
+	url := "http://" + snIP + ":" + snPort + "/getPruneList/" + strconv.Itoa(count)
 	resp, err := http.Get(url)
 	if err != nil {
 		fmt.Println("Error in getting the pruning list from the sn: ", err.Error())
+		fakeAdamPointState := AdamPointState{}
+		return fakeAdamPointState, err
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
@@ -227,17 +231,22 @@ func getPruningListFromSN(snIP, snPort string) AdamPointState {
 	// from the json get the data
 	// data := pruningList["data"]
 
-	return pruningList
+	return pruningList, nil
 }
 
 func periodicallyGetPruningListFromSN() {
 	snIP, snPort := getSNInfoFromConfig()
 	fmt.Println("pruning list: sn ip: ", snIP)
 	fmt.Println("pruning list: sn port: ", snPort)
+	count := 1
 	for {
-		time.Sleep(10 * time.Minute)
+		time.Sleep(1 * time.Minute)
 		// get the pruning list from the sn using the http request
-		pruningList := getPruningListFromSN(snIP, snPort)
+		pruningList, err := getPruningListFromSN(snIP, snPort, count)
+		if err != nil {
+			// fmt.Println("Error in getting the pruning list from the sn: ", err.Error())
+			continue
+		}
 		// fmt.Println("pruning list: ", pruningList)
 		// pruningList := getPruningListFromSN(snIP, snPort)
 		fmt.Println("pruning list: ", pruningList)
@@ -278,6 +287,7 @@ func periodicallyGetPruningListFromSN() {
 		}
 		fmt.Println("referenceList: ", referenceList)
 		dh.AdamPointPrune(adamPoint, referenceList, &dag)
+		count++
 	}
 }
 

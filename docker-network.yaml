@@ -34,13 +34,34 @@ services:
     depends_on:
       - discovery
       - storage0
+  storage2:
+    image: sto:1.0
+    networks:
+      - iotblck
+    depends_on:
+      - discovery
+      - storage1
+  storage3:
+    image: sto:1.0
+    networks:
+      - iotblck
+    depends_on:
+      - discovery
+      - storage2
+  storage4:
+    image: sto:1.0
+    networks:
+      - iotblck
+    depends_on:
+      - discovery
+      - storage3
   gateway0:
     image: gw:1.0
     networks:
       - iotblck
     depends_on:
       - discovery
-      - storage1
+      - storage4
   gateway1:
     image: gw:1.0
     networks:
@@ -55,3 +76,17 @@ services:
     depends_on:
       - discovery
       - gateway1
+  gateway3:
+    image: gw:1.0
+    networks:
+      - iotblck
+    depends_on:
+      - discovery
+      - gateway2
+  gateway4:
+    image: gw:1.0
+    networks:
+      - iotblck
+    depends_on:
+      - discovery
+      - gateway3

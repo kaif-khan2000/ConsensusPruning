@@ -4,6 +4,9 @@ import (
 	crypt "StorageNode/Crypt_key_Manager"
 	dh "StorageNode/Data_Handler"
 	p2p "StorageNode/P2P_Manager"
+	"sync"
+
+	// pbft "StorageNode/Pbft_Consensus"
 	sc "StorageNode/SC_Handler"
 	"bufio"
 	"crypto/ecdsa"
@@ -24,9 +27,18 @@ import (
 var (
 	dag          dh.DAG
 	chain        sc.SideChain
+	isMyTurn     = make(chan bool)
+	proposalChan = make(chan []byte)
+	responseChan = make(chan bool)
 	aprBucket    []dh.AdamPointState
 	gwPrivateKey *ecdsa.PrivateKey
 	gwPublicKey  ecdsa.PublicKey
+	scBlocks     = make(map[int]sc.SideChainBlock)
+	scBlocksMux  sync.Mutex
+	txSize       = 208    // bytes;
+	txRate       = 3      // tx/sec
+	gwCap        = 200000 // bytes
+	scThresh     = 4
 )
 
 // get the image of the dag
@@ -186,24 +198,47 @@ func getChainImage(c *gin.Context) {
 
 func generatePruningInformation() {
 	// time.Sleep(9 * time.Minute)
-	time.Sleep(10 * time.Minute)
+	fmt.Println("pbft: sn_main: waiting for my turn to generate pruning information")
+	count := 0
+	time.Sleep(6 * time.Minute)
 	for {
-		pruneList := dh.GeneratePruneList(&dag)
-		fmt.Println("PruneList: ", pruneList)
+		// _ = <-isMyTurn
+		count++
+		fmt.Println("pbft: sn_main: my turn to generate pruning information")
+		epoch := gwCap / (scThresh * txSize * txRate)
+		// convert int to time duration
+		epochDuration := time.Duration(epoch) * time.Second
+		time.Sleep(epochDuration)
+		
+		time1 := time.Now().UnixNano()
+		rl, _, pl := dh.GeneratePruneList(&dag)
+		fmt.Println("PruneList: ", rl)
 
 		// compress the prune list
 		var adamPointState dh.AdamPointState
-		adamPointState = dh.GetAdamPointState(pruneList)
+		adamPointState = dh.GetAdamPointState(rl)
 		fmt.Println("adamPointState: ", adamPointState)
 
 		// create a sc block
 		adamPointStateBytes, _ := dh.Serialize(adamPointState)
 		scBlock := sc.CreateSideChainBlock(string(adamPointStateBytes), chain.LatestBlockHash, time.Now().Unix(), gwPrivateKey)
-		scBlock.Pow()
-
-		fmt.Println("adamPointState: pow done..........")
+		// scBlock.Pow()
+		// fmt.Println("adamPointState: pow done..........")
 		scBlock.SignBlock(gwPrivateKey)
+		scBlockBytes, _ := dh.Serialize(scBlock)
 
+		// plBytes, _ := dh.Serialize(pl)
+
+		fmt.Println("pbft: sn_main: proposal to pbft module: ", string(scBlockBytes))
+		// // proposalChan <- plBytes
+		// proposalChan <- scBlockBytes
+		// // wait for the response
+		// response := <-responseChan
+		// fmt.Println("pbft: sn_main: response received from pbft module: ", response)
+		// if !response {
+		// 	fmt.Println("pbft: adamPointState: proposal rejected")
+		// 	continue
+		// }
 		// check if a new block has been added to the side chain
 		chain.Mux.Lock()
 
@@ -214,12 +249,22 @@ func generatePruningInformation() {
 		}
 		chain.Mux.Unlock()
 
+		time2 := time.Now().UnixNano()
+		fmt.Println("Time taken to generate pruning information: ", (time2-time1)/1000000, "ms")
+		fmt.Println("2time: ", len(pl), (time2-time1)/1000000, "ms")
+
 		sc.AddToSideChain(&chain, scBlock)
-		p2p.BroadcastSCBlock(*scBlock)
+		// p2p.BroadcastSCBlock(*scBlock)
 		strBlock, _ := dh.Serialize(scBlock)
-		dh.AdamPointPrune(pruneList[0], pruneList[0:], &dag)
+		// dh.AdamPointPrune(rl[0], rl[0:], &dag)
+		// dh.PRLPrune(prl, &dag)
+		dag.Mux.Lock()
+		fmt.Println("txRate: ", time.Now().UnixMilli(), len(dag.Graph))
+		dag.Mux.Unlock()
+		scBlocksMux.Lock()
+		scBlocks[count] = *scBlock
+		scBlocksMux.Unlock()
 		fmt.Println("adamPointState: block added to the side chain..........", string(strBlock))
-		time.Sleep(5 * time.Minute)
 	}
 }
 
@@ -291,6 +336,29 @@ func getLatestPruningList(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, pruningList)
 }
 
+func getPruneList(c *gin.Context) {
+	// read the slug
+	slug := c.Param("count")
+	// convert the slug to int
+	count, err := strconv.Atoi(slug)
+	if err != nil {
+		fmt.Println("Error in converting the slug to int: ", err.Error())
+		c.IndentedJSON(http.StatusBadRequest, "Error in converting the slug to int")
+		return
+	}
+	// check if the count is present in the map
+	scBlocksMux.Lock()
+	block, ok := scBlocks[count]
+	scBlocksMux.Unlock()
+	if !ok {
+		c.IndentedJSON(http.StatusBadRequest, "Block not found")
+		return
+	}
+	// get the pruning list from the block
+	var pruningList dh.AdamPointState
+	dh.Deserialize(block.Data, &pruningList)
+	c.IndentedJSON(http.StatusOK, pruningList)
+}
 func gwHTTPServer() {
 	// gin server
 	router := gin.Default()
@@ -302,6 +370,7 @@ func gwHTTPServer() {
 	router.GET("/getChainImage", getChainImage)
 	router.GET("/getLatestSCBlock", getLatestSCBlock)
 	router.GET("/getLatestPruneList", getLatestPruningList)
+	router.GET("/getPruneList/:count", getPruneList)
 	router.Run("0.0.0.0:4000")
 }
 
@@ -311,6 +380,9 @@ func main() {
 	gwPrivateKey, gwPublicKey = crypt.GenerateKeyPair()
 
 	fmt.Println("pubKey: ", gwPublicKey)
+
+	pkstring := hex.EncodeToString(crypt.SerializePublicKey(gwPrivateKey.PublicKey))
+	fmt.Println("pkstring: ", pkstring)
 
 	genesis := dh.CreateGenesisTx()
 	// Init DAG
@@ -328,6 +400,10 @@ func main() {
 
 	go p2p.StorageNode(&dag, &chain)
 	fmt.Println("Storage node started successfully")
+
+	time.Sleep(5 * time.Second)
+	fmt.Println("pbft: sn_main: did not start pruning")
+	// go pbft.RunPbftConsensusModule(pkstring, &isMyTurn, &proposalChan, &responseChan)
 
 	generatePruningInformation()
 }

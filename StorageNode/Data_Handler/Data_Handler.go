@@ -84,8 +84,8 @@ type PruningSchedulerParameters struct {
 
 var (
 	bitLen          = 27
-	txAge           = (18 * time.Minute).Nanoseconds()
-	weightThreshold = 0
+	txAge           = (5 * time.Minute).Nanoseconds()
+	weightThreshold = 6
 	adamIterations  = 5
 
 	unPrunedTransactions    = make(map[string]bool)
@@ -198,7 +198,9 @@ func findAdamPoint(dag *DAG, pruneList []string, iterations int) string {
 
 func fetchTxWithReference(adamPoint string, reference string, dag *DAG) string {
 	// from adampoint, for each char of reference move left if char is 0 and right if reference is 1
+	dag.Mux.Lock()
 	currVertex := dag.Graph[adamPoint]
+	dag.Mux.Unlock()
 	newNodeHash := ""
 	ok := false
 	for _, ref := range reference {
@@ -207,7 +209,9 @@ func fetchTxWithReference(adamPoint string, reference string, dag *DAG) string {
 		} else {
 			newNodeHash = hex.EncodeToString(currVertex.Tx.RightTip[:])
 		}
+		dag.Mux.Lock()
 		currVertex, ok = dag.Graph[newNodeHash]
+		dag.Mux.Unlock()
 		if !ok {
 			return ""
 		}
@@ -256,9 +260,26 @@ func pruneTxAndChildren(txHash string, dag *DAG, deleteCount *int) {
 	fmt.Println("pruned: ", txHash)
 }
 
+func PRLPrune(prl []string, dag *DAG) {
+	deleteCount := 0
+	unPrunedTransactionsMux.Lock()
+	fmt.Println("PruneMonitor: before pruning: ", time.Now().UnixMilli(), len(unPrunedTransactions))
+	unPrunedTransactionsMux.Unlock()
+	for _, txHash := range prl {
+		if txHash != "" {
+			pruneTxAndChildren(txHash, dag, &deleteCount)
+		}
+	}
+	unPrunedTransactionsMux.Lock()
+	fmt.Println("PruneMonitor: after pruning: ", time.Now().UnixMilli(), len(unPrunedTransactions))
+	unPrunedTransactionsMux.Unlock()
+}
+
 func AdamPointPrune(adamPoint string, referenceList []string, dag *DAG) {
 	// check if adamPoint is in the dag
+	dag.Mux.Lock()
 	_, ok := dag.Graph[adamPoint]
+	dag.Mux.Unlock()
 	if !ok {
 		return
 	}
@@ -274,8 +295,9 @@ func AdamPointPrune(adamPoint string, referenceList []string, dag *DAG) {
 			pruneTxAndChildren(txHash, dag, &deleteCount)
 		}
 	}
-
+	dag.Mux.Lock()
 	fmt.Println("SizeInfo: ", len(dag.Graph), len(unPrunedTransactions), deleteCount)
+	dag.Mux.Unlock()
 }
 
 // prune the DAG (from GW's data_handler)
@@ -296,17 +318,22 @@ func getTxToBePruned(dag *DAG) []string {
 	// }
 	// dag.Mux.Unlock()
 
+	currTime := time.Now().UnixNano()
+	fmt.Println("lockWait: unprunedTransactions waiting for lock")
 	unPrunedTransactionsMux.Lock()
+	fmt.Println("lockWait: unprunedTransactions got lock")
 	for hash := range unPrunedTransactions {
+		fmt.Println("lockWait; dag lock waiting for lock")
 		dag.Mux.Lock()
+		fmt.Println("lockWait: dag lock got lock")
 		if vertex, ok := dag.Graph[hash]; ok {
 			dag.Mux.Unlock()
-			if int64(time.Now().UnixNano()-vertex.Tx.Timestamp) > int64(txAge) && vertex.Weight >= weightThreshold {
+			if int64(currTime-vertex.Tx.Timestamp) > int64(txAge) && vertex.Weight >= weightThreshold {
 				count++
 				hashArray = append(hashArray, hash)
+			} else {
+				dag.Mux.Unlock()
 			}
-		} else {
-			dag.Mux.Unlock()
 		}
 	}
 	unPrunedTransactionsMux.Unlock()
@@ -491,19 +518,31 @@ func aprCompression(dag *DAG, adamPoint string, compressedPruneList []string) []
 	return aprList
 }
 
-func GeneratePruneList(dag *DAG) []string {
+func GeneratePruneList(dag *DAG) ([]string, []string, []string) {
 	// get the list of transactions to be pruned
+	time1 := time.Now().UnixNano()
 	pruneList := getTxToBePruned(dag)
+	time2 := time.Now().UnixNano()
 
+	fmt.Println("time: Time taken to generate PL", (len(pruneList) * 32), ": ", (time2-time1)/1000000, "ms")
+
+	time1 = time.Now().UnixNano()
 	compressedPruneList := removeChildrenFromPruneList(dag, pruneList)
-
+	time2 = time.Now().UnixNano()
+	timeForPhase1 := (time2 - time1) / 1000000
+	fmt.Println("time: Time taken for phase-1", (len(pruneList) * 32), ":", timeForPhase1, "ms")
 	if verifyCompression(dag, pruneList, compressedPruneList) {
 		fmt.Println("PruneListCompression: Compression successful")
 	} else {
 		fmt.Println("PruneListCompression: Compression failed")
 	}
 
+	time1 = time.Now().UnixNano()
 	adamPoint := findAdamPoint(dag, compressedPruneList, adamIterations)
+	time2 = time.Now().UnixNano()
+	timeForAPS := (time2 - time1) / 1000000
+	fmt.Println("time: Time taken for APS", (len(pruneList) * 32), ": ", timeForAPS, "ms")
+
 	fmt.Println("Adam Point: ", adamPoint)
 
 	if verifyCompression(dag, compressedPruneList, []string{adamPoint}) {
@@ -512,12 +551,18 @@ func GeneratePruneList(dag *DAG) []string {
 		fmt.Println("PruneListCompression: Adampoint Compression failed")
 	}
 
+	time1 = time.Now().UnixNano()
 	adamPointCompressedPruneList := aprCompression(dag, adamPoint, compressedPruneList)
 
 	// add adam point to the prune list at the start of the list
 	adamPointCompressedPruneList = append([]string{adamPoint}, adamPointCompressedPruneList...)
+	time2 = time.Now().UnixNano()
+	timeForPhase2 := (time2 - time1) / 1000000
+	fmt.Println("time: Time taken for phase-2", (len(pruneList) * 32), ":", timeForPhase2, "ms")
 
-	return adamPointCompressedPruneList
+	fmt.Println("time: Time for compression", len(pruneList)*32, ": ", timeForPhase1+timeForAPS+timeForPhase2, "ms")
+
+	return adamPointCompressedPruneList, compressedPruneList, pruneList
 }
 
 func generateChildren(dag *DAG, pruneList []string, compressedPruneList []string, decompressedPruneMap map[string]bool) {
@@ -623,7 +668,9 @@ func UpdateWeight(dag *DAG, hash string) {
 	// get all the unique children of the vertex with max 16 len path
 
 	// get the vertex
+	dag.Mux.Lock()
 	currVertex := dag.Graph[hash]
+	dag.Mux.Unlock()
 	// get the children of the vertex from the tips
 	children := make(map[string]bool)
 	getChildren(dag, currVertex.Tx.Hash, children, bitLen)

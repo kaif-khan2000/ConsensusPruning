@@ -19,7 +19,7 @@ type Message struct {
 type PrePrepare struct {
 	SessionId    int
 	Proposal     []byte
-	participants []string
+	Participants []string
 	Signature    []byte
 }
 
@@ -34,21 +34,22 @@ type CurrentSession struct {
 
 type Vote struct {
 	SessionId int
-	response  string
+	Response  string
 	Signature []byte
 }
 
 var (
-	participants         = make(map[string]net.Conn)
-	participantArray     = []string{}
-	participantsMutex    sync.Mutex
-	NextGeneratorPK      = ""
-	nextGeneratorIndex   = -1
-	NextGeneratorPKMutex sync.Mutex
-	currentSession       CurrentSession
-	currentSessionMutex  sync.Mutex
-	ProposalList         = [][]byte{}
-	ProposalListMutex    sync.Mutex
+	participants          = make(map[string]net.Conn)
+	participantArray      = []string{}
+	participantArrayMutex sync.Mutex
+	participantsMutex     sync.Mutex
+	NextGeneratorPK       = ""
+	nextGeneratorIndex    = -1
+	NextGeneratorPKMutex  sync.Mutex
+	currentSession        CurrentSession
+	currentSessionMutex   sync.Mutex
+	ProposalList          = [][]byte{}
+	ProposalListMutex     sync.Mutex
 )
 
 func Serialize(p interface{}) ([]byte, error) {
@@ -75,26 +76,31 @@ func writeMessage(conn net.Conn, msg Message) error {
 }
 
 func readMessage(conn net.Conn) (Message, error) {
-	var err error
-	var buffer []byte
-	temp_buffer := make([]byte, 1024)
 	for {
-		n, e := conn.Read(temp_buffer)
-		buffer = append(buffer, temp_buffer[:n]...)
-		if n < 1024 || e == io.EOF {
-			break
-		} else {
-			err = e
+		var err error
+		var buffer []byte
+		temp_buffer := make([]byte, 1024)
+		var n int
+		var e error
+		for {
+			n, e = conn.Read(temp_buffer)
+			buffer = append(buffer, temp_buffer[:n]...)
+			if n < 1024 || e == io.EOF {
+				break
+			} else {
+				err = e
+			}
+			//clean temp_buffer
+			temp_buffer = make([]byte, 1024)
 		}
-		//clean temp_buffer
-		temp_buffer = make([]byte, 1024)
+
+		if err != nil {
+			continue
+		}
+		var message Message
+		err = Deserialize(string(buffer), &message)
+		return message, err
 	}
-	if err != nil {
-		return Message{}, err
-	}
-	var message Message
-	err = Deserialize(string(buffer), message)
-	return message, err
 }
 
 func handleHello(conn net.Conn, msg Message) {
@@ -106,6 +112,10 @@ func handleHello(conn net.Conn, msg Message) {
 	participants[publicAddressOfNode] = conn
 	participantsMutex.Unlock()
 
+	participantArrayMutex.Lock()
+	participantArray = append(participantArray, publicAddressOfNode)
+	participantArrayMutex.Unlock()
+
 	NextGeneratorPKMutex.Lock()
 	if NextGeneratorPK == "" {
 		// set the next generator public key
@@ -115,7 +125,7 @@ func handleHello(conn net.Conn, msg Message) {
 	}
 	// send a message back to the node
 	response := Message{
-		Type:      "NextGenPk",
+		Type:      "NextGenPK",
 		Data:      []byte(NextGeneratorPK),
 		Timestamp: msg.Timestamp,
 	}
@@ -123,10 +133,10 @@ func handleHello(conn net.Conn, msg Message) {
 
 	err := writeMessage(conn, response)
 	if err != nil {
-		fmt.Println("Error sending message to node:", err)
+		fmt.Println("handleHello: Error sending message to node:", err)
 		return
 	}
-	fmt.Println("Sent NextGenPk message to:", publicAddressOfNode)
+	fmt.Println("handleHello: Sent NextGenPk message to:", publicAddressOfNode)
 }
 
 func handlePropose(msg Message) {
@@ -139,30 +149,43 @@ func handlePropose(msg Message) {
 	currentSession.commit = 0
 	currentSessionMutex.Unlock()
 
-	participantsMutex.Lock()
 	participantList := make([]string, 0)
+	participantsMutex.Lock()
 	for _, participant := range participants {
 		// get the ip and port of the participant conn
 		ip := participant.RemoteAddr().(*net.TCPAddr).IP.String()
-		port := participant.RemoteAddr().(*net.TCPAddr).Port
-		participantList = append(participantList, fmt.Sprintf("%s:%d", ip, port))
+		// port := participant.RemoteAddr().(*net.TCPAddr).Port
+		participantList = append(participantList, fmt.Sprintf("%s:%d", ip, 8080))
 	}
 	participantsMutex.Unlock()
+
+	fmt.Println("handlePropose: Participants list:", participantList)
 
 	currentSessionMutex.Lock()
 	prePrepare := PrePrepare{
 		SessionId:    currentSession.SessionId,
 		Proposal:     currentSession.proposal,
-		participants: participantList,
+		Participants: participantList,
 		Signature:    []byte("signature"), // yet to implement
 	}
 	currentSessionMutex.Unlock()
 
+	// copy(prePrepare.participants, participantList)
+	fmt.Println("handlePropose: PrePrepare message:", prePrepare)
 	prePrepareBytes, err := Serialize(prePrepare)
 	if err != nil {
-		fmt.Println("Error serializing PrePrepare message:", err)
+		fmt.Println("handlePropose: Error serializing PrePrepare message:", err)
 		return
 	}
+
+	var demoPrePrepare PrePrepare
+	err = Deserialize(string(prePrepareBytes), &demoPrePrepare)
+	if err != nil {
+		fmt.Println("handlePropose: Error deserializing PrePrepare message:", err)
+		return
+	}
+
+	fmt.Println("handlePropose: Deserialized PrePrepare message:", demoPrePrepare)
 
 	prePrepareMessage := Message{
 		Type:      "PrePrepare",
@@ -174,10 +197,10 @@ func handlePropose(msg Message) {
 	for _, participant := range participants {
 		err := writeMessage(participant, prePrepareMessage)
 		if err != nil {
-			fmt.Println("Error sending PrePrepare message to participant:", err)
+			fmt.Println("handlePropose: Error sending PrePrepare message to participant:", err)
 			continue
 		}
-		fmt.Println("Sent PrePrepare message to participant")
+		fmt.Println("handlePropose: Sent PrePrepare message to participant")
 	}
 	participantsMutex.Unlock()
 }
@@ -187,17 +210,17 @@ func handleVote(msg []byte) {
 	var vote Vote
 	err := Deserialize(string(msg), &vote)
 	if err != nil {
-		fmt.Println("Error deserializing vote:", err)
+		fmt.Println("handleVote: Error deserializing vote:", err)
 		return
 	}
 	currentSessionMutex.Lock()
 	if currentSession.SessionId != vote.SessionId {
-		fmt.Println("Vote session id does not match current session id")
+		fmt.Println("handleVote: Vote session id does not match current session id")
 		currentSessionMutex.Unlock()
 		return
 	}
 	// update the current session with the vote
-	if vote.response == "YES" {
+	if vote.Response == "YES" {
 		currentSession.yes++
 	} else {
 		currentSession.no++
@@ -221,12 +244,20 @@ func handleVote(msg []byte) {
 func handleCommit() {
 	currentSessionMutex.Lock()
 	currentSession.commit++
-	if currentSession.commit >= len(currentSession.participants) {
-		//add proposal to the proposal list
-		ProposalList = append(ProposalList, currentSession.proposal)
-		currentSession.commit = 0
+	fmt.Println("handleCommit: Current session commit count:", currentSession.commit, len(participants))
+	if currentSession.commit < len(participants) {
+		currentSessionMutex.Unlock()
+		return
 	}
+
+	fmt.Println("handleCommit: Proposal accepted, sending commit message to all participants, commit count:", currentSession.commit)
+	//add proposal to the proposal list
+	ProposalList = append(ProposalList, currentSession.proposal)
+	currentSession.commit = 0
+
 	currentSessionMutex.Unlock()
+
+	time.Sleep(30 * time.Second)
 
 	// now create a new nextgenpk
 	NextGeneratorPKMutex.Lock()
@@ -235,51 +266,60 @@ func handleCommit() {
 	NextGeneratorPKMutex.Unlock()
 	// send the next generator pk to all the participants
 	nextGenMsg := Message{
-		Type:      "NextGenPk",
+		Type:      "NextGenPK",
 		Data:      []byte(NextGeneratorPK),
 		Timestamp: time.Now().UnixNano(),
 	}
-
+	count := 0
 	participantsMutex.Lock()
 	for _, participant := range participants {
+
 		err := writeMessage(participant, nextGenMsg)
 		if err != nil {
-			fmt.Println("Error sending NextGenPk message to participant:", err)
+			fmt.Println("handleCommit: Error sending NextGenPk message to participant:", err)
 			continue
 		}
-		fmt.Println("Sent NextGenPk message to participant")
+		count++
+		fmt.Println("handleCommit: Sent NextGenPk message to participant", participant, count)
 	}
 	participantsMutex.Unlock()
 
 }
 
 func handleConnection(conn net.Conn) {
+	msg, err := readMessage(conn)
+	if err != nil {
+		fmt.Println("handleConnection: Error reading message1:", err)
+		return
+	}
+	handleHello(conn, msg)
 	for {
 		msg, err := readMessage(conn)
 		if err != nil {
-			fmt.Println("Error reading message:", err)
+			fmt.Println("handleConnection: Error reading message2:", err)
 			return
+			// continue
 		}
 
 		switch msg.Type {
 		case "Hello":
-			fmt.Println("Received Hello message:", string(msg.Data))
+			fmt.Println("handleConnection: Received Hello message:", string(msg.Data))
 			// Handle Hello message
 			handleHello(conn, msg)
 		case "Propose":
-			fmt.Println("Received Propose message:", string(msg.Data))
+			fmt.Println("handleConnection: Received Propose message:", string(msg.Data))
 			// Handle Data message
 			handlePropose(msg)
 		case "Vote":
-			fmt.Println("Received Vote message:", string(msg.Data))
+			fmt.Println("handleConnection: Received Vote message:", string(msg.Data))
 			// Handle Goodbye message
 			handleVote(msg.Data)
 		case "Commit":
-			fmt.Println("Received Commit message:", string(msg.Data))
+			fmt.Println("handleConnection: Received Commit message:", string(msg.Data))
 			// Handle Goodbye message
 			handleCommit()
 		default:
-			fmt.Println("Unknown message type:", msg.Type)
+			fmt.Println("handleConnection: Unknown message type:", msg.Type)
 		}
 	}
 }
